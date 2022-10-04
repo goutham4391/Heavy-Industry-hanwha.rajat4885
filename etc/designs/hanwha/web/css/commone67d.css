@@ -1,0 +1,2472 @@
+@charset "UTF-8";
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+/* Layouts*/
+html { font-size: 16px; }
+body { line-height:1; margin: 0; }
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { display:block; margin: 0; }
+nav ul,
+ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; text-decoration: none; }
+/* change colours to suit your needs */
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+/* change colours to suit your needs */
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+table { border-collapse:collapse; border-spacing:0; }
+/* change border colour to suit your needs */
+hr { display:block; height:1px; border:0; border-top:1px solid #e6e6e6; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+button { margin: 0; padding: 0; border: none; background: transparent; cursor: pointer; }
+/*common*/
+.dim {background-color: gray;opacity:.4;}
+.mt0 { margin-top: 0 !important; }
+.mtm7 { margin-top: -7px !important; }
+.mt40 { margin-top: 40px !important; }
+.mt80 { margin-top: 80px;}
+.mt160 { margin-top: 160px; }
+.line_type01 { width: 700px; margin: 30px auto; }
+.bgnone { background: none !important;}
+strong { font-weight: 600; }
+.skip_navigation { position: absolute; left: 0; top:  80px; }
+.skip_navigation a { display: block; padding: 5px 10px; width: 200px; margin-left: -20000em;  background: #fff; border: 1px solid #767676; }
+.skip_navigation a:focus,
+.skip_navigation a:active { visibility: visible; margin-left: 0; }
+.txt_center { text-align: center !important; }
+/* layout */
+#wrapper { position: relative; font-family: 'myriad-pro'; *zoom: 1;  font-style: normal; width: 100%;}
+
+/* Titles */
+.tit_type01 { margin: 0 auto; width: 700px; font-weight: 600; font-size: 180%; line-height: 1.2; color: #576b7c;}
+.tit_type02 { margin: 80px auto 45px; width: 700px; font-size: 1.125rem; color: #576b7c}
+.tit_type03 { margin: 30px auto 45px; width: 700px; font-size: 1.125rem; color: #576b7c}
+
+/* news components */
+.article_area { margin: 15px auto 0; width: 700px; font-size: 1rem; color: #767676; line-height: 20px; word-break: break-word; }
+.type_small { font-size: 90%; }
+.for_more_infomation {font-size: 0.9375rem; color: #767676; line-height: 20px; margin: 0 auto; width: 920px; }
+.txt_link {color: #ff6d12; }
+.news_summary { margin: 30px auto 60px; width: 700px; font-size: 1rem; color: #767676; line-height: 1.5; font-weight: 600; }
+.figure_area { position: relative; margin: 40px auto 20px; width: 920px; }
+.figure_area.figure_big { width: 1220px; margin-bottom: 0; }
+.figure_area02 { margin: 0 auto; padding: 0  0 15px; line-height: 1; width: 920px;}
+.figure_area02 img { width: 100%; margin: 0 0 -1px; display: block; font-size: 0; line-height: 0; border-bottom: 1px solid #e6e6e6; }
+.figure_area03 { margin: 0 auto; }
+
+.f_left { float: left; }
+.txt_upper { text-transform: uppercase; }
+.clearfix { *zoom: 1; }
+.clearfix:after { display: block; clear: both; content: ''}
+/*#gnb > h1 { float: left; padding: 32px 0 0 10px; margin: 0;}
+#gnb > h1 a img { display: block; width: 163px; height: 61px; } 2019-12-10 삭제 */
+#gnb #gnb_logo {float:left;padding:32px 0 0 10px;margin:0;-webkit-transition:all 0.3s;transition:all 0.3s}/* 2019-12-10 추가 */
+#gnb #gnb_logo a {display:block}/* 2019-12-10 추가 */
+#gnb #gnb_logo a img {display:block;width:163px;height:61px;-webkit-transition:all 0.3s;transition:all 0.3s}/* 2019-12-10 추가 */
+#gnb .gnb_menu { float: right; padding: 11px 10px 0 0; text-align: right; }
+#gnb {position:fixed;z-index:999;top:0;left:0;right:0}/* 2019-12-10 수정 */
+#gnb .inner_gnb {position:relative;z-index:21;width:1240px;height:106px;margin:0 auto}/* 2019-12-10 추가 */
+.gnb_1dpt { position: relative; font-size: 1.125rem; *zoom: 1; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_line_gnb.png") repeat-x left top; text-align: left;  z-index: 30; }
+
+/* 2019-12-10 추가 시작 */
+/* GNB - 3depth */
+.header_static #gnb{max-height:106px;background-color:#ff7200}
+.header_static .gnb_1dpt{background:none}
+.header_static .gnb_1dpt > li > a.active,
+.header_static .gnb_1dpt > li > a:hover{color:#793000}
+.header_static .gnb_1dpt > li > a.active span img,
+.header_static .gnb_1dpt > li > a:hover span img{margin-top:0}
+.header_static .gnb_2dpt{border-top:0 none}
+.header_static .box_menu_lang > a.active,
+.header_static .box_menu_lang > a:hover{color:#793000;background: url("../../../../../content/dam/hanwha/resources/images/common/bg_lang_active2.html") no-repeat 10px center}/* // 2019-12-10 경로수정해주세요 */
+.header_static .content_header{clear:both;margin-top:90px}
+
+/* GNB - 1depth, 2depth */
+.header_fixed #gnb{max-height:65px;background-color:#ff7200;-webkit-transition:all 0.3s ease-in;transition:all 0.3s ease-in}
+.header_fixed #gnb .inner_gnb{height:65px}
+.header_fixed #gnb #gnb_logo{padding-top:14px}
+.header_fixed #gnb #gnb_logo a img{width:120px;height:40px}
+.header_fixed .gnb_1dpt{margin:2px 191px 12px 0;background:none}
+.header_fixed .gnb_1dpt > li{padding-left:16px;-webkit-transition:all 0.3s;transition:all 0.3s}
+.header_fixed .gnb_1dpt > li > a.active,
+.header_fixed .gnb_1dpt > li > a:hover{color:#793000}
+.header_fixed .gnb_1dpt > li > a.active span img,
+.header_fixed .gnb_1dpt > li > a:hover span img{margin-top:0}
+.header_fixed .gnb_2dpt{width:780px;border-top:0 none}
+.header_fixed .gnb_2dpt header{width:260px}
+.header_fixed .gnb_2dpt > ul{width:auto}
+.header_fixed .menu_util{position:absolute;top:18px;right:0}
+.header_fixed .box_menu_search, .header_fixed .box_menu_lang{margin-left:5px;font-size:0.9rem}
+.header_fixed .box_menu_lang > a.active,
+.header_fixed .box_menu_lang > a:hover{color:#793000;background: url("../../../../../content/dam/hanwha/resources/images/common/bg_lang_active2.html") no-repeat 10px center}/* // 2019-12-10 경로수정해주세요 */
+
+/* // 2019-12-10 추가 끝 */
+
+.gnb_1dpt > li { float: left; padding: 0 0 0 38px; -webkit-transition:all 0.3s;transition:all 0.3s}
+.gnb_1dpt > li:first-child { padding: 0; }
+.gnb_1dpt > li > a { display: block; padding: 10px 7px 11px 5px; height: 18px; color: #fff; }
+.gnb_1dpt > li > a span { display: inline-block; *display: inline; *zoom: 1; overflow:hidden; height: 12px; }
+.gnb_1dpt > li > a span.txt_logo {width:74px}/* 2019-12-10 추가 */
+.gnb_1dpt > li > a span.txt_logo img {width:100%}/* 2019-12-10 추가 */
+.gnb_1dpt > li > a.active,
+.gnb_1dpt > li > a:hover { color: #ff7200 }
+.gnb_1dpt > li > a span img { display: block; font-size: 0; line-height: 0; }
+.gnb_1dpt > li > a.active span img,
+.gnb_1dpt > li > a:hover span img { margin-top: -12px; }
+.gnb_2dpt { display: none; position: absolute; right: 0; top: 0; padding: 0 20px 0 20px; width: 932px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_gnb_2dpt.png") repeat left top; *zoom: 1; z-index: 23; border: 1px solid #e6e6e6}
+
+/*.gnb_2dpt > header > h1 { padding: 20px 0 14px; color: #505050; font-size: 1.375rem; font-weight: normal; }*/
+.gnb_2dpt > header > .tit { padding: 20px 0 14px; color: #505050; font-size: 1.375rem; font-weight: normal; }
+
+.gnb_2dpt > header > p { padding: 0 10px 0 0; font-size: 0.9375rem; line-height: 19px; color: #696a6a; }
+.gnb_2dpt > header,
+.gnb_2dpt >ul,
+.gnb_2dpt .info_menu { float: left; }
+.gnb_2dpt header { width: 348px; }
+.gnb_2dpt .close_gnb { position: absolute; right: 20px; bottom: 20px; margin: 0; padding: 0; border: 0; background: none; cursor: pointer; *width: 21px; }
+.gnb_2dpt .close_gnb img { display: block; font-size: 0; line-height: 0; }
+.gnb_2dpt > ul { position: relative; width: 255px; padding: 15px 20px 10px; min-height: 247px; border: 1px solid #ececec; border-top: none; border-bottom: none; }
+.gnb_2dpt > ul > li { border-top: 1px solid #ececec; }
+.gnb_2dpt > ul > li:first-child { border-top: none; }
+.gnb_2dpt > ul > li > a { display: block; padding: 9px 0 7px; width: 188px; font-size: 0.9375rem; color: #333333; line-height: 1.2; }
+.gnb_2dpt > ul > li > a.active,
+.gnb_2dpt > ul > li > a:hover { color: #ff7200;}
+.gnb_2dpt > ul > li > a.hasSub { background: url("../../../../../content/dam/hanwha/resources/images/common/bg_gnb_2dptdefault.png") no-repeat right center; }
+.gnb_2dpt > ul > li > a.hasSub:hover,
+.gnb_2dpt > ul > li > a.hasSub.active {  background: url("../../../../../content/dam/hanwha/resources/images/common/bg_gnb_2dptactive.png") no-repeat right center;  }
+.gnb_2dpt > ul > li > ul { left: 249px; top: 15px; width: 262px; }
+.gnb_2dpt > ul > li > ul > li > a { display: block; padding: 10px 0 9px; font-size: 0.875rem; color: #333; line-height: 1.2; }
+.gnb_2dpt > ul > li > ul > li > a.active,
+.gnb_2dpt > ul > li > ul > li > a:hover { color: #ff7200; }
+
+.gnb_2dpt .info_menu { padding: 20px 0 0 20px; width: 262px; color: #333; }
+.gnb_2dpt .info_menu img { display: block; font-size: 0; line-height: 0; width: 262px; }
+
+/*.gnb_2dpt .info_menu h1 { margin: 14px 0 4px; font-size: 0.9375rem; line-height: 19px; }*/
+.gnb_2dpt .info_menu .info_menu_tit { margin: 14px 0 4px; font-size: 0.9375rem; line-height: 19px; }
+
+.gnb_2dpt .info_menu p { font-size: 0.812rem; line-height: 1.2em; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; word-wrap:break-word; *display: block; -webkit-line-clamp: 3; max-height: 3.6em;  }
+.gnb_2dpt .info_menu a { display: inline-block; *display: inline; *zoom: 1; margin: 4px 0 0; font-size: 0.812rem; }
+.gnb_3dpt { position: absolute; display: none; }
+html>body .gnb_1dpt {margin-top:42px;font-size:18px;-webkit-transition:all 0.3s;transition:all 0.3s}/* 2019-12-10 수정 */
+html>body .gnb_1dpt > li:first-child { padding: 0 0 0 7px; }
+
+/*html>body .gnb_2dpt > header > h1 { font-size: 22px; }*/
+html>body .gnb_2dpt > header > .tit { font-size: 22px; }
+
+html>body .gnb_2dpt > header > p,
+html>body .gnb_2dpt > ul > li > a,
+/*html>body .gnb_2dpt .info_menu h1 { font-size: 15px;}*/
+html>body .gnb_2dpt .info_menu .info_menu_tit { font-size: 15px; }
+html>body .gnb_2dpt .info_menu .info_menu_tit { font-weight:bold; }
+
+html>body .gnb_2dpt .info_menu p,
+html>body .gnb_2dpt .info_menu a { font-size: 13px; }
+.gnb_2dpt > ul > li > ul > li > a { font-size: 14px; }
+
+.menu_util {position:absolute;z-index:40;top:11px;right:0;-webkit-transition:all 0.3s;transition:all 0.3s}/* 2019-12-10 수정 */
+.box_menu_search,
+.box_menu_lang { display: inline-block; *display: inline; *zoom: 1; vertical-align: top; margin: 0 0 0 22px; text-align: left; z-index: 40;font-size: 1rem;-webkit-transition:all 0.3s;transition:all 0.3s}/*20150916 전체적으로 랜딩페이지에서만 상단 검색부분이 작아지는 현상이 발생*//* 2019-12-10 수정 */
+.box_menu_lang .layer_lang { position: absolute; right: 0; top: 42px; *top: 43px; display: none; width: 520px; font-size: 0.875rem; border: 1px solid #b4b8bd; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_gnb_2dpt.png") repeat left top; }
+.box_menu_lang .layer_lang:after { display: block; clear: both; content: ''; }
+.box_menu_lang .layer_lang .tit_lang,
+.box_menu_lang .layer_lang ul { float: left; }
+.box_menu_lang .layer_lang .tit_lang { padding: 24px 20px 0; color: #505050; width: 252px; }
+
+/*.box_menu_lang .layer_lang .tit_lang h1 { font-size: 1.625rem; font-weight: 400; }*/
+.box_menu_lang .layer_lang .tit_lang .tit { font-size: 1.625rem; font-weight: 400; }
+
+.box_menu_lang .layer_lang .tit_lang p { margin: 15px 0 0; font-size: 0.9375rem; }
+.box_menu_lang .layer_lang ul { padding: 17px 0 47px; border-left: 1px solid #ececec; }
+.box_menu_lang .layer_lang a:hover { color: #ff7200 }
+.box_menu_lang .layer_lang a { display: block; padding: 6px 0 8px; margin: 0 15px; width: 188px; font-size: 0.875rem; line-height: 1.4; color: #576b7c; opacity: 1; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_arrow_lang.png") no-repeat right center; border-top: 1px solid #c0c7cd; font-family:inherit, 'Malgun Gothic'}
+.box_menu_lang .layer_lang li:first-child a { border-top: none; }
+.box_menu_lang .close_gnb { position: absolute; right: 20px; bottom: 20px; width: 21px; }
+
+.box_menu_lang > a { display: block;color: #fff; padding: 6px 0 8px 28px; width: 77px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_menu_global.png") no-repeat 10px center;line-height:1rem}/* 2019-12-10 수정 */
+
+.box_menu_lang > a.active,
+.box_menu_lang > a:hover{ color: #ff7200;  background: url("../../../../../content/dam/hanwha/resources/images/common/bg_lang_active.png") no-repeat 10px center; }
+
+.box_menu_search .text { }
+.box_menu_search a { display: inline-block; *display: inline; *zoom: 1; padding: 6px 0 8px 20px; margin: 0; color: #fff; background: transparent url("../../../../../content/dam/hanwha/resources/images/common/bg_util_search.png") no-repeat left center; border: none; cursor: pointer; line-height:1rem}/* 2019-12-10 수정 */
+.lyr_search { display:none; position: absolute; right: 0; top: 42px; *top: 43px; padding: 20px 20px 50px; width: 360px; font-size: 0; line-height: 0;  background: url("../../../../../content/dam/hanwha/resources/images/common/bg_gnb_2dpt.png") repeat left top; border: 1px solid #b4b8bd}
+.lyr_search strong,
+.lyr_search .text,
+.lyr_search button { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.lyr_search strong { display: block; margin: 0 0 10px; font-size: 1.625rem; line-height: 1.2; font-weight: 400; color: #505050; }
+.lyr_search .text { padding: 5px 10px 6px; width: 307px; border: 1px solid #dcdcdc; background: #fff; font-size: 0.9375rem; color: #b6b6c5; }
+.lyr_search button { font-size: 0; line-height: 0; margin: 0; padding: 0; width: 30px;}
+.lyr_search button img { display: block; width: 100%; }
+.lyr_search .close_gnb { position: absolute; right: 20px; bottom: 20px; width: 21px;}
+html>body .lyr_search strong,
+/*html>body .box_menu_lang .layer_lang .tit_lang h1 { font-size: 26px; }*/
+html>body .box_menu_lang .layer_lang .tit_lang .tit { font-size: 26px; }
+
+
+#footer { margin: 40px auto; width: 1220px; font-size: 0.875rem }
+#footer address { padding: 30px 0 0; text-align: center; font-style: normal; color: #767676; }
+#footer address img { display: inline-block; *display: inline; *zoom: 1; margin: 0 16px 0 0; vertical-align: middle; }
+.menu_footer { text-align: center; border-bottom: 1px solid #e9e9e9; }
+.menu_footer ul li { display: inline-block; *display: inline; *zoom: 1; vertical-align: -webkit-baseline-middle; margin: 0 0 20px; padding: 0 10px; }
+.menu_footer ul li:first-child { margin-left: 0; padding-left: 0; }
+.menu_footer ul li.bdr_foot { padding-left: 20px; margin-left: 10px; background: url("../../../../../content/dam/hanwha/resources/images/common/bdr_left_gray.png") no-repeat left center; }
+/*
+.menu_footer ul li dl dt,
+.menu_footer ul li dl dd { float: left; }
+*/
+.menu_footer ul li a { display: block; padding: 5px 0 5px; color: #6f7276; }
+.menu_footer ul li > a,
+.menu_footer ul li dl dt { font-weight: 600; }
+.menu_footer ul li dl dt { padding: 5px 0px 5px 0; color: #6f7276; }
+.foot_enquire dd { margin: 0 4px 0 3px; }
+
+/* .foot_download dd { margin: 0 0 0 10px; } */
+.foot_download a { display: block; padding-right: 17px !important; background: url("../../../../../content/dam/hanwha/resources/images/common/icon_download.png") no-repeat right center; }
+dl.foot_download a { display: block; padding-right: 17px !important; background: url("../../../../../content/dam/hanwha/resources/images/common/download_icon.png") no-repeat right center; }
+.btn_gotop { display: none; position: fixed; left: 1220px; bottom: 95px; z-index: 22;}
+.down_file { margin: 10px 0; padding: 10px 0 0; display: inline-block; *display: inline; *zoom: 1; color: #545e65;}
+.down_file a,
+.down_file span { display: block; font-size: 0.875rem; }
+.down_file a { color: #ff790d; padding: 0 0 0 25px; font-size: 1rem; line-height: 20px;  }
+.down_pdf { background: url("../../../../../content/dam/hanwha/resources/images/common/icon_download_pdf.png") no-repeat left center; }
+.down_pdf.type02{margin-top:-25px;}
+
+/* 2019-12-10 수정 시작 */
+.visual_top {position:relative;width:100%;min-width:1240px;height:auto;box-sizing:border-box}
+.visual_image {display:none;position:absolute;top:0;left:0;width:100%;height:100%;background-repeat:no-repeat;background-position:50% 50%;background-size:cover}
+.visual_image:first-child { display: block; }
+.visual_image img { display: block; margin: 0 auto; width: 100%; min-width: 1240px}
+.visual_image figcaption {display:table;overflow: hidden; position: relative; z-index: 10; margin:0 auto; width:1200px; height:100%; color: #fff; *zoom: 1; *margin:0 auto}
+.visual_image figcaption .inner_txt{display:table-cell;padding-top:7%;vertical-align:middle}
+/*.visual_image figcaption h1 { font-size: 60px; line-height: 1; font-weight: 600; }*/
+.visual_image figcaption .tit { font-size: 60px; line-height: 1; font-weight: 600; }
+.visual_image figcaption h2 { font-size: 60px; line-height: 1; font-weight: 600; }
+.visual_image figcaption p { margin: 10px 0 30px; font-size: 1.125rem; line-height: 1.2; }
+.visual_image figcaption .btn_readmore { display: inline-block; *display: inline; *zoom: 1; padding: 13px 0 15px 25px; width: 152px; font-family: inherit; color: #ff7200; background: url('../../../../../content/dam/hanwha/resources/images/common/bg_btn_readmore.png') no-repeat left top; line-height: 1;}
+
+#visualMain{min-height:420px;padding-top:22%}
+#visualMain .visual_image figcaption .visual-txt{font-size:50px;line-height: 1; font-weight: 600}
+
+#visualSubMain{min-height:400px;padding-top:22%}
+/*#visualSubMain .visual_image figcaption { margin: -310px auto -110px; height: 310px; } 2019-12-10 삭제 */
+#visualSubMain .visual_image figcaption .inner_txt{padding-top:6.1%}
+#visualSubMain .visual_image figcaption h1 { font-size: 50px; }
+#visualSubMain .visual_image figcaption .tit{font-size:50px}
+#visualSubMain .visual_image figcaption p {margin:30px 0 0}
+/*#visualSubMain .visual_image img { min-height: 387px; } 2019-12-10 삭제 */
+/* //2019-12-10 수정 끝 */
+
+.nav_vis_top { position: relative; z-index: 22; border-bottom: 1px solid #f7f7f7; }
+.nav_vis_top ul { *zoom: 1; margin: 0 auto; width: 100%;  }
+.nav_vis_top ul li { float: left; background: #fff;  }
+.nav_vis_top ul li.odd { background: #fbfbfb; }
+.nav_vis_top ul li a { display: block; padding: 20px 0 0 20px; color: #818f9c; width: 154px; height: 48px; font-size: 1rem;line-height: 18px; word-break: break-word;}
+.nav_vis_top ul li.odd a { width: 154px; }
+/*html[lang="en"] .nav_vis_top ul li a { width: 154px; }
+html[lang="en"] .nav_vis_top ul li.odd a { width: 154px; }*/
+.nav_vis_top ul li a span { display: block; overflow: hidden; height: 11px; }
+.nav_vis_top ul li a.active { margin: -12px 0 0; padding-top: 32px; color: #fff; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_active_vistop.png") no-repeat left top; }
+.nav_vis_top ul li a.active span img { display: block;  margin-top: -11px; }
+.wrap_nav { position: relative; margin: 0 auto 0; width: 1220px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_wrap_nav.png") no-repeat left bottom;}
+.nav_vis_top .btn_nav { position: absolute; top: -50px; display: block; padding: 0; margin: 0; border: 0; background: transparent; cursor: pointer; }
+.btn_visual { position: absolute; right: 0; top: -60px; z-index: 20; }
+.btn_visual button { padding: 0; margin: 0 0 0 5px; border: none; background: none; cursor: pointer; font-size: 0; line-height: 0; }
+.btn_visual button img { display: block; }
+
+.content { margin: 0 auto 60px; *zoom: 1; position: relative; /*z-index: 22;*/}
+.box_main_cont { position: relative; text-align: center; width: 100%; min-width: 1240px; }
+.box_main_cont.even { background: #fbfbfb;}
+.box_inner { padding: 80px 0; width: 1220px; margin: 0 auto;}
+.box_main_cont .box_inner > h1 { font-weight: 600; font-size: 1.875rem; color: #576b7c;  }
+.box_main_cont .box_inner > h1+h2 { margin: 20px 0 0; }
+.box_main_cont .box_inner > h2 { font-weight: 600; font-size: 1.125rem; color: #576b7c }
+
+.view_more { display: inline-block; *display: inline; *zoom: 1; font-size: 0.9375rem; margin: 30px 0 20px; color: #ff7200; }
+.list_grid { position: relative; clear: both;}
+.content_header { overflow: hidden; margin: 0 auto; width: 1220px; *zoom: 1; }
+.content_header .page_nav { padding: 65px 0 16px; border-bottom: 1px solid #f3f3f3; font-size: 0.9375rem;}
+.content_header .page_nav a { color: #767676; }
+.content_header .page_nav span { color: #ff7200; }
+.content_header .social_nav { padding: 20px 150px 0 0; text-align: right; font-size: 0; line-height: 0;}
+.content_header .social_nav li { margin: 0 0 0 10px; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.content_header .social_nav li a { display: block; font-size: 0; line-height: 0; }
+.content_header .social_nav .at-share-tbx-element .at-share-btn { margin: 0 0 0 10px; }
+.content_header .social_nav .at-share-btn { display: inline-block; *display: inline; *zoom: 1; /*width: 36px; height: 36px;*/ cursor: pointer;  }
+
+.content_header .social_nav .addthis_32x32_style .at4-icon,
+.content_header .social_nav .addthis_32x32_white_style .at4-icon,
+.content_header .social_nav .at-32x32 {width: 36px;height: 36px;line-height: 36px;background-size: 36px!important;}
+.content_header .social_nav .at-share-tbx-element.addthis_32x32_style .at-share-btn,
+.content_header .social_nav .at-share-tbx-element.addthis_32x32_white_style .at-share-btn {min-width: 40px;max-width: 40px;max-height: 40px;}
+/*.at-custom-button-color {background-color: #cfcfcf;}*/
+
+/*
+.content_header .social_nav .at-share-btn.at-svc-twitter {background: url("https://www.hanwha.com/content/dam/hanwha/resources/images/common/btn_sns01.png") no-repeat left top; !important;}
+.content_header .social_nav .at-share-btn.at-svc-facebook {background: url("https://www.hanwha.com/content/dam/hanwha/resources/images/common/btn_sns02.png") no-repeat left top; !important;}
+.content_header .social_nav .at-share-btn.at-svc-google_plusone_share {background: url("https://www.hanwha.com/content/dam/hanwha/resources/images/common/btn_sns03.png") no-repeat left top; !important;}
+.content_header .social_nav .at-share-btn.at-svc-pinterest_share {background: url("https://www.hanwha.com/content/dam/hanwha/resources/images/common/btn_sns04.png") no-repeat left top; !important;}
+.content_header .social_nav .at-share-btn.at-svc-linkedin {background: url("https://www.hanwha.com/content/dam/hanwha/resources/images/common/btn_sns05.png") no-repeat left top; !important;}
+.content_header .social_nav .at-share-btn.at-svc-print {background: url("https://www.hanwha.com/content/dam/hanwha/resources/images/common/btn_sns07.png") no-repeat left top; !important;}
+*/
+
+.at-circular {border-radius: 50%;}
+.at-custom-share-span {cursor: pointer;display: inline-block;padding: 0;margin: 0 2px !important; border-radius:50% !important;margin: 2px 6px 0px 0px !important;}
+.at15t, .at16nc, .at300bs { background: none !important;}
+
+.nav_roll { position: absolute; width: 100%; left: 0; top: 5px; }
+.nav_roll > button,
+.nav_roll > span { position: static; font-size: 0; line-height: 0;  cursor: pointer; display: inline-block; *display: inline; *zoom: 1; margin: 0 3px; padding: 0; border: none; vertical-align: middle; width: 25px; height: 25px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_indicator_rolling.png") no-repeat left bottom; }
+.nav_roll button.active,
+.nav_roll .swiper-active-switch.swiper-visible-switch { background-position: left top; }
+
+
+.box_figure { position: relative; }
+.text_hidden { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px) }
+
+.wrap_list { overflow: hidden; position: relative; margin: 0 auto; padding: 40px 0 0; width: 1218px; }
+.wrap_list ul { overflow: hidden; position: absolute; left: 0; top: 40px !important; *zoom: 1; font-size: 0; line-height: 0; text-align: center; }
+.wrap_list ul li { position: relative; padding: 0 0 135px; display: block; *display: inline; *zoom: 1; vertical-align: middle; position: relative; overflow: hidden; width: 406px; text-align: left; float:left;}
+.wrap_list ul li img,
+.wrap_list ul li a,
+.wrap_list ul li div { display: block; line-height: 1.2;}
+.wrap_list ul li a.newList {position: absolute;width: 363px;height: 85px;margin-top: -15px;min-height: 0px;padding: 30px 14px 15px 28px;background: transparent url("../../../../../content/dam/hanwha/resources/images/common/bg_list_link.png") no-repeat left top;border-right: 1px solid #ececec;border-bottom: 1px solid #ececec;}
+.wrap_list ul li a,
+.wrap_list ul li div { position: absolute; width: 363px; margin-top:-15px; padding: 35px 14px 15px 28px; min-height: 97px; background: transparent url("../../../../../content/dam/hanwha/resources/images/common/bg_list_link.png") no-repeat left top;border-right: 1px solid #ececec; border-bottom: 1px solid #ececec;}
+.wrap_list ul li a strong,
+.wrap_list ul li a > span,
+.wrap_list ul li div strong,
+.wrap_list ul li div > span,
+.wrap_list ul li a > em,
+.wrap_list ul li div > em { display: block;  }
+.wrap_list ul li a strong,
+.wrap_list ul li div strong { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; word-wrap:break-word; *display: block; color: #576b7c; font-size: 1.125rem;  font-size: 18px\9; font-family: inherit; font-weight: 600; }
+.wrap_list ul li a > span,
+.wrap_list ul li div > span { position: relative; margin: 7px 0 0; padding: 0 35px 0 0; font-size: 0.9375rem; font-size: 15px\9; color: #767676; overflow: hidden; text-overflow-mode: ellipsis-word; text-overflow: ellipsis; display: -webkit-box; -webkit-box-orient: vertical; word-wrap:break-word; *display: block;}
+.wrap_list ul li a > span .msieClamp,
+.wrap_list ul li div > span .msieClamp { position: absolute; width: 30%; font-size: 14px; line-height: 16px; height: 18px; color: #767676; right: 10%; bottom: 0; background: #fff; }
+.wrap_list ul li a > span .msieClamp.react,
+.wrap_list ul li div > span .msieClamp.react { display: none; }
+
+
+.wrap_list ul li.active  a,
+.wrap_list ul li.active  div{ top: 25px; height: 277px; }
+.wrap_list ul li.active  a > span,
+.wrap_list ul li.active  div> span { overflow: hidden; overflow-y: auto; display: block;   }
+.wrap_list ul li a > span {background: url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat 95% 35px; }
+.wrap_list ul li div > span { background: none; }
+.wrap_list ul li a > span,
+.wrap_list ul li div > span { padding: 0 35px 0 0; }
+
+/*.wrap_list ul li a.btn_video_figure{ position: static; margin: 0; padding: 0 !important; background: none; }*/
+.wrap_list ul li a.btn_video_figure{ position: static; margin-top: -1px; padding: 0 !important; background: none; }
+.wrap_list ul li span a.btn_video_figure{ position: static; margin-top: -1px; padding: 0 !important; background: none; }
+
+.toggle_layer { position: absolute; right: 0; bottom: 0; padding: 0; width: 16px; height: 16px; margin: 0 30px 25px 0; background: url("../../../../../content/dam/hanwha/resources/images/common/btn_view_more_layer.png") no-repeat left top; border: none; cursor: pointer; z-index: 10;}
+.wrap_list ul li.active .toggle_layer { top: 0; margin: 20px 10px 0 0; background: url("../../../../../content/dam/hanwha/resources/images/common/btn_view_close_layer.png") no-repeat left center;}
+.txt_source { position: absolute; right: 0; top: 165px; text-align: right; padding: 12px 20px 0 0; width: 100%; height: 38px; font-size: 0.812rem; font-style: italic; color: #fff; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_txt_source.png") repeat left top; }
+
+/* worldside list 20160817 */
+.wrap_list ul li.ty02 a,
+.wrap_list ul li.ty02 div{min-height:10px;}
+.wrap_list ul li.ty02{padding-bottom:80px;}
+.wrap_list.type02 ul li.ty02 a strong,
+.wrap_list.type02 ul li.ty02 div strong{background: url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat 95% 4px;}
+
+
+/* Title 1 line Content 3 line wide */
+.wrap_list.type01 { height: 350px; } /* 2021-11-19 수정 */
+.wrap_list.type01 ul li{padding-bottom:155px} /* 2021-11-19 추가 */
+.wrap_list.type01 ul li a strong,
+.wrap_list.type01 ul li div strong { -webkit-line-clamp: 2;  line-height: 1.15em; height: 42px; } /* 2021-11-19 수정 */
+    .wrap_list.type01 ul li a > span,
+.wrap_list.type01 ul li div > span { min-height: 86%; -webkit-line-clamp: 3; line-height: 1.2em; height: 3.7em; }
+.wrap_list.type01 ul li > img { width: 407px; height: 205px;}
+.wrap_list.type02 { height: 338px; }
+
+/* Title 2 line Content 2 line wide */
+.wrap_list.type02 ul li a strong,
+.wrap_list.type02 ul li div strong { -webkit-line-clamp: 2;  line-height: 22px; height: 44px; }
+.wrap_list.type02 ul li a > span,
+.wrap_list.type02 ul li div > span { min-height: 77%; -webkit-line-clamp: 2; line-height: 1.2em; height: 2.4em; background-position: 95% 20px;}
+.wrap_list.type02 ul li > img { width: 407px; height: 205px;}
+
+/* Title 2 line Content 2 line narrow */
+.wrap_list.type03 { height: 296px; width: 1220px;}
+.wrap_list.type03 ul li { overflow: hidden; width: 305px; }
+.wrap_list.type03 ul li a,
+.wrap_list.type03 ul li div { padding: 28px 14px 22px; width: 276px; min-height: 0; }
+.wrap_list.type03 ul li img { display: block; font-size: 0; line-height: 0; width: 306px; height: 167px;}
+.wrap_list.type03 ul li a strong,
+.wrap_list.type03 ul li div strong {-webkit-line-clamp: 2;  line-height: 1.2em; height: 2.4em; }
+.wrap_list.type03 ul li a > span,
+.wrap_list.type03 ul li div > span { min-height: 77%; -webkit-line-clamp: 2; line-height: 1.2em; height: 2.6em; background-position: 95% 20px;}
+.wrap_list.type03 ul li.active a,
+.wrap_list.type03 ul li.active div { height: 233px}
+
+/* Title 1 line Content 3 line narrow */
+.wrap_list.type04 { height: 296px; width: 1220px;}
+.wrap_list.type04 ul li { overflow: hidden; width: 305px; }
+.wrap_list.type04 ul li a,
+.wrap_list.type04 ul li div { padding: 28px 14px 25px; width: 276px; min-height: 0; }
+.wrap_list.type04 ul li img { display: block; font-size: 0; line-height: 0; width: 306px; height: 167px;}
+.wrap_list.type04 ul li a strong,
+.wrap_list.type04 ul li div strong {-webkit-line-clamp: 1;  line-height: 1.15em; height: 1.2em; }
+.wrap_list.type04 ul li a > span,
+.wrap_list.type04 ul li div > span { min-height: 91%; -webkit-line-clamp: 3; line-height: 1.15em; height: 3.6em;}
+.wrap_list.type04 ul li.active a,
+.wrap_list.type04 ul li.active div { height: 228px}
+.wrap_list.type04 ul li.active a > span { background-position: 93% bottom; }
+
+/* Explain Mocule */
+.wrap_list.type05 { height: 308px; }
+.wrap_list.type05 ul li { padding: 0 0 151px; width: 406px; }
+.wrap_list.type05 ul li div strong,
+.wrap_list.type05 ul li a strong { color: #767676; font-size: 1.125rem; font-weight: normal; }
+.wrap_list.type05 ul li div em,
+.wrap_list.type05 ul li a em { font-style: normal; font-family: inherit; font-size: 3.4rem; color: #576b7c; line-height: 1;  font-size: 54px\9; }
+.wrap_list.type05 ul li div em > span,
+.wrap_list.type05 ul li a em > span { font-size: 1.687rem; vertical-align: baseline; font-size: 26px\9 }
+.wrap_list.type05 ul li div em > span.txt_middle,
+.wrap_list.type05 ul li a em > span.txt_middle { font-size: 3.43rem !important;font-size: 54px\9 !important }
+.wrap_list.type05 ul li div em > sup,
+.wrap_list.type05 ul li a em > sup { margin: 0 -10px; vertical-align: super; font-size: 1.687rem; font-size: 26px\9; }
+.wrap_list.type05 ul li div,
+
+.wrap_list.type05 ul li a { padding: 20px 28px 14px 28px; width: 349px; }
+.wrap_list.type05 ul li div > span{ background: none; }
+
+/*Career Slide*/
+.wrap_list.type06 { overflow: hidden; *zoom: 1; padding:0; width: 940px !important; height: 502px;}
+.wrap_list.type06 ul {padding:0;}
+.wrap_list.type06 li { float: left; width: 291px !important; height:420px !important; margin: 0 11px; text-align: left; background: #fff; *zoom: 1; padding:0}
+.wrap_list.type06 li img { display: block; font-size: 0; line-height: 0; border-bottom: 1px solid #e6e6e6;}
+.wrap_list.type06 h2 { margin: 0 0 15px; font-size: 18px; color: #576B7C; font-weight: 600; line-height: 1.4;}
+.wrap_list.type06 li a { display: block; padding: 19px; margin:0; display: block; min-height: 124px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat right 18px bottom 18px; width:251px; height:205px; border:1px solid #e6e6e6}
+.wrap_list.type06 p{ margin: 0 0 5px; font-size: 15px; line-height: 20px; color: #767676; }
+
+
+.list_grid .wrap_list ul { position: absolute; }
+
+.tbl_type01 { position: relative; width: 100%; }
+.tbl_type01 caption { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); text-indent: -999em; }
+.tbl_type01 thead th { padding: 14px 0 12px; color: #fff; font-size: 0.875rem; font-weight: normal; background: #576b7c; border-left: 1px solid #ececec; border-bottom: 1px solid #ececec; }
+.tbl_type01 tbody td { padding: 14px 0 12px; font-size: 0.75rem; color: #767676; line-height: 20px; border-left: 1px solid #ECECEC; border-bottom: 1px solid #ececec; vertical-align: middle}
+.txt_left { padding: 14px 15px 12px !important; text-align: left; }
+.tbl_type01 thead th:first-child,
+.tbl_type01 tbody td:first-child { border-left: none;}
+.tbl_type01 tbody td a { color: #767676; }
+.paging { font-size: 0; line-height: 0;}
+.paging a,
+.paging strong { display: inline-block; *display: inline; *zoom: 1; margin: 0 -1px; width: 38px; font-size: 0.875rem; font-size: 14px\9; font-weight: normal; color: #767676; line-height: 38px; vertical-align: middle; border: 1px solid #d5d5d5; background: #fff; }
+.paging a.prev,
+.paging a.next,
+.paging a.first,
+.paging a.last { font-size: 0; line-height: 0; background: url("../../../../../content/dam/hanwha/resources/images/contact/bg_btn_contact.png"); width: 40px; height: 40px; border: none !important;}
+.paging a.prev { background-position: left -176px; }
+.paging a.next { background-position: left -216px; }
+.paging a.first { background-position: left -322px; }
+.paging a.last { background-position: left -362px; }
+.paging strong { background: #576b7c; border: 1px solid #576b7c; color: #fff; }
+
+/* Foot Print */
+.box_footprint { margin: 0 auto; width: 866px;  }
+.box_footprint .list_find_top { float: right; margin: 25px 0 50px; }
+.map_footprint{ position: relative; clear: both;}
+.indicator_footprint { position: relative; margin: 0 auto; width: 770px; height: 400px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_global_footprint.png") no-repeat left top; clear: both; }
+.index_footprint { margin: 30px 0 0; text-transform: uppercase; }
+.index_footprint li { display: inline-block; *display: inline; *zoom: 1; margin: 0 30px; text-align: left; }
+.index_footprint li strong,
+.index_footprint li span { display: block; }
+.index_footprint li span { margin: 5px 0 0; font-size: 0.875rem; }
+.index_footprint li.index01 { color: #ffae6c }
+.index_footprint li.index02 { color: #7ca5b0 }
+.index_footprint li.index03 { color: #cbb6a6 }
+
+.indcator_map { position: absolute; display: block; width: 22px; height: 22px; }
+.indcator_map span { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); font-size: 0; line-height: 0;}
+.indcator_map.type01 { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map01.png") no-repeat left top; }
+.indcator_map.type02 { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map02.png") no-repeat left top; }
+.indcator_map.type03 { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map03.png") no-repeat left top; }
+.indcator_map.small { width: 11px; height: 11px; background-size: contain; }
+.indcator_map.type01.small { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map01_small.png") no-repeat left top; }
+.indcator_map.type02.small { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map02_small.png") no-repeat left top; }
+.indcator_map.type03.small { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map03_small.png") no-repeat left top; }
+.indcator_map.mid { width: 14px; height: 14px; background-size: contain; }
+.indcator_map.type01.mid { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map01_mid.png") no-repeat left top; }
+.indcator_map.type02.mid { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map02_mid.png") no-repeat left top; }
+.indcator_map.type03.mid { background: url("../../../../../content/dam/hanwha/resources/images/common/img_indicator_map03_mid.png") no-repeat left top; }
+.indcator_map .info_footprint { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px) top: -999em; }
+
+.layer_map_cont > div { border-bottom: 1px solid #e6e6e6; margin: 0 0 18px; padding: 0 0 15px; }
+
+#advMaterial .indcator_map,
+#advMaterial .layer_map_cont > div { display: none; }
+#advMaterial .indcator_map.cate01,
+#advMaterial .layer_map_cont > div.cate01 { display: block; }
+
+#cheMical .indcator_map,
+#cheMical .layer_map_cont > div { display: none; }
+#cheMical .indcator_map.cate02,
+#cheMical .layer_map_cont > div.cate02 { display: block; }
+
+#conStruction .indcator_map,
+#conStruction .layer_map_cont > div { display: none; }
+#conStruction .indcator_map.cate03,
+#conStruction .layer_map_cont > div.cate03 { display: block; }
+
+#finService .indcator_map,
+#finService .layer_map_cont > div { display: none; }
+#finService .indcator_map.cate04,
+#finService .layer_map_cont > div.cate04 { display: block; }
+
+#leiLifestyle .indcator_map,
+#leiLifestyle .layer_map_cont > div { display: none; }
+#leiLifestyle .indcator_map.cate05,
+#leiLifestyle .layer_map_cont > div.cate05 { display: block; }
+
+#manTrading .indcator_map,
+#manTrading .layer_map_cont > div { display: none; }
+#manTrading .indcator_map.cate06,
+#manTrading .layer_map_cont > div.cate06 { display: block; }
+
+#solEnergy .indcator_map,
+#solEnergy .layer_map_cont > div { display: none; }
+#solEnergy .indcator_map.cate07,
+#solEnergy .layer_map_cont > div.cate07 { display: block; }
+
+.menu_map_category { margin: 80px auto 0; width: 824px; }
+.menu_map_category a { display: inline-block; *display: inline; *zoom: 1; margin: 0 6px; padding: 38px 0 0; width: 121px; height: 82px; vertical-align: middle; font-size: 0.8375rem; color: #576b7c; text-align: center; background: url("../../../../../content/dam/hanwha/resources/images/about/bg_menu_map_category.png") no-repeat left top; }
+.menu_map_category a:hover,
+.menu_map_category a.active { color: #fff;background-position: left bottom;  }
+.menu_map_category a span { display: block; }
+
+.wrap_info_category { margin: 16px auto 0; padding: 10px 20px; width: 770px; background: #fdfdfd; border: 1px solid #ececec; font-size: 12px; }
+.map_cate_box { display: none; }
+.map_cate_box:first-child { display: block; }
+.tbl_map_info { margin: 0 0 13px; width: 100%; text-align: left; }
+.tbl_map_info caption { position: absolute; width: 1px; height: 1px; overflow: hidden; }
+.tbl_map_info th { padding: 7px 5px 8px 17px; color: #6e6e6e; font-weight: normal; background: url("../../../../../content/dam/hanwha/resources/images/about/icon_map_info.png") no-repeat 10px center; }
+.tbl_map_info tr:first-child th,
+.tbl_map_info tr:first-child td { padding-top: 19px; border-top: 1px solid #ececec; background-position: 10px 65%;}
+.tbl_map_info:first-child tr:first-child th,
+.tbl_map_info:first-child tr:first-child td { border-top: none; }
+.tbl_map_info td,
+.tbl_map_info td a { color: #767676; }
+.layer_map_info { display: none; position: fixed; left: 0; top: 0; padding: 0; background: #fff; width: 440px; border: 1px solid #576b7c; z-index: 50; text-align: left;}
+.layer_map_info > h2 { padding: 15px 0 10px 20px; font-size: 1.125rem; color: #fff; background: #576b7c; }
+.layer_map_cont { position: relative; overflow: hidden ;overflow-y: auto; padding: 25px 20px 15px; max-height: 405px;}
+.close_layer { position: absolute; padding: 0; margin: 0; font-size: 1.875rem; color: #ff7200; background: url("../../../../../content/dam/hanwha/resources/images/common/btn_layer_close.png") no-repeat left top !important; border: none; width: 21px; height: 21px; right: 10px; top: 10px; cursor: pointer; font-size: 0; line-height: 0;}
+.close_layer span { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px) }
+.layer_map_cont div:first-child hr { display: none; }
+.tbl_layer01 { width: 100%; }
+.tbl_layer01 caption { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px); font-size: 0; line-height: 0; top: -999em; }
+.tbl_layer01 th { padding: 7px 0 8px 17px; font-size: 0.812rem; color: #6e6e6e; text-align: left; background: url("../../../../../content/dam/hanwha/resources/images/about/icon_map_info.png") no-repeat 10px center;}
+.tbl_layer01 td { font-size: 0.75rem; color: #767676; }
+.tbl_layer01 td a { color: #767676; }
+.mask_layer { display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_layer_mask.png") repeat left top; z-index: 40; }
+.ine_seperate_tbl { display: none;  margin: 15px 0 18px; background: #e6e6e6; border: none; *border-top: 1px #e6e6e6; }
+.txt_layer_info { padding: 0 0 10px; text-align: center; font-size: 1rem; color: #767676; }
+.layer_map_info .btn_contact { margin: 0; padding: 25px 0 10px; width: auto; text-align: center; border-bottom:0 none } /* 2020-04-28 수정 */
+.layer_map_info .btn_contact button { width: 132px; }
+.map_cate_box .nomore { color: #767676; line-height: 1.2rem; }
+
+/* Contact US */
+.nav_contact { padding: 0 0 50px; }
+.nav_contact a { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; margin: 0 0 0 45px; padding: 80px 0 0; width: 123px; height: 43px; font-size: 1rem; color: #767676; background: url("../../../../../content/dam/hanwha/resources/images/contact/bg_nav_contact.jpg"); }
+.nav_contact a:hover,
+.nav_contact a.active { color: #fff; }
+.nav_contact a.btn_contact01 { background-position: left top; margin: 0; }
+.nav_contact a.btn_contact02 { background-position: -123px top; }
+.nav_contact a.btn_contact03 { background-position: -246px top; }
+.nav_contact a.btn_contact01:hover,
+.nav_contact a.btn_contact01.active { background-position: left bottom; }
+.nav_contact a.btn_contact02:hover,
+.nav_contact a.btn_contact02.active { background-position: -123px bottom; }
+.nav_contact a.btn_contact03:hover,
+.nav_contact a.btn_contact03.active { background-position: -246px bottom; }
+.list_findus { margin: 50px auto 0; width: 920px; }
+.list_find_top { *zoom: 1; }
+.selectbox { position: relative; z-index: 10; *zoom: 1; }
+.selectbox > a { display: block; height: 15px; padding: 13px 34px 15px 14px; border: 1px solid #e6e6e6; font-size: 0.9375rem; color: #333; background: url("../../../../../content/dam/hanwha/resources/images/contact/bg_btn_contact.png") no-repeat right top; margin: 0; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+.selectbox > a.active { background-position: right -43px; }
+.selectbox > ul { position: absolute; display:none; width: 100%; border: 1px solid #e6e6e6; border-top: none; background: #fff;}
+.selectbox > ul li a { display: block; padding: 5px 10px; color: #333; }
+.selectbox > ul li a:hover { background: #e6e6e6; }
+.list_find_top .selectbox { position: relative; float: left; margin: 0 0 0 10px; background: #fff; font-size: 0.9375rem; text-align: left; *zoom:1;  }
+.list_find_top .selectbox:first-child { margin: 0; }
+.list_find_top .selectbox > a,
+.list_find_top .selectbox > select { width: 145px; }
+.list_find_top .selectbox >select { width: 195px; }
+.list_find_top > button { float: left; margin: 0 0 0 10px; padding: 0; border: none; background: url("../../../../../content/dam/hanwha/resources/images/contact/bg_btn_contact.png"); cursor: pointer; text-indent: -999em; }
+.list_find_top .btn_findus { width: 45px; height: 45px; font: 0/0 Doutm; background-position: left -86px; }
+.list_find_top .btn_refresh { width: 45px; height: 45px; font: 0/0 Doutm; background-position: left -131px; }
+.list_findus .tbl_type01 { margin: 20px 0 50px; clear: both; }
+
+/* 20191016 */
+.ipt_search_findus { position: relative; z-index: 10; *zoom: 1; }
+.ipt_search_findus input { display: block; height: 15px; width: 300px; padding: 13px 34px 15px 14px; border: 1px solid #e6e6e6; font-size: 0.9375rem; color: #333; margin: 0; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+.list_find_top .ipt_search_findus { position: relative; float: left; margin: 0 0 0 10px; background: #fff; font-size: 0.9375rem; text-align: left; *zoom:1;  }
+
+.form_contact { position: relative; padding: 34px; margin: 35px auto 0; width: 850px; border: 1px solid #e6e6e6; text-align: left; }
+.form_contact .f_left { margin: 0 15px; width: 395px; }
+.form_contact > ul > li { padding: 0 0 30px; }
+.form_contact > ul > li > label,
+.newsletter .chk_email label { display: block; padding: 0 0 10px; font-size: 0.9375rem; color: #333;  }
+.form_contact .selectbox a { padding: 8px 23px 10px 14px; width: 356px; background-position: right -256px; }
+.form_contact .selectbox > span {display: block;height: 15px;border: 1px solid #e6e6e6;font-size: 0.9375rem;color: #333;background: url("../../../../../content/dam/hanwha/resources/images/contact/bg_btn_contact.png") no-repeat right top;margin: 0;text-align: left;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;padding: 8px 23px 10px 14px;width: 356px;background-position: right -256px;}
+.form_contact .selectbox a.active { background-position: right -289px; }
+.form_contact > ul > li .text,
+.newsletter .chk_email .text { margin: 0; padding: 8px 23px 9px 14px; width: 356px; border: 1px solid #e6e6e6; font-size: 0.875rem; color: #767676; }
+/* 20150727 */
+.form_contact > ul > li .text2 { margin: 0; padding: 8px 18px 9px 14px; width: 96%; border: 1px solid #e6e6e6; font-size: 0.875rem; color: #767676; }
+.form_contact > ul > li textarea { padding: 24px 16px; width: 360px; height: 180px; border: 1px solid #e6e6e6; font-family: inherit;  font-size: 0.875rem; color: #818181; }
+/* 20150727 */
+.form_contact > ul > li .textarea2 { padding: 24px 16px; width: 792px; height: 345px; border: 1px solid #e6e6e6; font-family: inherit;  font-size: 0.875rem; color: #818181; }
+
+.form_contact > ul > li.select_2dpt { display: none; }
+
+.chk_agree { padding: 20px 0 0; }
+.chk_agree li {margin: 0 0 5px; }
+.chk_agree li a { color: #333; text-decoration: underline; }
+.chk_agree li label { *display: inline; *zoom: 1; vertical-align: top; color: #767676;}
+.chk_agree li .check,
+.chk_agree li label a { display: inline-block; *display: inline; *zoom: 1; vertical-align: top; color: #767676;}
+.chk_agree li label { width: 90%; }
+.chk_agree li .check { margin: 0; }
+.btn_contact { margin: 20px auto 0; width: 920px; text-align: center; }
+.btn_contact button { display: inline-block; *display: inline; *zoom: 1; margin: 0 0 0 6px; padding: 0; width: 192px; font-family: inherit;  font-size: 0.9375rem; line-height: 45px; border: none; font-weight: 600; color: #fff; cursor: pointer;  }
+.btn_contact .submit_contact { background: #ff6d12; }
+.btn_contact .reset_contact { background: #576b7c; }
+.newsletter .chk_email { margin: 0 0 30px; }
+.newsletter .btn_contact { position: static; }
+
+.form_contact.newsletter { padding: 34px 32px; }
+.chk_newsletter { line-height: 1.2; color: #767676; }
+.chk_newsletter .checkbox,
+.chk_newsletter label  { display: inline-block; *display: inline; *zoom: 1; vertical-align: text-top; padding: 0 0 25px; color: #767676; }
+.chk_newsletter dt label { margin: 0 12px 0 0; color: #333; }
+.chk_newsletter dd { display: inline-block; *display: inline; *zoom: 1; width: 276px;  }
+html[lang="de"] .chk_newsletter dd {width: 280px;}
+.info_newsletter { padding: 30px 0 ; border-top: 1px solid #e6e6e6; clear:both}/* 2020-03-22 수정 */
+.info_newsletter dt { font-size: 1.125rem; color: #333; }
+.info_newsletter dd { margin: 25px 0 0; font-size: 0.9375rem; line-height: 20px; color: #767676; }
+.info_newsletter dd a { color: #767676; text-decoration: underline;}
+.info_newsletter dd .check,
+.info_newsletter dd label { display: inline-block; *display: inline; *zoom: 1; vertical-align: top; color: #767676; }
+.info_newsletter dd label { width: 90% }
+
+.box_manage_subs { position: relative; margin: 75px auto 0; width: 700px; font-size: 1rem; text-align: center; color: #767676; }
+.box_manage_subs label,
+.box_manage_subs .text { padding: 12px; width: 100%; color: #767676; }
+.box_manage_subs label { position: absolute; text-align: left; color: #cdcdcd;  }
+.box_confirm { margin: 35px auto 0; padding: 35px 0 0; width: 540px; border-top: 1px solid #e6e6e6; }
+
+/* News & Media */
+.news_list { margin: 0 auto; padding: 30px 0 0; text-align: left; }
+.news_list .list_find_top { float: right; margin: 0 2px 0 0; }
+.news_list .list_find_top .selectbox > a { width: 210px; }
+.news_list .list_find_top .selectbox > ul li a { padding: 5px 14px; }
+.grid_news { padding: 20px 0 0; clear: both; }
+.grid_news .wrap_list { height: auto; *margin: 0 0 50px; }
+.grid_news .wrap_list,
+.grid_news .wrap_list ul { position: static; width: auto; *zoom:1; text-align: left; }
+.grid_news .wrap_list ul li { margin: 0 0 50px; }
+.grid_news .wrap_list ul li span.date { margin: 30px 0 0; height: auto; background-position: right top; }
+
+.oddinary { background: url("../../../../../content/dam/hanwha/resources/images/about/bg_about_brand.jpg") repeat-x left top; }
+.oddinary .box_inner { padding: 0; }
+.oddinary .figure_area.figure_big { margin: 0; }
+.figure_area .cont_news h1 { margin-top: 60px; }
+.figure_area .figcaption { padding: 20px 0 0; margin: 0 auto; width: 700px; font-style: italic; font-size: 0.875rem; line-height: 20px; color: #767676; }
+.figure_area .figcaption h1 { margin: 70px 0 45px; }
+.figure_area .text_hidden { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px) text-indent: -999em; }
+.figure_area .btn_video_figure { display: block; width: 920px; height: 377px; position: absolute; left: 0; top: 0; background: url("../../../../../content/dam/hanwha/resources/images/news/bg_video_figure.png") no-repeat left top ;}
+.news_photo02 { margin: 0 auto; padding: 0 0 70px; width: 950px; }
+.news_photo02 li { float: left; color: #767676; font-style: italic; margin: 0 15px;}
+.news_photo02 li img{ display: block; font-size: 0; line-height: 0; }
+.news_photo02 li figcaption { padding: 10px 0 0; font-size: 0.875rem; line-height: 18px; }
+.cont_news,
+.about_news { width: 920px; margin: 0 auto; }
+.cont_news > h1,
+.about_news > h1 { font-size: 1.125rem; color: #576b7c; }
+.cont_news > h1 { margin: 0 0 45px; }
+.about_news > h1 { margin: 80px 0 45px; color: #576b7c; }
+.cont_news > p,
+.about_news > p { margin: 15px 0 0; font-size: 0.9375rem; color: #767676; line-height: 20px; }
+.about_news a { color: #ff6d12; }
+.infomation_news { font-size: 0.9375rem; color: #767676; line-height: 20px; }
+.more_info_cont { padding: 45px 0 0; }
+.more_info_cont h1 { font-size: 0.9375rem; font-weight: normal; color: #767676; }
+.more_info_cont { display: inline-block; *display: inline; *zoom: 1; }
+.more_info_cont ul { overflow: hidden; padding: 25px 0 0; *zoom: 1 ;}
+.more_info_cont li { float: left; *width: 444px; }
+.more_info_cont li a { display: block; overflow: hidden; *zoom: 1; }
+.more_info_cont li a img { float: right; }
+.more_info_cont li a figcaption { float: right; padding: 56px 0 0 29px; width: 190px; height: 78px; font-size: 1.125rem; font-weight: 600; color: #ff7200; text-align: left; border: 1px solid #f1f1f1; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat 156px 86px;}
+
+.btn_area_list { padding: 10px 0 0; margin: 80px 0 0; border-top: 1px solid #e4e4e4; *zoom: 1;}
+.btn_list_type01,
+.btn_list_type02 { display: block; padding: 14px 0 12px; width: 78px; text-align: center; font-size: 0.9375rem; line-height: 20px; }
+.btn_list_type01 { color: #333; border: 1px solid #e6e6e6; }
+.btn_list_type02 { color: #fff; background: #576b7c; border: 1px solid #e6e6e6; }
+.btn_area_list .btn_list_type01 { float: left; margin: 0 10px 0 0; }
+.btn_area_list .btn_list_type02 { float: right; }
+
+.news_addtional h1 { margin: 80px 0 45px; font-size: 1.125rem; font-weight: 600; color: #576b7c; }
+
+/* About Hanwha */
+.about_fig { margin: 0 0 80px; height: auto; }
+.box_sign { margin: 0 auto; padding: 65px 0 0; width: 700px; font-size: 0.9375rem; color: #9c9c9c; text-align: right; }
+.nav_history a { position: relative; display: inline-block; *display: inline; *zoom: 1; padding: 87px 0 0; margin: 0 28px; width: 140px; height: 75px; vertical-align: middle; font-size: 0.9rem; color: #576b7c; background: url("../../../../../content/dam/hanwha/resources/images/about/bg_nav_history.png") no-repeat left top; }
+.nav_history a span {display: block; position: absolute; left: 0; bottom: 0; width: 100%; color: #576b7c !important; }
+
+.nav_history a.history00 { background-position: left top; }
+.nav_history a.history01 { background-position: -140px top; }
+.nav_history a.history02 { background-position: -280px top; }
+.nav_history a.history03 { background-position: -420px top; }
+.nav_history a.history04 { background-position: -560px top; }
+
+.nav_history a.history00:hover,
+.nav_history a.history00.active { background-position: left bottom; color: #fff; }
+.nav_history a.history01:hover,
+.nav_history a.history01.active { background-position: -140px bottom; color: #fff; }
+.nav_history a.history02:hover,
+.nav_history a.history02.active { background-position: -280px bottom; color: #fff; }
+.nav_history a.history03:hover,
+.nav_history a.history03.active { background-position: -420px bottom; color: #fff; }
+.nav_history a.history04:hover,
+.nav_history a.history04.active { background-position: -560px bottom; color: #fff; }
+
+.nav_history.type02 a { padding: 90px 0 0; height: 50px; background: url("../../../../../content/dam/hanwha/resources/images/about/bg_nav_identy.png") no-repeat left top; }
+.nav_history.type02 a:hover,
+.nav_history.type02 a.active { color: #fff; }
+
+.nav_history2{background:url("../../../../../content/dam/hanwha/resources/images/about/k_histNavi.png") 50% 0 no-repeat;font-family:"myriad-pro",sans-serif;margin:0 auto 100px;width:988px;height:115px;}
+.nav_history2 .col1,
+.nav_history2 .col2{float:left;}
+.nav_history2 .tit{display:block;color:#576b7c;font-size:0.9em;margin:-3px 0 0;line-height:130%;height:53px;}
+.nav_history2 .col1{margin:0 0 0 26px;text-align:center;width:140px;}
+.nav_history2 .col1 .rolling{position:relative;overflow:hidden;width:140px;height:160px;}
+.nav_history2 .col1 .rolling .jcarousel{height:140px;}
+.nav_history2 .col1 .rolling ul{width:20000em;position:relative;list-style:none;margin:0;padding:0}
+.nav_history2 .col1 .rolling ul li{float:left;text-align:center;}
+.nav_history2 .col1 .cover{position:absolute;top:0;left:0;background:url("../../../../../content/dam/hanwha/resources/images/about/img_hisCover.png") 0 0 no-repeat;width:140px;height:160px;}
+.nav_history2 .col1 .cover .tx1{text-indent:-9999px;font-size:0;}
+.nav_history2 .col1 .cover .tx2{position:absolute;bottom:0;left:0;display:block;color:#576b7c !important;font-size:0.8em;color:#576b7c;padding:8px 0 0;text-align:center;width:100%;}
+.nav_history2 .col2{float:right;text-align:center;}
+.nav_history2 .col2 a{position:relative;display:inline-block;*display:inline;*zoom:1;line-height:130%;padding:87px 0 0;margin:0 27px;width:140px;height:75px;vertical-align:middle;font-size:0.8em;color:#576b7c;background:url("../../../../../content/dam/hanwha/resources/images/about/bg_nav_history.png") no-repeat left top;}
+.nav_history2 .col2 a span{display:block;position:absolute;left:0;bottom:-1px;width:100%;color:#576b7c !important;}
+.nav_history2 .col2 a:hover,
+.nav_history2 .col2 a.active{color:#fff;}
+.nav_history2 .col2 a.history00{background-position:0 0;}
+.nav_history2 .col2 a.history01{background-position:-140px 0;}
+.nav_history2 .col2 a.history02{background-position:-280px 0;}
+.nav_history2 .col2 a.history03{background-position:-420px 0;}
+.nav_history2 .col2 a.history04{background-position:-560px 0;}
+.nav_history2 .col2 a.history00:hover,
+.nav_history2 .col2 a.history00.active{background-position:0 100%;}
+.nav_history2 .col2 a.history01:hover,
+.nav_history2 .col2 a.history01.active{background-position:-140px 100%;}
+.nav_history2 .col2 a.history02:hover,
+.nav_history2 .col2 a.history02.active{background-position:-280px 100%;}
+.nav_history2 .col2 a.history03:hover,
+.nav_history2 .col2 a.history03.active{background-position:-420px 100%;}
+.nav_history2 .col2 a.history04:hover,
+.nav_history2 .col2 a.history04.active{background-position:-560px 100%;}
+
+.nav_history.type02 a.identy01 { background-position: left top; }
+.nav_history.type02 a.identy02 { background-position: -140px top; }
+.nav_history.type02 a.identy03 { background-position: -280px top; }
+.nav_history.type02 a.identy04 { background-position: -420px top; }
+.nav_history.type02 a.identy05 { background-position: right top; }
+.nav_history.type02 a.identy01:hover,
+.nav_history.type02 a.identy01.active  { background-position: left bottom; }
+.nav_history.type02 a.identy02:hover,
+.nav_history.type02 a.identy02.active  { background-position: -140px bottom; }
+.nav_history.type02 a.identy03:hover,
+.nav_history.type02 a.identy03.active  { background-position: -280px bottom; }
+.nav_history.type02 a.identy04:hover,
+.nav_history.type02 a.identy04.active  { background-position: -420px bottom; }
+.nav_history.type02 a.identy05:hover,
+.nav_history.type02 a.identy05.active  { background-position: right bottom; }
+
+
+.wrap_history { margin: 60px auto 210px; width: 920px; background: url("../../../../../content/dam/hanwha/resources/images/about/bg_wrap_history.png") repeat-y center center; }
+.wrap_history li { position: relative; }
+.wrap_history li span { display: block; margin: 33px 0 0; }
+.wrap_history li.even span { margin: 236px 0 0;}
+.wrap_history li:first-child span { margin: 0; }
+.wrap_history li dl { position: absolute; right: 0; top: -30px; padding: 0 0 0 16px; width: 420px; text-align: left;  line-height: 1.2; background: url("../../../../../content/dam/hanwha/resources/images/about/bg_box_history.png") no-repeat right top; font-family: inherit}
+.wrap_history li.even dl { left: 0; padding: 0 17px 0 0; background-position: left top; text-align: right;}
+.wrap_history li dl dt { padding: 20px 0 0 19px; font-size: 1.25rem; color: #576b7c ; font-weight: 600; }
+.wrap_history li dl dt + dd { padding: 6px 19px 17px; font-size: 0.875rem; color: #767676; }
+.wrap_history li dl dd img { display: block;  font-size: 0; line-height: 0; width: 418px; border: 1px solid #e6e6e6; }
+.wrap_history li.even dl dt { padding: 20px 19px 0; }
+.wrap_history li.even dl dt + dd { padding: 10px 19px 17px; }
+
+.nav_sustainable a { display: inline-block; *display: inline; *zoom: 1; padding: 89px 0 0; margin: 0 25px; width: 150px; height: 61px; vertical-align: middle; font-size: 1rem; line-height: 1; color: #576b7c; background: url("../../../../../content/dam/hanwha/resources/images/about/bg_nav_sustain.png") no-repeat }
+.nav_sustainable a.sustain01 { background-position: left top; }
+.nav_sustainable a.sustain02 { background-position: -150px top; }
+.nav_sustainable a.sustain03 { background-position: -300px top; }
+.nav_sustainable a.sustain04 { background-position: -450px top; }
+.nav_sustainable a.sustain01:hover,
+.nav_sustainable a.sustain01.active { background-position: left bottom; color: #fff;}
+.nav_sustainable a.sustain02:hover,
+.nav_sustainable a.sustain02.active { background-position: -150px bottom; color: #fff; }
+.nav_sustainable a.sustain03:hover,
+.nav_sustainable a.sustain03.active { background-position: -300px bottom; color: #fff; }
+.nav_sustainable a.sustain04:hover,
+.nav_sustainable a.sustain04.active { background-position: -450px bottom; color: #fff; }
+
+.list_sustain { margin: 0 auto; width: 960px; *zoom: 1; *margin: 0 0 110px; }
+.list_sustain li { float: left; width: 280px; margin: 0 20px 113px; ;}
+.list_sustain li strong,
+.list_sustain li span { display: block; }
+.list_sustain li strong { padding: 28px 0 25px; font-size: 1.125rem; line-height: 1.2; color: #333; font-weight: normal; }
+.list_sustain li span { font-size: 0.9375rem; color: #767676; line-height: 20px; }
+
+.list_sustain.type02 li { margin: 50px 30px 0; width: 180px; }
+.list_sustain.type02 li strong { height: 30px; text-transform: none; display: table-cell; vertical-align: middle; width: 180px; }
+.list_desc .odd { background: #fff; }
+.list_desc li { padding: 80px 0; }
+.list_desc dl { margin: 0 auto; width: 920px; text-align: left; }
+.list_desc dl dt { padding: 0 0 25px 320px; font-size: 1.125rem; color: #333; }
+.list_desc dl .img_desc,
+.list_desc dl .txt_desc  { float: left; }
+.list_desc dl .img_desc { margin: -40px 0 0; border: 1px solid #ececec; }
+.list_desc dl .img_desc img { display: block; font-size: 0; line-height: 0; width: 278px; }
+.list_desc dl .txt_desc  { margin: 0 0 0 40px; width: 600px; font-size: 0.9375rem; line-height: 1.4; color: #767676; }
+.list_desc li a dl { display: block; padding: 0 0 20px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat right bottom; }
+
+.map_sports { margin: 30px auto 0; }
+.list_desc.type02 dl { margin: 40px auto 0; }
+.list_desc.type02 dl dt { padding: 0 0 0 450px; font-weight: 600; color: #576B7C; }
+.list_desc.type02 dl .img_desc { margin: -20px 0 0; }
+.list_desc.type02 dl .img_desc img { width: 408px; }
+.list_desc.type02 dl .txt_desc { padding: 25px 0 0; width: 470px; }
+
+.list_sustain.type03 li { margin: 50px 20px 0; }
+.list_sustain.type03 li strong { text-transform: none; }
+
+
+.down_app { margin: 40px auto 0;  padding: 32px 0 0;  width: 330px; font-size: 1rem; color: #767676;  background: url("../../../../../content/dam/hanwha/resources/images/about/bg_icon_down_app.png") no-repeat center top; *zoom: 1; }
+.down_app dt { font-size: 1.125rem; color: #333; }
+.down_app dd { margin: 25px 0 0; letter-spacing: -0.025em; }
+.down_app dd a { display: inline-block; *display: inline; *zoom: 1; margin: 0 5px; }
+
+.list_identy { margin: 45px auto 0; width: 940px;  background: url(../../../../../content/dam/hanwha/resources/images/common/bg_box_identy.png) no-repeat 10px bottom; }
+.list_identy li { float: left; margin: 0 10px; width: 293px; }
+.list_identy li a { display: block; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat 93% 93%; }
+.list_identy li > div { position: relative; }
+.list_identy li > div .btn_play_video { position: absolute; left: 0; top: 0; display: block; width: 291px; height: 173px; background: url("../../../../../content/dam/hanwha/resources/images/about/btn_play_video.png") no-repeat center center; }
+.list_identy li > div img { display: block; border-bottom: 1px solid #e6e6e6;  font-size: 0; line-height: 0; width: 100%; }
+.list_identy li .figcaption { padding: 19px; min-height: 240px; text-align: left; }
+.list_identy li .figcaption strong,
+.list_identy li .figcaption span { display: block; }
+.list_identy li .figcaption strong { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap:break-word; *display: block; font-size: 1.125rem; line-height: 20px; color: #576b7c; height: 40px; }
+.list_identy.odd li .figcaption strong { -webkit-box; -webkit-line-clamp: 3; line-height: 20px; height: 63px; }
+    .list_identy li > div > a > .figcaption span { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; word-wrap:break-word; *display: block; margin: 20px 0 0; font-size: 0.9375rem; line-height: 20px; color: #767676; min-height: 280px; *height: 280px; }
+.list_identy li > div > div .figcaption span { margin: 20px 0 0; font-size: 0.9375rem; line-height: 20px; color: #767676; }
+.list_identy.type02 li .figcaption { min-height: 330px; }
+
+.box_media { overflow: hidden; *zoom: 1; margin: 30px auto 0; width: 920px; }
+.area_media { float: left; padding: 0 0 14px; width: 428px; border: 1px solid #e6e6e6; background: #f2f2f2; }
+.area_media > img { display: block; margin: 0 0 14px; font-size: 0; line-height: 0; }
+.box_media button,
+.box_media .wrap_roll_media,
+.box_media .wrap_roll_highlight { display: inline-block; *display: inline; vertical-align: middle; }
+.box_media .wrap_roll_media,
+.box_media .wrap_roll_highlight_new { display: inline-block; *display: inline; vertical-align: middle; }
+.box_media button { padding: 0; margin: 0; border: 0; background: transparent; cursor: pointer; font-size: 0; line-height: 0;}
+.box_media button img { display: block; }
+.area_media .wrap_roll_media {position: relative; overflow: hidden; width: 354px; margin: 0 2px; *zoom: 1;}
+.area_media .wrap_roll_media ul,
+.box_media .wrap_roll_highlight ul { overflow: hidden; width: 1000%; *zoom: 1; }
+.box_media .wrap_roll_highlight_new ul { overflow: hidden; width: 1000%; *zoom: 1; }
+.area_media .wrap_roll_media ul li,
+.box_media .wrap_roll_highlight ul li { float: left; margin: 0 0 0 4px; }
+.box_media .wrap_roll_highlight_new ul li { float: left; margin: 0 0 0 4px; }
+.area_media .wrap_roll_media ul li:first-child { margin: 0; }
+.desc_media { float: left; margin: 0 0 0 30px; width: 460px; text-align: left; font-size: 0.9375rem; line-height: 20px; color: #767676; }
+.desc_media p { margin: 10px 0 16px; }
+
+.media_highlight { overflow: hidden; position: relative; *zoom: 1; padding: 10px 0 0; clear: both; text-align: left; }
+.media_highlight header { float: left; text-align: left; }
+.media_highlight header a { display: inline-block; *display: inline; *zoom: 1; margin: 10px 0 0 20px; color: #ff6d12; }
+.media_highlight header .video-tit { order: 1; width: 65%; }
+.roll_highlight { float: left; position: relative; width: 666px;}
+.roll_highlight_new { float: left; position: relative; width: 100%;}
+.box_media .wrap_roll_highlight { position: relative; overflow: hidden; display: block; width: 564px; margin: 0 auto; *zoom: 1; }
+.box_media .wrap_roll_highlight_new { position: relative; overflow: hidden; display: block; width: 752px; margin: 0 auto; *zoom: 1; }
+
+.box_media .wrap_roll_highlight ul li { margin: 0 3px;}
+.box_media .wrap_roll_highlight ul li a { position: relative; display: block; }
+.box_media .wrap_roll_highlight ul li img { display: block; width: 182px; height: 102px;}
+.box_media .wrap_roll_highlight ul li span { display: block; overflow: hidden; width: 182px; font-size: 0.812rem; line-height: 15px; text-align: center; font-style: italic; color: #767676;text-overflow: ellipsis; white-space : nowrap;}
+.box_media .wrap_roll_highlight ul li span.imgTitle { margin-top: 5px; text-align: left; text-decoration: underline; color: black; }
+.box_media .wrap_roll_highlight ul li span.imgText { margin-top: 5px; text-align: left; display: block; overflow: initial; width: 182px; font-size: 0.812rem; line-height: 15px; font-style: italic; color: #767676; text-overflow: clip; white-space: pre-wrap;}
+.box_media .roll_highlight button { position: absolute; width: 40px; }
+.box_media .roll_highlight .media_prev { left: 0; top: 30px;}
+.box_media .roll_highlight .media_next { right: 0; top: 30px;}
+
+.box_media .wrap_roll_highlight_new ul li { margin: 0 3px;}
+.box_media .wrap_roll_highlight_new ul li a { position: relative; display: block; }
+.box_media .wrap_roll_highlight_new ul li img { display: block; width: 182px; height: 102px;}
+.box_media .wrap_roll_highlight_new ul li span { display: block; overflow: hidden; width: 182px; font-size: 0.812rem; line-height: 15px; text-align: center; font-style: italic; color: #767676;text-overflow: ellipsis; white-space : nowrap;}
+.box_media .wrap_roll_highlight_new ul li span.imgTitle { margin-top: 5px; text-align: left; text-decoration: underline; color: black; }
+.box_media .wrap_roll_highlight_new ul li span.imgText { margin-top: 5px; text-align: left; display: block; overflow: initial; width: 182px; font-size: 0.812rem; line-height: 15px; font-style: italic; color: #767676; text-overflow: clip; white-space: pre-wrap;}
+.box_media .roll_highlight_new button { position: absolute; width: 40px; }
+.box_media .roll_highlight_new .media_prev { left: 0; top: 30px;}
+.box_media .roll_highlight_new .media_next { right: 0; top: 30px;}
+
+.box_media .wrap_roll_media ul li a { display: block; position: relative; }
+.box_media .wrap_roll_media ul li a .media_video { position: absolute; left: 0; top: 0;  display: block; width: 100%; height: 100%; background: url("../../../../../content/dam/hanwha/resources/images/about/btn_play_video_small.png") no-repeat center center; font-size: 0; line-height: 0; text-indent: -999em; }
+.box_media .wrap_roll_highlight ul li a .media_video { position: absolute; left: 0; top: 0;  display: block; width: 100%; height: 107px; background: url("../../../../../content/dam/hanwha/resources/images/about/btn_play_video_small.png") no-repeat center center;  font-size: 0; line-height: 0;}
+.box_media .wrap_roll_highlight_new ul li a .media_video { position: absolute; left: 0; top: 0;  display: block; width: 100%; height: 107px; background: url("../../../../../content/dam/hanwha/resources/images/about/btn_play_video_small.png") no-repeat center center;  font-size: 0; line-height: 0;}
+
+.box_media .figure_area { margin: 40px 0; }
+
+.indicator_sports { position: relative; width: 746px; height: 395px; background: url("../../../../../content/dam/hanwha/resources/images/about/bg_indicator_sports.png") no-repeat left top ;}
+.indi_sport { display: block; position: absolute; }
+.indi_sport.map01 { left: 125px; top: 28px; }
+.indi_sport.map02 { left: 125px; top: 49px; }
+.indi_sport.map03 { left: 125px; top: 70px; }
+.indi_sport.map04 { left: 108px; top: 121px; }
+.indi_sport.map05 { left: 108px; top: 142px; }
+.indi_sport.map06 { left: 108px; top: 205px; }
+.indi_sport.map07 { left: 294px; top: 82px; }
+.indi_sport.map08 { left: 294px; top: 115px; }
+.indi_sport.map09 { left: 294px; top: 188px; }
+.indi_sport.map10 { left: 294px; top: 209px; }
+.indi_sport.map11 { left: 294px; top: 230px; }
+.indi_sport.map12 { left: 294px; top: 251px; }
+.indi_sport.map13 { left: 606px; top: 122px; }
+
+.video_box { margin: 40px auto 0; width: 460px; height: 331px; }
+.video_box a,
+.video_box a span { display: block; width: 100%; height: 100%; }
+.video_box a { background: #000; }
+.video_box a span { background: url("../../../../../content/dam/hanwha/resources/images/about/btn_play_video_big.png") no-repeat center center; font-size: 0; line-height: 0; text-indent: -999em; }
+.list_profile { overflow: hidden; margin: 60px auto 0; width: 920px; *zoom: 1; }
+.list_profile li { float: left; margin: 0 0 0 25px; width: 205px; }
+.list_profile li a { display: block; color: #767676; font-size: 0.9375rem; line-height: 20px; height:260px;}
+.list_profile li a h1 { padding: 0 0 15px; font-size: 1.125rem; color: #576b7c; }
+.list_profile li a figcaption { margin: 54px 0 0; text-align: left; }
+
+.layer_map_info.layer_contents { position: absolute; width: 920px; top: 0 !important;}
+.layer_map_info.layer_contents .nav_result { position: relative; z-index; 10; }
+.layer_map_info.layer_contents .nav_result ul {border-bottom: 1px solid #576B7C}
+.layer_map_info.layer_contents .nav_result .nav_result_1dpt > li { background: #fff; margin-bottom: -1px; }
+.layer_map_info.layer_contents .layer_map_cont { max-height: none; }
+.cont_layer_image { overflow: hidden; *zoom: 1; }
+.cont_layer_image img,
+.cont_layer_image figcaption { float: left; font-size: 0.9375rem; line-height: 20px; color: #767676; }
+.cont_layer_image figcaption { overflow: hidden; overflow-y: auto; padding: 20px; height: 165px; width: 530px; }
+.box_layer_media { position: relative; padding: 20px; border: 1px solid #576B7C; border-top: none; font-size: 1rem; line-height: 20px; color: #767676; background: #fff; z-index: 19; }
+.box_layer_media figcaption { margin: 20px 0 0;}
+.box_layer_media figure img { display: block; width: 838px; font-size: 0; line-height: 0; }
+.roll_layer_media { padding: 22px 20px; margin: 50px -20px -20px; background: #f2f2f2; clear: both; position: relative;}
+.roll_layer_media button,
+.roll_layer_media .wrap_layer_roll { display: block; *display: inline; *zoom: 1; margin: 0 20px; vertical-align: middle; }
+.roll_layer_media button { padding: 0; margin: 0; border: none; background: none; cursor: pointer; position: absolute;}
+.roll_layer_media .btn_prev { left: 30px; top: 45px;}
+.roll_layer_media .btn_next { right: 30px; top: 45px;}
+.roll_layer_media .wrap_layer_roll { overflow: hidden; *zoom: 1; width: 740px; margin: 0 auto;}
+.roll_layer_media .wrap_layer_roll ul { overflow: hidden; *zoom: 1; width: 1000%; }
+.roll_layer_media .wrap_layer_roll ul li { float: left; margin: 0 8px 0 0; }
+.roll_layer_media .wrap_layer_roll ul li a { position: relative; display: block; width: 100%; }
+.roll_layer_media .wrap_layer_roll ul li a img { display: block; font-size: 0; line-height: 0; width: 140px; height: 76px;}
+.roll_layer_media .wrap_layer_roll ul li a .media_video { position: absolute; left: 0; top: 0;  display: block; width: 100%; height: 76px; background: rgba(0,0,0, 0.5) url("../../../../../content/dam/hanwha/resources/images/about/btn_play_video_small.png") no-repeat center center;  font-size: 0; line-height: 0;}
+
+.info_video { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px)  }
+.layer_video { display: none; position: fixed; width: 920px;z-index: 45; background: #000; }
+.layer_video .header_video { background: #576b7c;}
+.header_video h2 { margin: 0 ; padding: 4px 0 0 20px; font-size: 1.125rem; line-height: 40px; color: #fff; text-align: left;  width:800px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.header_video div.tit { margin: 0 ; padding: 4px 0 0 20px; font-size: 1.125rem; line-height: 40px; color: #fff; text-align: left;  }
+.cont_video { overflow: hidden; text-align: left; *zoom: 1; }
+
+.area_video { float: left; width: 640px;  }
+.area_caption { float: left; width: 280px; }
+.area_caption button { display: block; width: 100%; text-align: center; font-size: 0; line-height: 0; }
+.area_caption button img { display: inline-block; *display: inline; *zoom: 1; }
+.txt_caption { overflow: hidden; /*overflow-y: auto; */ margin: 10px 0; padding: 0 20px; width: 235px; height: 280px; font-size: 1rem; line-height: 1.4; color: #fff;  }
+.box_layer_media .txt_caption  { width: 165px; height: 304px; background: #000; margin: 0;  }
+.box_layer_media .area_caption { overflow: hidden; width: 190px; }
+.box_layer_media.cont_video { display: none; }
+.txt_caption .copy { display: block; margin: 10px 0 0; font-size: 0.75rem; line-height: 1.2; }
+
+.list_sponser { display: block; font: 0/0 'myriad-pro' ; }
+.list_sponser li { display: inline-block; *display: inline; *zoom: 1; margin: 0 5px; }
+.list_sponser li { color: #767676; font-size: 0.9375rem; line-height: 1.2; }
+.list_sponser li * { display: block; }
+.list_sponser li img { display: inline-block; *display: inline; *zoom: 1; margin: 0 0 10px; }
+.list_sponser li strong { color: #333333; font-size: 1.125rem; }
+
+/* product sub main  */
+#subMain .grid_news { padding: 80px 0 30px; }
+#subMain .list_grid { padding: 20px 0 0; }
+#subMain .list_grid .wrap_list ul { text-align: left; }
+.photo_product_detail { padding: 50px 0; }
+#productDetail .about_news { padding: 50px 0 0; }
+#productDetail .about_news h1 { color: #576b7c; }
+#productDetail .grid_news { padding: 10px 0 0; }
+.grid_news .wrap_list ul li { margin: 0 0 50px;}
+.fig_product { margin: 0 auto; width: auto; }
+
+
+/* Investor */
+.view_graph { margin-top: 40px; }
+.view_graph .figcaption { position: absolute; overflow: hidden; width: 1px !important; height: 1px !important; padding: 0; border: 0; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px) }
+.list_career { overflow: hidden; *zoom: 1; margin: 40px auto; width: 940px; }
+.list_career li { float: left; width: 291px; margin: 0 10px 50px; border: 1px solid #e6e6e6; text-align: left; background: #fff; *zoom: 1;}
+.list_career li figcaption img { display: block; font-size: 0; line-height: 0; border-bottom: 1px solid #e6e6e6;}
+.list_career li figcaption { display: block; padding: 20px; min-height: 290px; }
+.list_career li figcaption h2 { font-size: 1.125rem; color: #576B7C; font-weight: 600; line-height: 1.4; }
+.list_career li figcaption dl { height: 190px; font-size: 0.9375rem; line-height: 18px; color: #767676; }
+.list_career li figcaption dl dt { margin: 18px 0 10px; }
+.list_career li figcaption dl dd { margin: 0 0 18px; padding: 0 0 0 10px; }
+.list_career li figcaption dl dd span { display: inline-block; *display: inline; *zoom: 1; margin: 0 0 0 -10px; width: 10px; vertical-align: top; }
+
+.list_career p { margin: 0 0 5px; font-size: 0.9375rem; line-height: 20px; color: #767676; }
+.list_career.type02 h2 { margin: 0 0 15px; }
+.list_career.type02 li figcaption { min-height: 150px; }
+.list_career.type02 li figcaption a { display: block; min-height: 124px; background: url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat right bottom; height:171px;}
+
+.question_career { margin: 55px auto 0; width: 920px; text-align: left; }
+.question_career h1 { padding: 0 0 35px; font-weight: 600; background: url("../../../../../content/dam/hanwha/resources/images/career/bg_question_career.jpg") no-repeat left bottom; }
+.question_career ul { overflow: hidden; padding: 29px 17px; border: 1px solid #e6e6e6; *zoom: 1; text-align: center; }
+.question_career li { display: inline-block; *display: inline; *zoom: 1; vertical-align: top; margin: 0 10px; width: 293px; font-size: 0.9375rem; line-height: 20px; color: #767676; text-align: left; }
+.question_career img { display: block; font-size: 0; line-height: 0; }
+.question_career .answer { margin: 20px 0; }
+
+.info_career { overflow: hidden; margin: 50px auto; width: 920px; *zoom: 1; text-align: left; border: 1px solid #e6e6e6; font-size: 0; line-height: 0; }
+.info_career img,
+.info_career figcaption { display: inline-block; *display: inline; vertical-align: top; *zoom: 1; }
+.info_career figcaption { min-height: 278px;  background: url("../../../../../content/dam/hanwha/resources/images/career/bg_career_interview.html") no-repeat left top;}
+.info_career figcaption dl { padding: 30px 30px 0 30px; font-size: 16px; color: #767676; line-height: 1.5; width: 400px; font-family: inherit }
+.info_career figcaption dl dt { margin: 0 0 15px; font-size: 30px; line-height: 1.2; color: #576B7C; }
+
+.answer_career li { padding: 50px 0; }
+.answer_career li.odd { background: #fbfbfb; }
+.answer_career li dl { margin: 0 auto; width: 920px; font-size: 0.9375rem; color: #767676; line-height: 20px; }
+.answer_career li dl dt { font-size: 1.125rem; color: #333; font-weight: 600; }
+.answer_career li dl dd { margin: 25px 0 0; }
+
+.answer_career li dl dd strong { color: #333; }
+
+/* search */
+.filter_result { color: #333 !important; }
+.msg_nodata { padding: 120px 0 80px; font-size: 1.125rem; font-weight: 600; text-align: center; }
+.msg_nodata_All { padding: 100px 0 80px; font-size: 1.125rem; font-weight: normal; text-align: center; color: #767676; }
+.msg_nodata_All .filter_result { color: #ff4a0e !important; }
+.ipt_search { margin: 17px auto 0; width: 385px; border: 2px solid #576B7C; font-size: 0; line-height: 0; }
+.ipt_search .text,
+.ipt_search button { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.ipt_search .text { padding:  13px 15px 10px; margin: 0; width: 312px; font-size: 1rem; line-height: 18px; height: 18px; color: #767676; border: 0; *padding: 11px 15px 8px; }
+.ipt_search button { padding: 0; margin: 0; width: 43px; height: 41px; border: none; background: none; cursor: pointer; }
+.ipt_search button img { display: block; font-size: 0; line-height: 0; }
+
+.area_result { margin: 60px auto 0; width: 1220px; text-align: left; }
+.area_result h1 { font-weight: 600; font-size: 1.875rem; color: #333 }
+.area_result h1 strong { color: #ff4a0e; }
+.nav_result { margin: 26px 0 0; *zoom: 1; }
+.nav_result .nav_result_1dpt { position: relative; *zoom: 1; }
+.nav_result .nav_result_1dpt > li { float: left; width: 305px  }
+.nav_result .nav_result_1dpt > li > a { display: block; padding: 12px 0 10px; width: 304px; font-size: 1rem; line-height: 20px; color: #333; text-align: center; background: #f2f2f2;  border-right: 1px solid #dedede; border-bottom: 1px solid #576B7C }
+.nav_result .nav_result_1dpt li:first-child a { border-left: none;  }
+.nav_result .nav_result_1dpt > li > a.last { border-right: 0;}
+.nav_result .nav_result_1dpt > li.active > a.last { border: 1px solid #576B7C; border-bottom: 0; }
+.nav_result .nav_result_1dpt > li.active { border-right: none; }
+.nav_result .nav_result_1dpt > li.active > a { border: 1px solid #576B7C; border-bottom: 0; background: #fff; font-weight: 600; color: #576b7c; width: 303px; }
+.nav_result_2dpt { overflow: hidden; *zoom: 1; display: none; position: absolute; left: 0; top: 80px; width: 100%;  }
+.nav_result_2dpt li { float: left; width: auto !important; line-height: 20px; }
+.nav_result_2dpt li a { padding: 0 15px; color: #333; background: url("../../../../../content/dam/hanwha/resources/images/etc/bdr_left_nav.jpg") no-repeat left center; }
+.nav_result_2dpt li a:hover,
+.nav_result_2dpt li a.active { font-weight: 600; color: #576B7C}
+.nav_result_2dpt li:first-child a { padding: 0 15px 0 0; background: none; }
+.nav_result .nav_result_1dpt > li.active > .nav_result_2dpt { display: block; }
+
+.box_result { padding: 80px 40px 20px; border-top: 1px solid #e4e4e4; }
+.box_result.first { border-top: none; }
+.box_result h2 { font-size: 1.875rem; color: #576b7c; font-weight: 600; }
+.box_result h2 span { display: inline-block; *display: inline; *zoom: 1; vertical-align: baseline; font-size: 1rem; font-weight: normal; }
+
+.result_type01 li { margin: 50px 0 0; }
+.result_type01 li dt { }
+.result_type01 li dt a { overflow: hidden; width: 100%; display: block; text-overflow: ellipsis; color: #576b7c; text-decoration: underline; white-space: nowrap; }
+.result_type01 .cont_result { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; word-wrap: break-word; margin: 20px 0; font-size: 1rem; color: #767676; line-height: 1.2em; max-height: 3.6em; -webkit-line-clamp: 3;  }
+.nav_results { font-size: 0.812rem; }
+.nav_results a { color: #767676; }
+.txt_result_more { margin: 25px 0 0; text-align: right; }
+.txt_result_more a { color: #ff4a0e; }
+
+.result_type02 { margin: 30px 0 0; font-size: 1rem; line-height: 1.5rem; color: #767676; }
+.result_type02 li { margin: 0 0 30px; }
+.result_type02 li dl { overflow: hidden; *zoom: 1; }
+.result_type02 li dl dt { margin: 30px 0 0 320px; font-size: 1.125rem; font-weight: normal; text-decoration: underline; }
+.result_type02 li dl dt a  { color: #576B7C; }
+.result_type02 li dl dd { float: left; }
+.result_type02 .nav_results { margin: 0 0 0 20px; }
+.img_result { margin: -35px 0 0; }
+.img_result img { width: 300px; }
+.result_type02 .cont_result,
+.result_type02 .date_result { margin: 0 0 0 40px; width: 760px; }
+.result_type02 .cont_result { margin: 15px 0 10px 20px; }
+
+.result_type03 { overflow: hidden; *zoom: 1; margin: 0 -10px; }
+.result_type03 li { float: left; margin: 20px 10px 0; padding: 20px; width: 518px; min-height: 180px; border: 1px solid #ececec; }
+.result_type03 li table { width: 100%; }
+.result_type03 li th { padding: 4px 0 4px 10px; background: url("../../../../../content/dam/hanwha/resources/images/common/icon_search_result.jpg") no-repeat left center; color: #576b7c; text-align: left; font-weight: 600; }
+.result_type03 li td,
+.result_type03 li td a { color: #767676; }
+
+.btn_area { text-align: center; }
+.btn_area a { display: inline-block; *display: inline; *zoom: 1; width: 170px; line-height: 45px; font-weight: 600; color: #fff; }
+.btn_area .btn_prev { background: #ff6d12; }
+.btn_area .btn_home { background: #576b7c; }
+
+/* Error */
+.tit_error { margin-top: 15px; }
+.btn_error { margin: 50px 0 0; }
+
+/* sitemap */
+.box_sitemap {margin: 92px 0 0 ; }
+.box_sitemap .list_sitemap { float: left; width: 186px; margin: 0 0 0 20px; text-align: left; }
+.box_sitemap .list_sitemap:first-child { margin: 0; }
+
+/*.box_sitemap .list_sitemap h1 { color: #576b7c; font-size: 1.125rem; line-height: 34px; border-bottom: 1px solid #576b7c; }*/
+/*.box_sitemap .list_sitemap h1 a { color: #576B7C; }*/
+.box_sitemap .list_sitemap h2 { color: #576b7c; font-size: 1.125rem; line-height: 34px; border-bottom: 1px solid #576b7c; }
+.box_sitemap .list_sitemap h2 a { color: #576B7C; }
+
+.box_sitemap .list_sitemap > ul { padding: 10px 0 0; }
+.box_sitemap .list_sitemap ul > li { font-size: 1rem; line-height: 1.2; }
+.box_sitemap .list_sitemap ul > li > a { display: block; padding: 10px 0; color: #767676; }
+.box_sitemap .list_sitemap ul > li > ul li a { padding: 6px 0 6px 9px; font-size: 1rem; }
+
+/* Terms and Conditions */
+.box_terms_condition { margin: 60px 0 0; color: #767676; font-size: 1rem; line-height: 20px; text-align: left; }
+.box_terms_condition dt { margin: 60px 0 0; font-weight: 600; }
+.box_terms_condition dt:first-child { margin: 0; }
+.box_terms_condition dd { margin: 10px 0 0 ; }
+.inner_list { padding: 10px 0 10px 16px; }
+.inner_list li { padding: 0 0 0 16px; }
+.inner_list span { display: inline-block; *display: inline; *zoom: 1; width: 16px; vertical-align: top; margin: 0 0 0 -12px;}
+
+/* 다국어 */
+html[lang="ja"] ,
+html[lang="zh"] { font-size: 14px; }
+html[lang="zh"] .tit_type02 {line-height: 18px}
+html[lang="ja"] #wrapper,
+html[lang="ja"] .info_career figcaption dl{ font-family: 'myriad-pro', Hiragino Kaku Gothic Pro, Meiryo !important; }
+html[lang="ja"] .mArticle1{ font-family: 'myriad-pro', Hiragino Kaku Gothic Pro, Meiryo !important; }
+html[lang="zh"] #wrapper,
+html[lang="zh"] .info_career figcaption dl{ font-family: 'myriad-pro', Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif !important; }
+html[lang="zh"] .mArticle1{ font-family: 'myriad-pro', Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif !important; }
+
+html[lang="de"] .gnb_2dpt { width: 922px; }
+html[lang="de"] .gnb_2dpt header { width: 320px }
+html[lang="de"] .gnb_2dpt > ul > li > a { width: 277px; }
+
+html[lang="it"] .gnb_2dpt { width: 899px; }
+html[lang="it"] .gnb_2dpt header { width: 305px }
+html[lang="it"] .gnb_2dpt > ul > li > a { width: 269px; }
+
+html[lang="es"] .gnb_2dpt { width: 867px; }
+html[lang="es"] .gnb_2dpt header { width: 295px }
+html[lang="es"] .gnb_2dpt > ul > li > a { width: 242px; }
+
+html[lang="zh"] .gnb_1dpt > li { margin: 0; padding: 0 28px; }
+html[lang="zh"] .header_fixed .gnb_1dpt > li {padding: 0 18px}
+html[lang="zh"] .gnb_2dpt .info_menu p { line-height: 1.25em; }
+html[lang="zh"] .nav_vis_top ul li a { padding: 20px 0 0 20px; height: 53px; }
+html[lang="zh"] .nav_vis_top ul li a.active { padding-top: 32px; }
+
+html[lang="ja"] .gnb_1dpt { font-size: 16px;  }
+html[lang="ja"] .gnb_2dpt { width: 821px; }
+html[lang="ja"] .gnb_2dpt header { width: 270px; font-size: 12px;  }
+html[lang="ja"] .gnb_2dpt > ul > li > a { width: 226px; font-size: 13px; }
+html[lang="ja"] .gnb_2dpt .info_menu H1 { line-height: 1.25em; font-size: 12px; }
+html[lang="ja"] .gnb_2dpt .info_menu p { line-height: 1.25em; font-size: 12px; }
+html[lang="ja"] .gnb_2dpt > header > p { font-size: 12px; }
+
+html[lang="ja"] { font-size: 14px; }
+html[lang="zh"] .gnb_2dpt > header > p { font-size: 12px; }
+
+
+/*html[lang="ja"] .wrap_list.type02 ul li a > strong, html[lang="ja"]  .wrap_list.type02 ul li div > strong,
+html[lang="zh"] .wrap_list.type02 ul li a > strong, html[lang="zh"]  .wrap_list.type02 ul li div > strong { line-height: 1.4rem; }*/
+
+html[lang="ja"] .wrap_list.type01 ul li a > span, html[lang="ja"]  .wrap_list.type01 ul li div > span,
+html[lang="zh"] .wrap_list.type01 ul li a > span, html[lang="zh"]  .wrap_list.type01 ul li div > span,
+html[lang="ja"] .wrap_list.type02 ul li a > span, html[lang="ja"]  .wrap_list.type02 ul li div > span,
+html[lang="zh"] .wrap_list.type02 ul li a > span, html[lang="zh"] .wrap_list.type02 ul li div > span,
+html[lang="ja"] .wrap_list.type03 ul li a > span, html[lang="ja"]  .wrap_list.type03 ul li div > span,
+html[lang="zh"] .wrap_list.type03 ul li a > span, html[lang="zh"] .wrap_list.type03 ul li div > span { font-size: 0.928rem; line-height: 1.15rem; background-position: 95% 15px;} /* 2021-12-21 수정 */
+/* 2021-12-21 추가 시작 */
+html[lang="ja"] .wrap_list.type01 ul li a > span, html[lang="ja"]  .wrap_list.type01 ul li div > span,
+html[lang="zh"] .wrap_list.type01 ul li a > span, html[lang="zh"]  .wrap_list.type01 ul li div > span{ background-position:95% 99%}
+/* 2021-12-21 추가 끝 */
+html[lang="ja"] .wrap_list.type03 ul li.active a, html[lang="ja"] .wrap_list.type03 ul li.active div,
+html[lang="zh"] .wrap_list.type03 ul li.active a, html[lang="zh"] .wrap_list.type03 ul li.active div { height: 229px; }
+html[lang="ja"] .wrap_list.type05 ul li div em, html[lang="ja"] .wrap_list.type05 ul li a em { font-size: 3.2rem; }
+html[lang="zh"] .wrap_list.type05 li figcaption dl,
+html[lang="ja"] .wrap_list.type06 p ,
+html[lang="zh"] .wrap_list.type06 p { font-size: 0.928rem; }
+html[lang="de"] .wrap_list.type06 li  { min-height: 170px; }
+html[lang="it"] .wrap_list.type06 li  { min-height: 140px; }
+html[lang="es"] .wrap_list.type06 li  { min-height: 140px; }
+
+html[lang="ja"] .list_career li figcaption dl,
+html[lang="zh"] .list_career li figcaption dl,
+html[lang="ja"] .list_career p ,
+html[lang="zh"] .list_career p { font-size: 0.928rem; }
+
+html[lang="de"] .list_career li figcaption { min-height: 380px; }
+html[lang="de"] .list_career.type02 li figcaption { min-height: 170px; }
+html[lang="de"] .list_career li figcaption dl { height: 280px; }
+
+html[lang="it"] .list_career li figcaption { min-height: 350px; }
+html[lang="it"] .list_career.type02 li figcaption { min-height: 140px; }
+html[lang="it"] .list_career li figcaption dl { height: 280px; }
+
+html[lang="es"] .list_career li figcaption { min-height: 360px; }
+html[lang="es"] .list_career.type02 li figcaption { min-height: 140px; }
+html[lang="es"] .list_career li figcaption dl { height: 280px; }
+
+html[lang="ja"] .box_sitemap .list_sitemap.odd_site,
+html[lang="it"] .box_sitemap .list_sitemap.odd_site,
+html[lang="de"] .box_sitemap .list_sitemap.odd_site  { width: 160px; }
+html[lang="ja"] .box_menu_lang .layer_lang,
+html[lang="ja"] .lyr_search,
+html[lang="zh"] .box_menu_lang .layer_lang,
+html[lang="zh"] .lyr_search { top: 40px; }
+
+sup { vertical-align: super; font-size: x-small; line-height: 3px;}
+
+/* 20150728 */
+.form_contact.newltr { padding:18px 2px;}
+.newsLtr { margin: 0 15px;}
+html[lang="en"] .newsLtr > dl {font-size: 14px;}
+html[lang="de"] .newsLtr > dl {font-size: 14px;}
+html[lang="de"] .newsLtr > dl > dd {width:260px !important;}
+html[lang="es"] .newsLtr > dl {font-size: 13px;}
+html[lang="it"] .newsLtr > dl {padding: 25px 10px 0 16px; font-size: 14px;}
+html[lang="ja"] .newsLtr > dl {padding: 25px 10px 0 16px;}
+.newsLtr > dl { border: 1px solid #e6e6e6; padding: 25px 10px 0 17px;}
+.newsLtr > dl > dd { width: 195px;}
+.fc_or { color:#f96b12;}
+.textCase { padding:8px 0 9px 0; width: 100%; border: 1px solid #e6e6e6; color: #767676; font-size: 0.875rem;}
+.textarea3 { width: 788px !important; padding:24px 16px; height: 168px; border: 1px solid #e6e6e6; font-size: 0.875rem; color: #818181; resize:none;}
+
+/* 20150901 newsletter monthlycolumn*/
+.mArticle1{margin:-4px auto 0;width:920px;}
+.mArticle1 .title{display:block;color:#576b7c;font-size:27px;margin:0 0 33px;text-align:center;}
+.mArticle1 .title.mt1{margin-top:74px;}
+.mArticle1 .txt{color:#767676;line-height: 18px;padding:0 0 21px;}
+.mArticle1 .txt.last{margin-bottom:0;}
+.mArticle1 .txt.mt1{margin-top:75px;}
+.mArticle1 .img{padding:35px 0 0;text-align:center;}
+.mArticle1 .title2{display:block;color:#576b7c;font-size:26px;margin:0 0 8px;}
+.mArticle1 .info{color:#576b7c;font-size:20px;line-height:130%;margin:0 0 25px;}
+.mArticle1 .mBox{position:relative;background-color:#f4f4f4;margin:30px 0 0;padding:40px 43px 25px;text-align:left;}
+.mArticle1 .mBox:after{display:block;clear:both;content:''}
+.mArticle1 .mBox .boxCon{position:relative;}
+.mArticle1 .mBox .img2{float:right;}
+.mArticle1 .mBox .img2.t2{margin-top:-10px;}
+.mArticle1 .mBox.h2{padding-bottom:35px;}
+.mArticle1 .mMobile{display:none;}
+
+@media only screen and (max-width: 768px) {
+	.mArticle1{width:auto;}
+	.mArticle1 .mWeb{display:none;}
+	.mArticle1 .mMobile{display:block;}
+	.mArticle1 .title{font-size:20px;text-align:left;margin:0 0 18px;}
+	.mArticle1 .title .br{display:block;margin-top:4px;}
+	.mArticle1 .title.mt1{margin-top:31px;}
+	.mArticle1 .txt{font-size:12px;text-align:left;}
+	.mArticle1 .info{font-weight:bold;margin-bottom:15px;}
+	.mArticle1 .img{padding:0 0 29px;}
+	.mArticle1 .mBox{margin-top:21px;padding:15px 15px 0;}
+	.mArticle1 .mBox .txt{padding-bottom:15px;margin-bottom:0;padding-right:0;}
+	.mArticle1 .mBox .txt .br{display:block;margin-top:15px;}
+	.mArticle1 .mBox .txt.t2{padding-right:115px;}
+	.mArticle1 .mBox .img2{padding-left:10px;}
+	.mArticle1 .mBox .img2 img{width:104px;}
+	.mArticle1 .mBox.h2{padding-bottom:0;}
+	.mArticle1 .title2,
+	.mArticle1 .info{font-size:13px;}
+	.mArticle1 .title2{margin-bottom:16px;}
+	.mArticle1 .txt.mt1{margin-top:25px;}
+}
+
+
+/*20151016 new Letter List page*/
+.mLetter{margin:0 auto;max-width:1220px;}
+.mTitle1{margin-bottom:20px;}
+.mList1{clear:both;padding:70px 0 0;}
+.mList1 ul{padding:0 0 0 10px;zoom:1;}
+.mList1 ul:after{display:block;clear:both;content:''}
+.mList1 li{float:left;text-align:center;margin:0 0 50px;width:400px;}
+
+.mList1 li span.img > img{width:381px;height:392px;}
+
+
+
+/* 20150902 hbc */
+.hbc_aLink{/*font-style: italic; margin-left: 15px; text-decoration: underline;*/ display:none;}
+.hbc_ol{overflow-y: auto; height: 290px}
+
+
+/* 20151013 hbc list title selectbox*/
+.hbc_type01{margin: 0 auto;width: 700px;font-weight: 600;font-size: 180%;line-height: 2;color: #576b7c;}
+.tit_left .hbc_type01 > span {font-size: 1.25rem;padding-left: 8px;}
+.hbc_right{width: 50%;float: right;text-align: right;}
+.hbc_right > .list_find_top {display: inline-block;}
+
+/* 20151015 hbc */
+.box_inner {padding:70px 0 32px 0;}
+.view_more {margin:40px 0 20px;}
+
+/*20160309 hbc */
+.hbc_paging {margin-top: 50px;}
+
+.hbc_cont {margin: 45px auto 10px;width: 920px;height:370px;border:1px solid #ededed;clear:both;}
+.hbc_inner {width: 920px;margin: 0 auto;}
+.hbc_inner:after { display: block; clear: both; content: '';}
+.video_view{width:520px;float:left;}
+.video_view.figure_area{width:520px;height:370px;margin:0;}
+.video_view.figure_area .btn_video_figure{width:520px;height:370px;background: url("../../../../../content/dam/hanwha/resources/images/news/play-img.png") no-repeat center center;background-size: 15% 20%;}
+.video_view.figure_area > img{width:100%;height:100%;}
+.video_txt{width:360px;float:right;text-align:left;padding:16px 20px 0 20px;}
+.video_txt > strong{overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;word-wrap: break-word;color: #576b7c;font-size: 1.5rem;font-family: inherit;font-weight: 600;line-height:1.5;padding-bottom:25px;display:inline-block;}
+/* .video_txt span.bold{font-weight: bold;} */
+.video_txt > span.date{display:block;font-size:1rem;color:#576b7c;padding-top:5px;padding-bottom:20px;}
+.video_txt > ol > li{font-size: 1rem;list-style:none;color: #767676;line-height: 20px;padding-bottom:5px;text-indent: -18px;margin-left: 18px;}
+.tit_left{width:50%;float:left;text-align:left;}
+.tit_left .tit_type01 > span{font-size:1.25rem;padding-left:8px;}
+.tit_left .article_area{width: inherit;}
+.tit_right{width:50%;float:right;text-align:right;padding-top:20px;}
+.tit_right > .list_find_top{display: inline-block;}
+.hbc_previous_list{width: 920px;margin:0 auto;z-index:9;}
+.hbc_previous_list > ul > li{height:240px;width:100%;overflow:hidden;border: 1px solid #ededed;margin-bottom:50px;}
+.hbc_previous_list > ul > li .video_view{width:475px;float:left;}
+.hbc_previous_list > ul > li .video_view.figure_area .btn_video_figure{width: 475px;height: 240px;background: url("../../../../../content/dam/hanwha/resources/images/news/play-img.png") no-repeat center center;background-size: 13% 25%;}
+.hbc_previous_list > ul > li .video_txt{width:445px;float:right;text-align:left;padding:0;position:relative;}
+.hbc_previous_list > ul > li .video_txt strong{font-size: 1.2rem;color:#768694;font-weight: 200;}
+.hbc_previous_list > ul > li .video_txt > span.date{color: #768694;padding-top: 0;padding-bottom: 10px;font-size:0.9rem;}
+.hbc_previous_list > ul > li .video_txt > ol > li{font-size:1.1rem;line-height:1.8;padding-bottom:0;}
+.hbc_previous_list > ul > li.active .video_txt > div{height:228px;}
+.hbc_previous_list > ul > li.active .video_txt > div span {overflow: hidden;overflow-y: auto;}
+.hbc_previous_list > ul > li .video_txt > div{ padding: 18px 25px 15px 50px; min-height: 0;position:relative;}
+.hbc_previous_list > ul > li .video_txt > div span {line-height: 1.45;height: 182px;margin: 7px 0 0;padding: 0 20px 0 0;font-size:1.1rem;color: #767676;overflow: hidden;display: text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;word-wrap: break-word;-webkit-line-clamp: 7;display:block;}
+.hbc_previous_list > ul > li.active .toggle_layer {top: 0;margin: 20px 25px 0 0;background: url("../../../../../content/dam/hanwha/resources/images/common/btn_view_close_layer.png") no-repeat left center;width: 17px;height: 17px;background-size: 100%;}
+.hbc_previous_list > ul > li .toggle_layer {position: absolute;right: 0;bottom: 0;padding: 0;width: 20px;height: 20px;margin: 0 18px 15px 0;background: url("../../../../../content/dam/hanwha/resources/images/common/btn_view_more_layer.png") no-repeat left top;border: none;cursor: pointer;z-index: 10;background-size: 100%;}
+.hbc_previous_list + .paging{padding-top:30px;background:#fff;}
+
+
+/* 20151104 History */
+/*.mHistory{position:relative;margin:0 auto;font-family:"myriad-pro",sans-serif;text-align:left;width:1218px;height:700px;}*/
+.mHistory{position:relative;margin:0 auto;font-family:"myriad-pro",sans-serif;text-align:left;width:1218px;height:760px;}/* 2019-12-29 수정 */
+.mHistory h2{position:absolute;top:55px;left:61px;}
+.mHistory .mLnb{position:absolute;top:145px;left:61px;}
+.mHistory .mLnb li{margin:0 0 1px;}
+.mHistory .mLnb li a{display:block;background:url(../../../../../content/dam/hanwha/about_hanwha/history/k_lnb.png) 0 0 no-repeat;color:#fff;font-size:17px;padding:0 0 0 16px;width:244px;line-height:43px;height:43px;}
+.mHistory .mLnb li.selected a{background-position:-500px 0;}
+.mHistory.type5 .mLnb li a{background-position:0 -100px;}
+.mHistory.type5 .mLnb li.selected a{background-position:-500px 0;}
+.mHistory .roll{position:absolute;top:363px;left:62px;}
+/*.mHistory .articleCover{position:absolute;top:97px;left:377px;background-color:#000;filter:alpha(opacity=75);opacity:0.75;-moz-opacity:0.75;width:778px;height:559px;}
+.mHistory .article{position:absolute;top:97px;left:377px;color:#efeeec;line-height:138%;padding:27px 30px;width:748px;height:505px;overflow:hidden;}*/
+.mHistory .articleCover{position:absolute;top:97px;left:377px;background-color:#000;filter:alpha(opacity=75);opacity:0.75;-moz-opacity:0.75;width:778px;height:599px;}/* 2019-12-29 수정 */
+.mHistory .article{position:absolute;top:97px;left:377px;color:#efeeec;line-height:138%;padding:27px 30px;width:748px;height:545px;overflow:hidden;/*overflow-y:auto;*/}/* 2019-12-29 수정 */
+.mHistory .article .con{padding:27px 30px;width:718px;display:none;filter:alpha(opacity=90);opacity:0.9;-moz-opacity:0.9;}
+.mHistory .article h3,
+.mHistory .article h4,
+.mHistory .article p{filter:alpha(opacity=0);opacity:0;-moz-opacity:0;}
+.mHistory .article h3{font-size:31px;font-weight:normal;font-style:italic;margin-bottom:28px;}
+.mHistory .article h4{font-size:18px;font-weight:normal;margin-bottom:26px;}
+.mHistory .article p{font-size:15px;margin-bottom:18px;}
+.mHistory .article p.txt1{margin-bottom:32px;}
+.mHistory .hidden{display:none;}
+.mHistory .vHidden{visibility:hidden;}
+.mHistory .rolling{position:absolute;border-top:0;width:259px;;z-index:1;}
+/*.mHistory .rolling .jcarousel{margin:0 auto;height:325px;overflow:hidden;}*/
+.mHistory .rolling .jcarousel{margin:0 auto;height:365px;overflow:hidden;}/* 2019-12-29 수정 */
+.mHistory .rolling ul{width:20000em;position:relative;list-style:none;margin:0;padding:0}
+.mHistory .rolling ul li{float:left;}
+.mHistory .rolling ul li .img{display:block;}
+.mHistory .rolling ul li .txt{display:block;color:#fff;font-size:14px;line-height:110%;padding:3px 5px 0 10px;}
+.mHistory .rolling ul li .txt.t2{line-height:110%;}
+.mHistory .background{position:absolute;top:0;left:0;}
+.mHistory .background img{position:absolute;top:0;left:0;}
+.mHistory .background .next{position:absolute;top:0;left:0;filter:alpha(opacity=0);opacity:0;-moz-opacity:0;}
+.mHistory.type1 .article .con1,
+.mHistory.type2 .article .con2,
+.mHistory.type3 .article .con3,
+.mHistory.type4 .article .con4,
+.mHistory.type5 .article .con5{display:block;}
+.mHistory.type1 .roll .rolling,
+.mHistory.type2 .roll .rolling,
+.mHistory.type3 .roll .rolling,
+.mHistory.type4 .roll .rolling,
+.mHistory.type5 .roll .rolling{visibility:hidden;}
+.mHistory.type1 .roll .mRolling1,
+.mHistory.type2 .roll .mRolling2,
+.mHistory.type3 .roll .mRolling3,
+.mHistory.type4 .roll .mRolling4,
+.mHistory.type5 .roll .mRolling5{visibility:visible;}
+.iScrollVerticalScrollbar{background-color:#fff;border-radius:7px;filter:alpha(opacity=70);opacity:0.7;-moz-opacity:0.7;}
+#scrollerCover{position:absolute;z-index:1;top:0;bottom:0;left:0;width:100%;overflow:hidden;}
+#scroller{position:absolute;z-index:1;-webkit-tap-highlight-color:rgba(0,0,0,0);width:100%;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);-ms-transform:translateZ(0);-o-transform:translateZ(0);transform:translateZ(0);-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none;-o-text-size-adjust:none;text-size-adjust:none;}
+
+/* 20151204 hanwhaCI */
+.mHanwhaCi{color:#767676;/*font-family:"myriad-pro",sans-serif;*/font-size:14.5px;line-height:140%;margin:0 auto;padding:0 0 0;width:1048px;}
+.mHanwhaCi .tit{display:block;color:#576b7c;font-size:28px;margin:0 0 37px;}
+.mHanwhaCi .tit .iCi{vertical-align:-1px;}
+.mHanwhaCi .con1{text-align:center;}
+.mHanwhaCi .con1 .txt{font-size:14.5px;margin:0 auto;}
+.mHanwhaCi .con2{background-color:#f4f4f4;position:relative;margin:55px 0 50px;padding:70px 70px 27px 470px;text-align:left;}
+.mHanwhaCi .con2 .img{position:absolute;top:78px;left:78px;}
+.mHanwhaCi .con2 dt{color:#ff7200;font-size:20px;font-weight:bold;margin:0 0 15px;}
+.mHanwhaCi .con2 dd{margin:0 0 44px;}
+.mHanwhaCi .con3{position:relative;margin:55px 0 0;}
+.mHanwhaCi .con3 .tit{margin-bottom:64px;}
+.mHanwhaCi .con3 .lst{position:relative;}
+.mHanwhaCi .con3 ul{background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201512/img_hanwhaci1.png) 0 0 no-repeat;margin:0 0 0 8px;padding:0 0 0 61px;height:434px;}
+.mHanwhaCi .con3 li{float:left;width:244px;}
+.mHanwhaCi .con3 li .year{display:block;text-indent:-9999px;font-size:0;margin:0 0 0 45px;padding:194px 0 0;width:160px;width:194px;height:58px;}
+.mHanwhaCi .con3 li .txt{display:block;color:#767676;font-size:14.5px;font-weight:bold;letter-spacing:0;padding:23px 0 0;text-align:center;height:164px;}
+.mHanwhaCi .con3 li .txt .arr{display:inline-block;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201512/ico_arr1.png) 0 0 no-repeat;margin:0 0 0 3px;vertical-align:-3px;width:16px;height:16px;}
+.mHanwhaCi .con3 li.selected a .year{background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201512/img_hanwhaci1.png) -106px -500px no-repeat;}
+.mHanwhaCi .con3 li.selected.b a .year{background-position:-348px -500px;margin-left:43px;}
+.mHanwhaCi .con3 li.selected.c a .year{background-position:-590px -500px;margin-left:41px;}
+.mHanwhaCi .con3 li.selected.d a .year{background-position:-832px -500px;margin-left:39px;}
+.mHanwhaCi .layer{position:absolute;top:251px;left:76px;background-color:#f4f4f4;width:960px;height:176px;height:0;overflow:hidden;}
+.mHanwhaCi .layer .arr{position:absolute;top:-9px;left:107px;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201512/ico_arr2.png) 0 0 no-repeat;color:#767676;width:18px;height:9px;}
+.mHanwhaCi .layer .tx{font-size:14px;padding:36px 40px 0;text-align:center;}
+.mHanwhaCi .layer .iClose{position:absolute;top:19px;right:19px;display:block;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201512/ico_close.png) 0 0 no-repeat;text-indent:-9999px;font-size:0;width:13px;height:13px;}
+.mHanwhaCi .layer.layer2 .tx{padding-top:55px;}
+.mHanwhaCi .layer.layer4 .tx{padding-top:44px;}
+
+/*20151215 about hanwha history*/
+.box_inner .nav_history3{width:100%;}
+.nav_history3 {width:100%;}
+.nav_history3{background:url("../../../../../content/dam/hanwha/resources/images/about/k_histNavi_2.png") 45% 0 no-repeat;font-family:"myriad-pro",sans-serif;margin:0 auto 100px;width:988px;height:115px;}
+.nav_history3 .col1,
+.nav_history3 .col2{float:left;}
+.nav_history3 .tit{display:block;color:#576b7c;font-size:0.9em;margin:-3px 0 0;line-height:130%;height:53px;}
+.nav_history3 .col1{margin:0 0 0 26px;text-align:center;width:140px;}
+.nav_history3 .col1 .rolling{position:relative;overflow:hidden;width:140px;height:160px;}
+.nav_history3 .col1 .rolling .jcarousel{height:140px;}
+.nav_history3 .col1 .rolling ul{width:20000em;position:relative;list-style:none;margin:0;padding:0}
+.nav_history3 .col1 .rolling ul li{float:left;text-align:center;}
+.nav_history3 .col1 .cover{position:absolute;top:0;left:0;background:url("../../../../../content/dam/hanwha/resources/images/about/img_hisCover.png") 0 0 no-repeat;width:140px;height:160px;}
+.nav_history3 .col1 .cover .tx1{text-indent:-9999px;font-size:0;}
+.nav_history3 .col1 .cover .tx2{position:absolute;bottom:0;left:0;display:block;color:#576b7c !important;font-size:0.8em;color:#576b7c;padding:8px 0 0;text-align:center;width:100%;}
+.nav_history3 .col2{float:right;text-align:center;}
+.nav_history3 .col2 a{position:relative;display:inline-block;*display:inline;*zoom:1;line-height:130%;padding:87px 0 0;margin:0 27px;width:140px;height:75px;vertical-align:middle;font-size:0.8em;color:#576b7c;background:url("../../../../../content/dam/hanwha/resources/images/about/bg_nav_history_2.png") no-repeat right top;}
+.nav_history3 .col2 a span{display:block;position:absolute;left:0;bottom:-1px;width:100%;color:#576b7c !important;}
+.nav_history3 .col2 a:hover,
+.nav_history3 .col2 a.active{color:#fff;}
+.nav_history3 .col2 a.history00{background-position:0 0;}
+.nav_history3 .col2 a.history01{background-position:-140px 0;}
+.nav_history3 .col2 a.history02{background-position:-280px 0;}
+.nav_history3 .col2 a.history03{background-position:-420px 0;}
+.nav_history3 .col2 a.history04{background-position:-560px 0;}
+.nav_history3 .col2 a.history05{background-position:-700px 0;}
+.nav_history3 .col2 a.history00:hover,
+.nav_history3 .col2 a.history00.active{background-position:0 100%;}
+.nav_history3 .col2 a.history01:hover,
+.nav_history3 .col2 a.history01.active{background-position:-140px 100%;}
+.nav_history3 .col2 a.history02:hover,
+.nav_history3 .col2 a.history02.active{background-position:-280px 100%;}
+.nav_history3 .col2 a.history03:hover,
+.nav_history3 .col2 a.history03.active{background-position:-420px 100%;}
+.nav_history3 .col2 a.history04:hover,
+.nav_history3 .col2 a.history04.active{background-position:-560px 100%;}
+.nav_history3 .col2 a.history05:hover,
+.nav_history3 .col2 a.history05.active{background-position:-700px 100%;}
+/*20160708 error font*/
+.font_ja { font-family: Helvetica, Lucida Grande, Hiragino Kaku Gothic Pro, Meiryo !important; }
+.font_zh { font-family: myriad-pro, Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", 宋体, SimSun, STXihei, "华文细黑", sans-serif !important; }
+
+/*20160712 worldwide*/
+.mGReports{position:relative;color:#767676;line-height:130%;font-size:16px;margin:0 auto;text-align:left;width:1100px;}
+.mGReports h3{position:relative;color:#576b7c;font-size:30px;margin:0 0 25px;text-align:center;}
+.mGReports .info{position:relative;font-size:16px;margin:0 0 10px;text-align:center;}
+.mGReports .list_find_top{float:right;margin:16px 49px 61px;}
+.mGReports .map .flag{position:absolute;top:0;left:0;}
+.lGReports{display:none;margin:0 auto;padding:35px 0 0;width:980px;min-height:700px;z-index:20;}
+.lGReports .title{display:block;color:#576b7c;font-size:26px;text-align:center;margin:0 0 26px;}
+.lGReports .title span{display:inline-block; padding:0 0 0 49px;line-height:39px;height:39px;}
+.lGReports li{border:1px solid #e0e0e0;background-color:#fff;margin:0 0 35px;padding:6px;}
+.lGReports li .con{position:relative;background-color:#f5f5f5;padding:4px 55px 51px;zoom:1;} /* modify20160817-10 */
+.lGReports li .con:after{display:block;clear:both;content:''}
+.lGReports li .con .img{float:left;}
+.lGReports li .con .tit{display:block;color:#576b7c;font-size:20px;margin:0 0 30px;text-align:center;}
+.lGReports li .con .tit em{display:block;color:#ff7200;font-style:normal;font-size:18px;margin:0 0 7px;}
+.lGReports li .con .lst{margin:50px 0 0;zoom:1;}
+.lGReports li .con .lst:after{display:block;clear:both;content:''}
+/*.lGReports li .con .lst.first{margin-top:24px;} */ /* delete20160817-10 */
+.lGReports li .con .txt{position:relative;display:block;float:right;font-size:16px;margin:-3px 0 0;width:490px;}
+.lGReports li .con .txt .ti{color:#576b7c;font-size:20px;margin:0 0 20px;}
+.lGReports li .con .txt.noimg{float:none;padding:0;margin-top:-10px;min-height:auto;width:auto;}
+.lGReports li .con .ls{display:block;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/Worldwide/common/web/ico_dotgray1.html) 0 8px no-repeat;margin:20px 0 0;padding:0 0 0 10px;}
+.lGReports li .con .ls.first{margin-top:0;}
+
+
+/* for chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0){
+}
+/* add20160809 */
+.lGReports li .con .txt .ico{background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/Worldwide/common/web/ico_dot.png) 0 8px no-repeat;margin-top:20px;padding:0 0 0 9px;}
+.lGReports li .con .txt .ico.first{margin-top:0;}
+.lGReports li .con .txt .ti2{display:block;color:#576b7c;font-size:20px;margin:0 0 43px;text-align:center;}
+.lGReports li .con .ls{background:none;padding-left:0;}
+.lGReports li .con .tit em{margin-bottom:10px;}
+/* //add20160809 */
+
+
+
+
+
+/* renewal2016 */
+	.tit_type04{margin:-20px auto 50px;width:1220px;font-weight:600;font-size:42px;font-size:2.6rem;line-height:1.2;text-align:center;color:#ff7200;} /* modify20161019 */
+	.tit_type05{margin:0 auto 30px;width:1220px;font-weight:600;font-size:32px;font-size:2rem;line-height:1.2;text-align:center;color:#576b7c;}
+	.view_more02{position:relative;display:inline-block;*display:inline;*zoom:1;font-size:16px;font-size:1rem;margin:0 0 20px;padding:10px 0 0;color:#ff7200;z-index:10;} /* add20161029-3 */
+	.article_area02{margin:0 auto 35px;width:810px;font-size:1.1rem;line-height:120%;color:#767676;letter-spacing:0.2px;word-break:break-word;}
+	.box_inner02{padding:70px 0;}
+
+	/* Business Highlights */
+	.wrap_list02{overflow:hidden;position:relative;margin:0 auto -20px;padding:20px 0 50px;width:1230px;height:318px;} /* [2021-10-27 BH슬라이드영역] 수정 */
+	.wrap_list02:not(.type02) .nav_roll{top:auto;bottom:5px} /* [2021-10-27 BH슬라이드영역] 추가 */
+	.wrap_list02 ul{overflow:hidden;position:absolute;left:0;top:20px !important;*zoom:1;font-size:0;line-height:0;text-align:left;} /* [2021-10-27 BH슬라이드영역] 수정 */
+	.wrap_list02 ul li{position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;position:relative;text-align:left;overflow:hidden;width:400px !important;height:318px;margin:0 5px;}
+	.wrap_list02 ul li img{min-height:318px;}
+	.wrap_list02 ul li .text{position:absolute;bottom:0;left:0;background:url(../../../../../content/dam/hanwha/products_and_service/common/bg_wrap_list02.png) 0 0 repeat;color:#fff;font-size:20px;font-size:1.3rem;line-height:1.2;padding:20px 20px 0 20px;padding:1.4rem 35px 0 1.2rem;width:320px;height:96px;}
+	.wrap_list02 ul li .text span{position:relative;-webkit-line-clamp:2;padding-right:18px;overflow:hidden;text-overflow-mode:ellipsis-word;text-overflow:ellipsis;display:block;display:-webkit-box;-webkit-box-orient:vertical;word-wrap:break-word;*display:block;height:2.5em;}
+	.wrap_list02 ul li span{display:;font-weight:normal;padding-top:0.4rem;}
+	.wrap_list02 ul li strong{display:block;font-size:14px;font-size:0.9rem;} /* add20161029-2 */
+	.wrap_list02 ul li a .text span{background:url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat 100% 36px;}
+	/* //Business Highlights */
+
+	/* Key Affiliates */
+	.wrap_list02.type02{height:389px;margin:0 auto;padding:40px 0 0;} /* 2021-11-19 수정 */ /* [2021-10-27 BH슬라이드영역] 수정 */
+	.wrap_list02.type02 .affiliate{background-color:#fff;border:1px solid #ecf1f3;border-radius:2px;margin-left:5px;padding:7px 0 0;text-align:center;width:397px !important; height:380px !important;} /* 2021-11-19 수정 */
+	.wrap_list02.type02 ul{top:40px !important;} /* 2021-11-19 수정 */ /* [2021-10-27 BH슬라이드영역] 추가 */
+	.wrap_list02.type02 ul li img{width:380px;min-height:175px;}
+	.wrap_list02.type02 ul li .text{bottom:auto;top:197px;background:none;padding-top:0;padding-left:20px;padding-right:20px;text-align:left;width:357px;height:180px;} /* 2021-11-19 수정 */
+	.wrap_list02.type02 ul li strong{display:-webkit-box;overflow:hidden;max-height:48px;color:#586b7c;font-size:20px;padding:18px 0 0;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;} /* 2021-11-19 수정 */
+	.wrap_list02.type02 ul li .text span{background-position:100% 97%;color:#838383;font-size:18px;margin-top:13px;-webkit-line-clamp:4;line-height:130%;margin:l12px 0 0;padding-top:0;height:5.3em;}
+	.wrap_list02.type02.noRolling{margin-top:-40px;}
+	/* for chrome */
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		.wrap_list02.type02 ul li .text span{background-position:100% 100%;height:5.1em;}
+	}
+	/* //Key Affiliates */
+
+	.mList03{margin:0 auto -18px;width:1220px;zoom:1;}
+	.mList03:after{display:block;clear:both;content:''}
+	.mList03 .img{float:left;margin:3px 0 0;width:643px;}
+	.mList03 .text{float:right;color:#767676;font-size:18px;margin:-5px 0 0;text-align:left;line-height:120%;width:529px;}
+	.mList03 .text .ti{display:block;color:#576b7c;font-size:1.37rem;line-height:120%;margin:0 0 20px;}
+	.mList03 .text p{margin:0 0 13px;}
+	.mList03 .text a{color:#767676;}
+	.mList03 .figure_area{float:left;margin:3px 0 0;margin:0;width:643px;}
+	.mList03 .figure_area .btn_video_figure{background:none;width:643px;height:330px;}
+
+
+	.icoArr01{display:inline-block;background:url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat 0 0;margin:0 0 0 13px;vertical-align:middle;width:16px;height:16px;}
+	/* for chrome */
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		.mList03 .text{margin:-3px 0 0;}
+		.mList03 .text p{margin-bottom:15px;}
+	}
+
+	/* filter */
+	div.filter-by-area{position:relative;max-width:1220px;margin:0 auto 60px;padding:30px 0 0;text-align:left;}
+	div.filter-by-area.desktop-area:after{display:block;position:absolute;left:0;top:45px;content:" ";width:100%;z-index:2}
+	div.filterby-section.none{height:50px;} /* only sort by */
+	div.filterby-section.none *{display:none;}
+	div.filter-by-area .blind{overflow:hidden;position:absolute;left:-9999px !important;top:-9999px !important}
+	div.filter-by-area input[type=checkbox]{position:absolute;opacity:0}
+	div.filter-by-area input[type=checkbox]+label{display:inline-block;position:relative;color:#767676;font-size:16px;padding:0 0 0 34px;}
+	div.filter-by-area input[type=checkbox]+label:before{content:"";overflow:hidden;position:absolute;display:inline-block;width:24px;height:24px;top:-3px;left:0;border:1px solid #ccc;box-sizing:border-box;background-color:#fff;}
+	div.filter-by-area input[type=checkbox]:checked+label:before{border-width:0;background-image:url(../../../../../content/dam/hanwha/products_and_service/common/ico_checked3.png);}
+	div.filter-by-area input[type=checkbox]:checked+label.inpart:before{color:#fff;background-position:-50.545454px 0;background-color:#fff;border-width:1px}
+	div.filter-by-area input[disabled=disabled]+label{color:#5a5a5a}
+	div.filter-by-area input[disabled=disabled]+label:before{color:#5d5d5d;border-width:0;background-color:#5a5a5a;background-image:none}
+
+	div.select-product{display:none;background:#f8f8f8;padding:2px 170px 0 70px;min-height:43px;}
+	div.select-product span.word{display:inline-block;color:#767676;margin:12px 48px 12px 0;}
+	div.select-product span.word a{display:inline-block;width:21px;height:21px;background:url(../../../../../content/dam/hanwha/products_and_service/common/ico_close1.png) 0 0 no-repeat;vertical-align:middle;margin-left:9px;margin-top:-3px;position:relative;bottom:auto;right:auto;}
+
+	div.product-depth-area{border-top:1px solid #c5c5c5;}
+	div.product-depth-area .btn{position:absolute;right:19px;bottom:0;z-index:30;}
+	div.product-depth-area a.btn-clear-all,
+	div.product-depth-area a.btn-filter-cls{display:inline-block;background:url(../../../../../content/dam/hanwha/news_and_media/common/ico_close1.png) 100% 50% no-repeat;text-align:center;color:#576b7c;font-size:16px;padding:0 33px 0 12px;white-space:nowrap;line-height:36px;height:39px;}
+	div.product-depth-area a.btn-clear-all{display:inline-block !important;background:url(../../../../../content/dam/hanwha/news_and_media/common/ico_clear1.png) 100% 50% no-repeat;}
+
+	.btn-filterby{position:relative;display:block;padding:0 25px;height:45px;background:#f47322;z-index:40;}
+	.btn-filterby span{position:relative;display:inline-block;color:#fff;font-size:18px;padding:0 27px 0 0;line-height:43px;height:45px;}
+
+	div.ui-filter-menu{position:relative;z-index:40;}
+	div.ui-filter-menu ul.menu{position:relative;width:100%;overflow:hidden;display:table;table-layout:fixed;background:#cfcfcf;}
+	div.ui-filter-menu ul.menu li{display:table-cell;color:#576b7c;font-size:18px;box-sizing:border-box;vertical-align:middle;text-align:center;border-left:1px solid #dadada;width:20%;}
+	div.ui-filter-menu ul.menu li:first-child{border-left:1px solid #ccc}
+	div.ui-filter-menu ul.menu li a{display:block;color:#576b7c;padding:13px}
+	div.ui-filter-menu ul.menu li.active{background:#576b7c;}
+	div.ui-filter-menu ul.menu li.active a{color:#fbfbfb;}
+	/* modify20161104 */
+	div.filter-content{position:relative;z-index:2;background:#;border-left:1px solid #c5c5c5;border-right:1px solid #c5c5c5;border-bottom:1px solid #c5c5c5;padding:1px 40px 15px 70px;}
+	div.product-listarea{margin-bottom:11px}
+	div.product-listarea ul.two-depth{width:100%;}
+	div.product-listarea ul.two-depth li{padding:10px 0 5px;width:25%;display:inline-block;vertical-align:top;box-sizing:border-box;margin-right:-3px;}
+	div.product-listarea ul.two-depth li.col2{width:50%;}
+	div.product-listarea ul.two-depth li.colw2{width:48%;}
+	div.product-listarea ul.two-depth li.col3{width:75%;}
+	div.product-listarea ul.two-depth li.col4{width:100%;}
+	div.product-listarea ul.two-depth li.w1{width:24%;}
+	div.product-listarea ul.two-depth li.w2{width:24%;}
+	div.product-listarea ul.two-depth li.w3{width:24%;}
+	div.product-listarea ul.two-depth li.w4{width:28%;}
+	div.product-listarea ul.three-depth{margin-top:10px;margin-bottom:20px}
+	div.product-listarea ul.three-depth li{width:100%;display:block;padding-bottom:10px;margin-left:25px;}
+	div.product-listarea ul.two-depth#typeChk li{width:21%;}
+
+	div.sortby-section{position:absolute;top:0;right:0;}
+	ul.sortby-list li{float:left;background:#f1f1f1;}
+	ul.sortby-list li.active{background:#0071bf !important}
+	ul.sortby-list li a{display:block;padding:13px 15px;height:24px}
+	ul.sortby-list li.active a{color:#fff;}
+
+
+	/* for ie8 */
+	@media \0screen {
+		div.filter-by-area input[type=checkbox]{opacity:1;}
+		div.filter-by-area input[type=checkbox]+label{padding-left:25px;}
+		div.filter-by-area input[type=checkbox]+label:before{background:transparent;border:0;width:auto;height:auto;}
+	}
+	/* filter */
+
+	/* Business in Focus */
+	.mList04{background:url(../../../../../content/dam/hanwha/products_and_service/aerospace_mechatronics/k_businessinfocus.jpg) 0 0 no-repeat;margin:0 auto;padding:4px 0 0;width:1220px;height:483px;}
+	.mList04 ul{padding:0 0 0 14px;zoom:1;}
+	.mList04 ul:after{display:block;clear:both;content:''}
+	.mList04 li{float:left;text-align:center;font-size:18px;line-height:170%;padding:80px 0 0;width:298px;}
+	.mList04 li .img{display:block;margin:0 0 4px;}
+	.mList04 li .txt{color:#fff;}
+	.mList04 li .txt .tx{line-height:160%;margin:5px 0 0;}
+	.mList04 li .txt .tx.t2{margin-top:0;}
+	.mList04 li .txt em{font-size:38px;font-style:normal;}
+		/* add20161025-1 */
+		.mList04.col03 ul{padding-left:0;margin:0 -30px 0 -11px;}
+		.mList04.col03 li{width:413px;}
+		.mList04 li .txt em sup{font-size:25px;}
+		.mList04 li .tx2{line-height:130%;}
+		.mList04.type03 li{padding-top:32px;}
+		.mList04.type03 li .img{margin-bottom:-1px;}
+		.mList04.type03 li .txt .txs1{display:block;float:left;text-align:right;margin-left:-13px;padding:6px 0 0;width:148px;}
+		.mList04.type03 li .txt .txs2{display:block;line-height:110%;text-align:left;margin:-3px 0 3px;padding-left:143px;}
+		.mList04.type03 li .txt .tx.t2 .txs1{width:127px;}
+		.mList04.type03 li .txt .tx.t2 .txs2{padding-left:122px;}
+		.mList04.type04 li{padding-top:104px;}
+		.mList04.type06 li{padding-top:85px;}
+		.mList04.type03 li .txt .tx.t13 .txs1{width:170px;}
+		.mList04.type03 li .txt .tx.t13 .txs2{padding-left:165px;}
+		/* //add20161025-1 */
+	/* //Business in Focus */
+
+	/* Exceptional Competitiveness */
+	.wrap_list05{margin:0 auto;padding:45px 0 0;width:1220px;height:483px;}
+	.wrap_list05 ul{zoom:1;}
+	.wrap_list05 ul:after{display:block;clear:both;content:''}
+	.wrap_list05 li{float:left;text-align:center;font-size:18px;width:244px;}
+	.wrap_list05 li .img{display:block;margin:0 0 35px;}
+	.wrap_list05 li .txt{line-height:110%;}
+	.wrap_list05 li .txt .ti{display:block;color:#f47322;font-size:20px;margin:0 0 11px;}
+	.wrap_list05 li .txt .ls{background:url(../../../../../content/dam/hanwha/products_and_service/common/bg_wrap_list05.png) 0 8px no-repeat;color:#5f6972;font-size:16px;margin:0 0 2px 22px;padding:0 0 0 14px;text-align:left;}
+	.wrap_list05 li.t2 .txt .ls{margin-left:12px;}
+	.wrap_list05 li.t2 .txt .ls{margin-left:12px;}
+	.wrap_list05 li.t4 .txt .ls{margin-left:40px;}
+	.wrap_list05 li.t5 .txt .ls{margin-left:25px;}
+	/* //Exceptional Competitiveness */
+
+	/* Hanwha's Aerospace & Mechatronics at a Glance */
+	.mAMechatronics{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-pack:justify;justify-content:space-between;border:1px solid #ececec;border-left:0;border-right:0;margin:0 auto;text-align:left;width:1220px;height:490px;overflow:hidden;}
+	.mAMechatronics .navi{list-style:none;margin:0;padding:0;-ms-flex:0 0 36.5%;flex:0 0 36.5%;-ms-flex:0 0 428px;flex:0 0 428px;float:right;width:428px;}
+	.mAMechatronics .navi li{position:relative;left:0;counter-increment:industry-selector;color:#fff;font-size:22px;line-height:70px;height:70px;}
+	.mAMechatronics .navi li:before{top:0;bottom:0;left:1.3rem;left:1.1rem;right:0;content:'';position:absolute;z-index:-1;transition:background-color 250ms cubic-bezier(.25,.25,.75,.75),top 250ms cubic-bezier(.25,.46,.45,.94),right 250ms cubic-bezier(.25,.46,.45,.94),bottom 250ms cubic-bezier(.25,.46,.45,.94),left 250ms cubic-bezier(.25,.46,.45,.94);}
+	.mAMechatronics .navi li.bg1:before,
+	.mAMechatronics .navi li.bg4:before,
+	.mAMechatronics .navi li.bg7:before{background-color:#f47200;}
+	.mAMechatronics .navi li.bg2:before,
+	.mAMechatronics .navi li.bg5:before{background-color:#ec8400;}
+	.mAMechatronics .navi li.bg3:before,
+	.mAMechatronics .navi li.bg6:before{background-color:#f19623;}
+	.mAMechatronics .navi li.is-active{left:0;color:#f47200;z-index:1;}
+	.mAMechatronics .navi li.is-active:before{top:0;bottom:0;left:0;right:0;background:url(../../../../../content/dam/hanwha/products_and_service/common/ico_arrorg1.png) 28px 50% no-repeat #fff;}
+	.mAMechatronics .navi li:after{position:absolute;top:50%;left:1rem;text-align:center;-ms-transform:translate(0,-50%);transform:translate(0,-50%);transition:transform 250ms cubic-bezier(.25,.46,.45,.94),opacity 250ms cubic-bezier(.25,.25,.75,.75)}
+	.mAMechatronics .navi li a,
+	.mAMechatronics .navi li span{display:block;color:inherit;text-decoration:none;padding-left:66px;transition:padding-left 250ms cubic-bezier(.25,.46,.45,.94);}
+	.mAMechatronics .cont{position:relative;-ms-flex:0 0 792px;flex:0 0 792px;float:left;width:792px;}
+	.mAMechatronics .cont .js-main-item{top:0;bottom:0;left:0;right:0;position:absolute;color:#fff;}
+	.mAMechatronics .cont .js-main-item .background{top:0;bottom:0;left:0;right:-1.3rem;right:-1.1rem;position:absolute;height:490px;}
+	.mAMechatronics .cont .js-main-item .background:before{top:0;bottom:0;left:0;right:0;content:'';position:absolute;}
+	.mAMechatronics .cont .js-main-item .con{position:absolute;top:0;left:0;color:#fff;font-size:18px;line-height:130%;width:792px;height:100%;display:-ms-flexbox;display:flex;display:block;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;-ms-flex-align:start;align-items:flex-start;}
+	.mAMechatronics .cont .js-main-item .con .ti{display:block;font-size:22px;margin:0 0 37px -10px;}
+	.mAMechatronics .cont .js-main-item .con a,
+	.mAMechatronics .cont .js-main-item .con .ls{display:block;color:#fff;padding:56px 0 0 63px;height:100%;}
+		/* add20161025-2 */
+		.mAMechatronics.row3{height:348px;}
+		.mAMechatronics.row3 .cont .js-main-item .background{height:348px;}
+		.mAMechatronics.row3 .navi li{line-height:116px;height:116px;}
+		.mAMechatronics.row3 .navi li.row2{line-height:150%;padding:26px 0 25px;height:auto;}
+		.mAMechatronics.row4{height:280px;}
+		.mAMechatronics.row6{height:420px;}
+		.mAMechatronics .icoArr01{display:block;margin:18px 0 0;}
+		.hiddenCont{display:none;}
+		/* //add20161025-2 */
+	/* //Hanwha's Aerospace & Mechatronics at a Glance */
+
+	.gtm100{margin-top:100px;}
+	.gtm80{margin-top:80px;}
+	.gtm60{margin-top:60px;}
+	.gtm30{margin-top:30px;}
+
+	/* work reference */
+	.mWorkreference{position:relative;margin:0 auto;width:1220px;height:404px;overflow:hidden;}
+	.mWorkreference h4{font-size:22px;font-weight:normal;margin-bottom:30px;}
+	.mWorkreference .full-image{background-color:#000;height:404px;}
+	.mWorkreference .full-image .back{position:absolute;top:0;left:0;background-color:#000;width:100%;height:100%;filter:alpha(opacity=0);opacity:0;-moz-opacity:0;}
+	.mWorkreference .full-image .back img{filter:alpha(opacity=40);opacity:0.4;-moz-opacity:0.4;}
+	.mWorkreference .full-image .back.t0{display:block;filter:alpha(opacity=100);opacity:1;-moz-opacity:1;}
+	.mWorkreference ol{top:0;bottom:0;left:1px;right:0;position:absolute;list-style:none;display:-ms-flexbox;display:flex;padding:0;margin:0;z-index:20;}
+	.mWorkreference li{counter-increment:horizontal-visual;position:relative;background:url(../../../../../content/dam/hanwha/products_and_service/common/ico_line1.png) 0 0 repeat-y;-ms-flex-positive:1;flex-grow:1;line-height:150%;width:0;overflow:;transform:translate3d(0,0,0);text-align:left;overflow:;}
+	.mWorkreference .txt{font-size:18px;line-height:130%;overflow:hidden;height:0;}
+	.mWorkreference .bar{position:absolute;top:50%;left:-1px;margin-top:-11px;display:block;background-color:#f47322;width:2px;height:28px;}
+	.mWorkreference li a,
+	.mWorkreference li .ls{position:absolute;left:0;right:0;top:54%;color:#fff;padding:0 40px;-ms-transform:translate(0,-50%);transform:translate(0,-50%);}
+	.mWorkreference li .icoArr01{display:block;margin:20px 0 0;height:16px;}
+	.mWorkreference li.selected .bar{top:14px;height:444px;}
+
+	.mWorkreference.type03{height:444px;}
+	.mWorkreference.type05{height:444px;}
+	.mWorkreference.type05 .full-image{height:444px;}
+	.mWorkreference.type05 .icoArr01{position:absolute;top:225px;left:0;}
+	.mWorkreference .txt .tx{width:325px;}
+	/* //work reference */
+
+	.wrap_list02 .newbh img {margin-left:-115px;}
+
+	/* add20161030 */
+	.mNewRoom{position:relative;margin:0 auto;width:1220px;}
+	.mNewRoom ul{margin-left:-10px;zoom:1;}
+	.mNewRoom ul:after{display:block;clear:both;content:''}
+/* modify20161108 */
+	.mNewRoom ul li{position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;position:relative;text-align:left;overflow:hidden;width:400px;height:318px;margin:0 5px;float:left;margin:0 0 10px 10px;height:410px;}
+	.mNewRoom ul li.h1{height:318px;}
+/* //modify20161108 */
+	.mNewRoom ul li img{min-height:318px;}
+	.mNewRoom ul li .text{position:absolute;bottom:0;left:0;background:url(../../../../../content/dam/hanwha/products_and_service/common/bg_wrap_list02.png) 0 0 repeat;color:#fff;font-size:1.3rem;line-height:1.2;padding:1.4rem 1.2rem 0;width:336px;height:96px;}
+	.mNewRoom ul li .text span{position:relative;-webkit-line-clamp:2;padding-right:18px;padding-right:18px;overflow:hidden;text-overflow-mode:ellipsis-word;text-overflow:ellipsis;display:block;display:-webkit-box;-webkit-box-orient:vertical;word-wrap:break-word;*display:block;height:2.5em;}
+	.mNewRoom ul li span{display:;font-weight:normal;padding-top:0.4rem;}
+	.mNewRoom ul li strong{display:block;font-size:0.9rem;}
+	.mNewRoom ul li .text span{background:url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat 100% 37px;}
+	.mNewRoom ul li .text span.noicon{background:none;padding-right:0;} /* add20170725 */
+	.mNewRoom ul li.w1{width:810px;}
+	.mNewRoom ul li.w1 .text{width:596px;}
+	.mNewRoom ul li.w2{width:605px;}
+	.mNewRoom ul li.w2 .text{width:326px;}
+	.mNewRoom .figure_area{margin:0;}
+	.mNewRoom .figure_area .btn_video_figure{background:none;padding:0;width:100%;height:100%;}
+	.mNewRoom .layer_video img{min-height:auto;}
+	.mNewRoom .btn_area_list02 .btn_list_type03{margin:0 auto;}
+
+
+	/*.mNewRoom.type02 ul{display:block;}
+	 20170925-1 
+	.mNewRoom.type02 ul li.type2 .text{padding:1.2rem 35px 0.3rem 1.2rem;width:326px;height:58px;}
+	.mNewRoom.type02 ul li.type2 .text span{margin-top:5px;padding:0;height:auto;}
+	.mNewRoom.type02 ul li.type2 strong{font-size:1.25rem;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-wrap:break-word;max-height:48px;}
+	.mNewRoom.type02 ul li.type2 strong.row1{-webkit-line-clamp:1;margin-bottom:-8px;max-height:28px;}
+	.mNewRoom.type02 ul li.type2 span	a{display:inline-block;position:static;font-size:0.9rem;padding:0;width:auto;height:auto;}
+	.mNewRoom.type02 ul li.type2 span .iDown{display:inline-block;background:url(https://www.hanwha.com/content/dam/hanwha/news_and_media/common/ico_download.png) 100% 3px no-repeat;font-style:normal;margin-top:1px;padding:0 20px 0 0;}
+	.mNewRoom.type02 ul li.type2 span{font-size:0.9rem;}
+	 //20170925-1 
+	.mNewRoom.type02 .figure_area .btn_video_figure{padding:0;} 2020-02-23 삭제 */
+
+	.gSearch{margin:0 auto;width:1220px;}
+	.gSearch .list_find_top{float:right;margin:0 2px 20px 0;}
+	.gSearch .mNewRoom{clear:both;padding:0;}
+	.gSearch .paging{margin-top:80px;text-align:center;}
+
+
+	.btn_area_list02{margin:90px 0 0;text-align:center;}
+	.btn_list_type03{display:inline-block;background:#576b7c;border-bottom:3px solid #c4c4c4;border-right:1px solid #c4c4c4;color:#fff;font-size:18px;text-align:center;font-size:18px;width:547px;line-height:50px;height:50px; }
+	.btn_list_type03 .arr{display:inline-block;background:url(../../../../../content/dam/hanwha/news_and_media/common/ico_arrwhite1.png) 100% 50% no-repeat;padding:0 32px 0 0;}
+
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+		.mNewRoom.type02 ul li strong.row1{margin-bottom:-5px;}
+	}
+	/* //add20161030 */
+	html[lang="ja"] .wrap_list02 ul li a .text span,
+	html[lang="zh"] .wrap_list02 ul li a .text span{background-position:100% 31px;}
+    html[lang="ja"] .mNewRoom ul li .text span,
+    html[lang="zh"] .mNewRoom ul li .text span{height:2.6em;line-height:1.4;background-position:100% 37px;}
+    html[lang="ja"] .wrap_list02 ul li .text span,
+    html[lang="zh"] .wrap_list02 ul li .text span{height:2.4em;}
+    html[lang="ja"] .wrap_list02.type02 ul li .text span,
+    html[lang="zh"] .wrap_list02.type02 ul li .text span{height:5.2em;background-position:100% 75px;}
+    html[lang="zh"] .wrap_list02.type02 ul li .text span{background-position:100% 78px;}
+
+
+	@media screen and (-webkit-min-device-pixel-ratio:0){
+    	html[lang="ja"] .wrap_list02 ul li .text span,
+    	html[lang="zh"] .wrap_list02 ul li .text span{height:2.3em;}
+    	html[lang="ja"] .wrap_list02.type02 ul li .text span,
+    	html[lang="zh"] .wrap_list02.type02 ul li .text span{background-position:100% 74px;}
+	}
+/* //renewal2016 */
+
+/* 201702 */
+/*#gnb > .logo { float: left; padding: 32px 0 0 10px; margin: 0;}
+#gnb > .logo a img { display: block; width: 163px; height: 61px; } 2019-12-10 삭제 */
+h1.hidden {overflow:hidden;position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;font-size:1px;}
+.header_video .video-tit { margin: 0 ; padding: 4px 0 0 20px; font-size: 1.125rem; line-height: 40px; color: #fff; text-align: left;  width:800px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:bold;}
+.layer_map_info > .layer-tit { padding: 15px 0 10px 20px; font-size: 1.125rem; color: #fff; background: #576b7c; font-weight:bold;}
+
+.at-share-btn.at-svc-twitter {background-color:rgb(207, 207, 207) !important;}
+.at-share-btn.at-svc-facebook {background-color:rgb(207, 207, 207) !important;}
+.at-share-btn.at-svc-google_plusone_share {background-color:rgb(207, 207, 207) !important;}
+.at-share-btn.at-svc-pinterest_share {background-color:rgb(207, 207, 207) !important;}
+.at-share-btn.at-svc-linkedin {background-color:rgb(207, 207, 207) !important;}
+.at-share-btn.at-svc-print {background-color:rgb(207, 207, 207) !important;}
+
+/* 201704 */
+/*.visual_image figcaption .visual-txt { font-size: 60px; line-height: 1; font-weight: 600; } 2019-12-10 삭제 */
+.mWorkreference .Ttxt {font-size:22px;font-weight:normal;margin-bottom:30px;}
+.list_career li figcaption .career-tit { font-size: 1.125rem; color: #576B7C; font-weight: 600; line-height: 1.4; }
+.list_career.type02 .career-tit  { margin: 0 0 15px; }
+.wrap_list.type06 .career-tit { margin: 0 0 15px; font-size: 18px; color: #576B7C; font-weight: 600; line-height: 1.4;}
+
+/* 20170427 */
+.area_result .result-txt {font-weight: 600; font-size: 1.875rem; color: #333}
+.area_result .result-txt strong {color:#ff4a0e;}
+/* CSS Document */
+
+
+
+/* 20170912 뉴스룸 개편 view css */
+.screen_out {overflow:hidden;position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;font-size:1px;}
+.content_header.newsroom .page_nav {width:800px;}
+.content_header.newsroom .social_nav {width:800px; padding-right: 0; min-height:36px;}
+.ns-view {text-align: left; margin-top: -30px;}
+.ns-view:after {display: block; content: ""; clear: both;}
+.ns-view .ns-leftbox {float: left; width: 800px;}
+.ns-view .ns-rightbox {float: left; width: 420px; padding-left:50px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; margin-top:-97px;}
+.ns-view .ns-rightbox .tit_type02 {font-size:24px; text-align:center; font-weight:600; padding-bottom:22px;}
+.ns-view .tit_type01 {font-size: 40px; width:auto;}
+.ns-view .tit_type03 {font-weight:600; width:auto; font-size:18pt; line-height:24pt;}
+.ns-view .news_summary {font-size: 20px; width: auto; font-weight: normal; line-height: 1.2; margin:35px auto 40px;}
+.ns-view .news_summary li {padding-left:15px; position: relative; margin-bottom:4px;}
+.ns-view .news_summary li:before {display:block; content:""; position: absolute; left: 0; top:9px; width:4px; height:4px; background: #6c6c6c; border:1px solid #6c6c6c; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px; }
+.ns-view div.figure_area {width: auto;}
+.ns-view .article_area {width: auto; font-size: 16px; line-height: 1.3; margin-top:20px;}
+.ns-view .article_area.italic {padding:0 15px 0; font-size: 15px; font-style: italic; margin:5px 0 25px;}
+.ns-view .figure_area img {max-width: 100%;}
+.ns-view .for_more_infomation {margin-top:20px; width:auto;}
+.ns-cont {padding-bottom: 60px; border-bottom:1px solid #f3f3f3;}
+.ns-view .tit_type02 {font-size:18px; margin:0; padding:40px 0 0; text-align: left; width: auto; font-weight:700; line-height:24px;}
+.ns-view .typenews {height:338px;} /* 2021-11-19 수정 */
+.typenews.typeoldnews {width:1220px;}
+.typenews.typeoldnews ul li > img {width:406px;}
+.wrap_list.typeoldrecon {width:1220px !important;}
+.ns-view .wrap_list {width:100%; padding:45px 0 0;}
+.ns-view .wrap_list ul li img {width: 380px; height: 196px;}
+.ns-view .wrap_list ul li {padding:0 10px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; float:left;}
+.typenews.wrap_list.oneslide ul li {float:none; margin:0 auto;}
+.ns-view .nav_roll {text-align: center; top:5px;}
+.ns-view .wrap_list ul li a,
+.ns-view .wrap_list ul li div {width:380px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; padding:28px 25px 24px; min-height: 138px;}
+.ns-view .wrap_list ul {top:45px !important;}
+.ns-view .wrap_list ul li a strong,
+.ns-view .wrap_list ul li div strong {font-size: 18px; color:#767676; }
+.ns-view .wrap_list ul li a > span {height: 54px; overflow: hidden; padding-right: 25px; background-position: right 37px !important; font-size: 15px; line-height: 18px !important; }
+.ns-view .figure_area .figcaption {width:auto; margin-left:20px; padding-bottom:15px; font-size:15px; line-height:1.6;}
+.ns-graybox {background: #fafafa;}
+.ns-graybox ul {padding:0 25px 35px;}
+.ns-graybox ul li {margin-top:12px;}
+.ns-graybox ul li:first-child {margin-top:6px;}
+.ns-graybox ul li a {font-size: 18px; color: #767676; font-weight:600;}
+.related-con-box {margin-bottom:20px;}
+.related-con-box img {width:370px; height:186px;}
+.related-con-box > a {display: block; background:transparent url("../../../../../content/dam/hanwha/resources/images/common/bg_list_link.png") no-repeat left top; margin-top:-19px; padding: 28px 25px 24px; z-index: 1; position: relative; border-right:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;}
+.related-con-box > a > span {display: block; padding-right:25px; background:url("../../../../../content/dam/hanwha/resources/images/common/bg_icon_more.png") no-repeat right 24px; font-size: 18px; color: #767676; line-height: 22px; min-height: 22px; max-height:44px; overflow: hidden; font-weight:600;}
+.ns-viewmore {font-size: 21px; color: #767676; font-style: italic; display: block; text-align:center; margin:35px 0 40px;  font-weight:600;}
+.ns-viewmore span {display:inline-block; padding:4px 0 4px 28px; background: url("../../../../../content/dam/hanwha/resources/images/common/ns-moreview-ico.png") no-repeat left 6px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.ns-navybox {padding:25px 35px; text-align: center; background: #576b7c; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; border:1px solid #576b7c; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; color: #fff; margin-bottom: 15px;}
+.ns-navybox .ns-navy-tit {font-size: 24px; font-weight: 500; padding:5px 5px 7px 35px; border-bottom:1px solid #83919d;}
+.ns-navybox.letterbox .ns-navy-tit {padding:5px 0 7px 0;}
+.ns-navybox.letterbox .ns-navy-tit > span {display:inline-block; padding-left:35px; background: url("../../../../../content/dam/hanwha/resources/images/common/ns-newsletter-ico.png") no-repeat 2px 2px; }
+.ns-navybox.contactbox .ns-navy-tit {padding:5px 0 7px 0; }
+.ns-navybox.contactbox .ns-navy-tit > span {display:inline-block; padding-left:35px; background: url("../../../../../content/dam/hanwha/resources/images/common/ns-contact-ico.png") no-repeat 2px 3px;}
+.ns-navybox .ns-navy-desc {margin:18px 0; line-height: 1.3;}
+.ns-navybox .searchbox {text-align: left; position: relative;}
+.ns-navybox .searchbox input {width:200px; height:40px; line-height: 40px; background: #fff; border:1px solid #fff; border-radius:3px 0 0 3px; -moz-border-radius:3px 0 0 3px; -webkit-border-radius:3px 0 0 3px; padding:0 10px 0 20px; font-size: 14px; color: #2d3340; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+.ns-navybox .orange-btn {display: block; height: 40px; line-height: 40px; background: #ff7200; text-align: center; color: #fff; font-size: 18px; font-weight:500; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; border:1px solid #ff7200; border-radius:3px; -moz-border-radius:3px; -webkit-border-radius:3px; font-family:"Arial";}
+.ns-navybox.contactbox .orange-btn {width:100%;}
+.ns-navybox .searchbox .orange-btn {width:107px; position: absolute; right: 0; top:0;}
+.ns-navybox .ns-navy-sdesc {margin-top:15px; font-size: 14px; line-height: 1.3;}
+.ns-navybox .ns-navy-sdesc a {color: #fff; text-decoration: underline; }
+.ns-view .ns-view-related .tit_type02 {text-align:center; font-size:24px; padding-top:50px; font-weight:600;}
+.ns-view .ns-viewall {margin:35px auto 40px; text-align:center; display:block;}
+.ns-view .figure_area .btn_video_figure {width:100%; height:330px; background-position:center center;}
+/*.ns-view .kollus_video > div {text-align:center;}*/
+/* //20170912 뉴스룸 개편 view css */
+
+/* 20170914 뉴스룸 개편 list css */
+/* [2021-10-25 LNB개편] 추가 시작 */
+.ns-list{margin-top:63px}
+.ns-list .filterbtn-wrap{position:relative}
+.ns-list .filter-selbox-wrap{margin:3px 0 5px}
+.ns-list .filterbtn{position:absolute;right:0;bottom:-46px}
+.ns-list .filterbtn-wrap.filterlist-opened .filterbtn{bottom:-61px}
+/* //[2021-10-25 LNB개편] 추가 끝 */
+.ns-list .filterbtn-wrap:after {display:block; content:""; clear:both;}
+.ns-list .filterbtn:after {display:block; content:""; clear:both;}
+/* [2021-10-25 LNB개편] 수정 및 추가 시작 */
+.ns-list .ns-list-filter {font-size: 18px; color: #fff; background:#f47322 url("../../../../../content/dam/hanwha/resources/images/common/ns-filter-ico.png") no-repeat 170px center; display: block; width: 219px; line-height: 1.3; text-align: center; float: right; border:1px solid #f5823b; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; padding:2px 25px 2px 0; min-height:46px; display:table;}
+.ns-list .ns-list-filter > span {display:table-cell; vertical-align:middle;}
+.ns-tablist {display:table;position:relative;width:990px;margin:15px 0 58px;border-top:2px solid #f47322;}
+.ns-tablist > li {display:table-cell;width:330px}
+.ns-tablist > li.ico1.active {padding-bottom:30px}
+.ns-tablist > li > a {display:block;width:309px;height:45px;margin-left:9px;font-size:18px;line-height:45px;color:#576b7c;background:#dedede;text-align:center} /* 2021-12-22 수정 */
+.ns-tablist > li:first-child > a {width:354px;margin-left:0} /* 2021-12-22 수정 */
+.ns-tablist > li.active > a {font-weight:600;color:#fff;background:#576b7c}
+.ns-sub-tablist {display:none;position:absolute;top:70px;left:0;width:1210px}
+.ns-tablist > li.active .ns-sub-tablist {display:block}
+.ns-sub-tablist > li {float:left;margin-left:10px} /* 2021-12-22 수정 */
+.ns-sub-tablist > li:first-child {margin-left:0}
+.ns-sub-tablist > li > a {display:block;width:172px;padding:0 5px;height:38px;font-weight:500;font-size:18px;line-height:38px;color:#576b7c;border-radius:18px;background:#dedede;text-align:center;box-sizing:border-box} /* 2021-12-22 수정 */
+.ns-sub-tablist > li.active > a{color:#fff;background:#f47322} /* 2021-12-22 수정 */
+/* //[2021-10-25 LNB개편] 수정 및 추가 끝 */
+.ns-tabcon {margin-top:60px; display: none;}
+.ns-tabcon.active {display: block;}
+.filter-modal {width:622px; position: fixed; left: 50%; top:50%; margin-left:-311px; margin-top:-230px; background: #fff; z-index:100; display: none; border:1px solid #c5c5c5; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; }
+.filter-modal.active {display:block;}
+.filter-modal-mask {width:100%; height:100%; position: fixed; left:0; top:0; z-index:40; background:#111; opacity: 0.6; display: none;}
+.filter-modal-mask.active {display:block;}
+.filter-modal-tit {height:66px; line-height: 66px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; padding:0 35px; background: #e1e1e1; font-size:20px; color: #576b7c; text-align: left; position: relative;}
+.filter-modal-tit:after {display: block; content:""; position: absolute; bottom:4px; width:100%; height:2px; left:0; background:#fff;}
+
+.filter-list:after {display: block; content: ""; clear: both;}
+.filter-list {padding:20px 29px 15px;}
+.filter-list .uiCheckbox_wrap { position: relative; float: left; width: 132px; height:82px; background: #f5f5f5; text-align: center; margin:10px 4px; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; border:1px solid #f5f5f5; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px; display: table;}
+.filter-list .uiCheckbox_wrap.checked {background:#f47322;}
+.filter-list .uiCheckbox_wrap.checked label {color: #fff;}
+.filter-list .uiCheckbox_wrap input {overflow:hidden;position:absolute;top:-9999px;left:-9999px;width:1px;height:1px;font-size:1px;}
+.filter-list .uiCheckbox_wrap label {display: table-cell; vertical-align: middle; font-size:17px; color: #767676; cursor: pointer; }
+.filter-ok-btn {display:block; width:120px; height:40px; line-height: 43px; background:#576b7c; color: #fff; text-align: center; margin:0 auto 30px; font-size: 18px;}
+.filter-modal-close {position: absolute; right:28px; top:22px;}
+.filter-selbox-wrap {margin:15px 0 ;}
+.filter-selbox-wrap:after {display:block; content:''; clear: both;}
+/* [2021-10-25 LNB개편] 수정 시작 */
+.filter-selbox-wrap .filter-selbox {display: none; float: right; vertical-align: top; margin-left:2px;}
+.filter-selbox {font-size: 15px; color: #767676; padding:0 18px; height:33px; line-height: 32px; border:1px solid #f47322; background: #fff; border-radius:10px; -moz-border-radius:10px; -webkit-border-radius:10px;}
+/* //[2021-10-25 LNB개편] 수정 끝 */
+.filter-selbox .filter-sel-close {display: inline-block; margin-left:10px;}
+.filter-selbox .filter-sel-close img {vertical-align: middle;}
+/* //20170914 뉴스룸 개편 list css */
+
+/* add20171016 */
+.mInfo1{background-color:#fafafa;color:#576b7c;font-size:18px;font-weight:bold;text-align:center;line-height:70px;height:70px;}
+/* //add20171016 */
+
+/* //add20180529 */
+.mGReports2{position:relative;color:#767676;line-height:130%;font-size:16px;margin:0 auto;text-align:left;width:1200px;}
+.mGReports2 h3{position:relative;color:#576b7c;font-size:30px;margin:0 0 25px;text-align:center;}
+.mGReports2 .info{position:relative;font-size:16px;margin:0 0 10px;text-align:center;}
+.mGReports2 .list_find_top{float:right;margin:16px 49px 61px;}
+.mGReports2 .map .flag{position:absolute;top:0;left:0;}
+.mGReports2 .modalBg{position:absolute;top:122px;left:50%;background-color:#000;filter:alpha(opacity=80);opacity:0.8;-moz-opacity:0.8;margin-left:-610px;width:1220px;height:891px;}
+.lGReports2{position:absolute;top:203px;left:50%;background-color:#fff;margin:40px 0 0 -400px;width:800px;min-height:auto;height:665px;padding:35px 0 0;} /* modify20180620-2 */
+.lGReports2 .title{display:block;background-color:#f1671e;color:#fff;font-size:22px;text-align:left;margin:0 0 25px;padding:9px 60px;}
+.lGReports2 .title2{position:relative;display:block;color:#4d6071;font-size:18px;text-align:left;margin:0 0 35px;padding:9px 0;min-height:20px;}
+.lGReports2 .title2 .lo{position:absolute;top:3px;right:0;}
+.lGReports2 li{border:0;border-top:1px solid #e7e7e7;padding:32px 0 0;margin:40px 0 0;}
+.lGReports2 li.noline{border-top:0;margin-top:0;padding-top:0;}
+.lGReports2 li .con{background-color:transparent;padding:0;}
+.lGReports2 li .con .img{display:block;margin:-20px 0 23px;}
+.lGReports2 li .con .img img{border:2px solid #f59461;}
+.lGReports2 li .con .txt{float:none;font-size:14px;width:auto;}
+.lGReports2 li .con .txt .ti{display:block;color:#576b7c;font-size:18px;letter-spacing:-0.3px;margin:0 0 -21px;}
+.lGReports2 .scroll{overflow:hidden;overflow-y:auto;margin:0 22px 0 60px;padding:0 21px 0 0;height:570px;}
+.lGReports2 .close{position:absolute;top:0;right:-45px;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/Worldwide/common/web/ico_close1.png) 0 0 no-repeat;text-indent:-9999px;font-size:0;width:35px;height:35px;}
+/* for chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0){
+	.lGReports2 .scroll{height:560px;}
+}
+/* //add20180529 */
+
+
+/* 2018-09-14 */
+html,body{height:100%}
+.wrapNavi{position:fixed;z-index:-1;top:0;left:25px;bottom:0;height:100%;opacity:0}
+.wrapNavi.active{z-index:1000;opacity:1;-webkit-transition:300ms;transition:300ms}
+.naviPath{display:table;height:100%;max-height:1090px}
+.naviPath ul{display:table-cell;height:100%;vertical-align:middle}
+.naviPath li{position:relative;height:10.3%;max-height:88px}
+.naviPath li:first-child{margin-top:10%}
+.naviPath li.line2{margin-top:-3.6%;margin-bottom:4.7%}
+.naviPath .path:after{content:'';position:absolute;top:50%;left:0;margin-top:-16px;width:29px;height:29px;background:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/ico_solar.png) no-repeat 0 0}
+.naviPath .on .path:after{background-position:-40px 0}
+.naviPath .path{display:block;position:relative;padding:10px 0 10px 38px;font-size:19px;line-height:27px;color:#fff}
+.naviPath .on .path{color:#f37321}
+.solar_lays{min-width:1400px}
+.solar_lays .intro{position:relative;min-height:616px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray1.jpg);background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}
+.solar_lays .intro .tit{position:relative;left:-25px;display:block;width:800px;padding:228px 0 0;margin:0 auto}
+.solar_lays .con_para1, .solar_lays .con_para2, .solar_lays .con_para3, .solar_lays .con_para4, .solar_lays .con_para5, .solar_lays .con_para6, .solar_lays .con_para7, .solar_lays .con_para8{position:relative;background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}
+.solar_lays .con_para1{min-height:1624px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray2.jpg)}
+.solar_lays .con_para2{min-height:980px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray3.jpg)}
+.solar_lays .con_para3{min-height:982px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray4.jpg)}
+.solar_lays .con_para4{min-height:1898px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray5.jpg)}
+.solar_lays .con_para5{min-height:983px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray6.jpg)}
+.solar_lays .con_para6{min-height:980px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray7.jpg)}
+.solar_lays .con_para7{min-height:914px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray8.jpg)}
+.solar_lays .con_para8{min-height:982px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_ray9.jpg)}
+
+.solar_lays [class^="con_para"]{display:table;width:100%}
+.solar_lays [class^="con_para"] .inner{display:table-cell;padding:40px 0;vertical-align:middle}
+.solar_lays .con_para2 .box_con{padding-bottom:96px}
+.solar_lays .con_para3 .box_con{padding-bottom:88px}
+.solar_lays .con_para4 .box_con{padding-bottom:70px}
+.solar_lays .con_para5 .box_con{padding-bottom:79px}
+.solar_lays .con_para6 .box_con{padding-bottom:78px}
+.solar_lays .con_para7 .box_con{padding-bottom:37px}
+.solar_lays .con_para8{padding:60px 0 60px}
+.solar_lays .con_para8 .box_con{padding-bottom:48px}
+
+.solar_lays .box_con{position:relative;width:800px;padding:51px 52px 59px 52px;margin:0 auto;color:#fff;background:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/the_rays_that_pay/bg_box_solar.png) repeat;box-sizing:border-box}
+.solar_lays .box_con .tit{display:block;margin-top:13px;font-size:40px}
+.solar_lays .box_con .desc{font-size:16px;line-height:1.25;word-break:break-word}
+.solar_lays .box_con .desc + .desc{margin-top:20px}
+.solar_lays .box_con .tit + .desc{margin-top:40px}
+.solar_lays .box_con img{display:block;margin:35px auto 0;vertical-align:top}
+.solar_lays .box_con .annot{display:block;padding:0 9px;margin:21px 0 25px;font-style:italic;font-size:15px;line-height:1.25;letter-spacing:0.01em}
+.solar_lays .box_con .inbox{margin:25px 0 26px;padding:24px 27px 21px 30px;background-color:rgba(255,255,255,0.1)}
+.solar_lays .box_con .inbox .desc{font-size:18px}
+.solar_lays .box_con .inbox em{font-weight:bold;font-style:normal}
+.solar_lays .box_con + .box_con{padding-top:35px;padding-bottom:43px;margin-top:27px}
+.solar_lays .box_con .img_person{float:left;margin-top:2px}
+.solar_lays .box_con .info_pack{overflow:hidden;padding-left:33px}
+.solar_lays .box_con .info_pack .annot{padding:0;margin:0;font-size:16px}
+.solar_lays .box_con .info_pack .desc{margin-top:20px;font-size:15px;line-height:20px}
+/* 2018-09-14  */
+/* 2018-09-18  */
+html[lang="zh"] .solar_lays .box_con .tit,
+html[lang="ja"] .solar_lays .box_con .tit{line-height:1.2}
+html[lang="zh"] .solar_lays .box_con .desc,
+html[lang="ja"] .solar_lays .box_con .desc{line-height:1.5}
+html[lang="zh"] .solar_lays .box_con .annot,
+html[lang="ja"] .solar_lays .box_con .annot{line-height:1.5}
+/* 2018-09-18  */
+
+/* 2018-12-14 */
+html,body{height:100%}
+.wrapNavi{position:fixed;z-index:-1;top:0;left:25px;bottom:0;height:100%;opacity:0}
+.wrapNavi.active{z-index:1000;opacity:1;-webkit-transition:300ms;transition:300ms}
+.naviPath{display:table;height:100%;max-height:1090px}
+.naviPath ul{display:table-cell;height:100%;vertical-align:middle}
+.naviPath li{position:relative;height:10.3%;max-height:88px}
+.naviPath li:first-child{margin-top:10%}
+.naviPath li.line2{margin-top:-3.6%;margin-bottom:4.7%}
+.naviPath li.line3{margin-top:-4.1%;margin-bottom:12.9%}
+.naviPath li.line4{margin-top:-4.9%;margin-bottom:25.3%}
+.naviPath li.line2, .naviPath li.line3, .naviPath li.line4{min-height:80px}
+.naviPath .path:after{content:'';position:absolute;top:50%;left:0;margin-top:-16px;width:29px;height:29px;background:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/ico.png) no-repeat 0 0}
+.naviPath .on .path:after{background-position:-40px 0}
+.naviPath .path{display:block;position:relative;padding:10px 0 10px 38px;font-size:19px;line-height:27px;color:#fff}
+.naviPath .on .path{color:#f37321}
+.vietnam_lays{min-width:1400px}
+.vietnam_lays .intro{position:relative;min-height:616px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/bg_1.jpg);background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}
+.vietnam_lays .intro .tit{position:relative;left:-25px;display:block;width:800px;padding:228px 0 0;margin:0 auto}
+.vietnam_lays .con_para1, .vietnam_lays .con_para2, .vietnam_lays .con_para3, .vietnam_lays .con_para4, .vietnam_lays .con_para5{position:relative;background-attachment:fixed;background-position:center;background-repeat:no-repeat;background-size:cover}
+.vietnam_lays .con_para1{min-height:1624px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/bg_2.jpg)}
+.vietnam_lays .con_para2{min-height:980px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/bg_3.jpg)}
+.vietnam_lays .con_para3{min-height:982px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/bg_4.jpg)}
+.vietnam_lays .con_para4{min-height:1898px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/bg_5.jpg)}
+.vietnam_lays .con_para5{min-height:983px;background-image:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/bg_6.jpg)}
+
+.vietnam_lays [class^="con_para"]{display:table;width:100%}
+.vietnam_lays [class^="con_para"] .inner{display:table-cell;padding:40px 0;vertical-align:middle}
+.vietnam_lays .con_para2 .box_con{padding-bottom:96px}
+.vietnam_lays .con_para3 .box_con{padding-bottom:88px}
+.vietnam_lays .con_para4 .box_con{padding-bottom:70px}
+.vietnam_lays .con_para5 .box_con{padding-bottom:79px}
+.vietnam_lays .con_para6 .box_con{padding-bottom:78px}
+.vietnam_lays .con_para7 .box_con{padding-bottom:37px}
+.vietnam_lays .con_para8{padding:60px 0 60px}
+.vietnam_lays .con_para8 .box_con{padding-bottom:48px}
+
+.vietnam_lays .box_con{position:relative;width:800px;padding:51px 52px 59px 52px;margin:0 auto;color:#fff;background:url(../../../../../content/dam/hanwha/news_and_media/hanwha-insight/hanwha-eyes-vietnam-aseans-rising-star/bg_box.png) repeat;box-sizing:border-box}
+.vietnam_lays .box_con .tit{display:block;margin-top:13px;font-size:40px}
+.vietnam_lays .box_con .desc{font-size:16px;line-height:1.25;word-break:break-word}
+.vietnam_lays .box_con img + .desc{margin-top:20px}
+.vietnam_lays .box_con .desc + .desc{margin-top:20px}
+.vietnam_lays .box_con .tit + .desc{margin-top:40px}
+.vietnam_lays .box_con img{display:block;margin:35px auto 0;vertical-align:top}
+.vietnam_lays .box_con .annot{display:block;padding:0 9px;margin:21px 0 25px;font-style:italic;font-size:15px;line-height:1.25;letter-spacing:0.01em}
+.vietnam_lays .box_con .inbox{margin:25px 0 26px;padding:24px 27px 21px 30px;background-color:rgba(255,255,255,0.1)}
+.vietnam_lays .box_con .inbox .desc{font-size:18px}
+.vietnam_lays .box_con .inbox em{font-weight:bold;font-style:normal}
+.vietnam_lays .box_con .inbox em.emph_txt{display:block;margin-top:11px}
+.vietnam_lays .box_con .inbox a{color:#fff}
+.vietnam_lays .box_con + .box_con{padding-top:35px;padding-bottom:43px;margin-top:27px}
+.vietnam_lays .box_con .img_person{float:left;margin-top:2px}
+.vietnam_lays .box_con .info_pack{overflow:hidden;padding-left:33px}
+.vietnam_lays .box_con .info_pack .annot{padding:0;margin:0;font-size:16px}
+.vietnam_lays .box_con .info_pack .desc{margin-top:20px;font-size:15px;line-height:20px}
+/* 2018-12-14  */
+/* 2018-12-18  */
+html[lang="zh"] .vietnam_lays .box_con .tit,
+html[lang="ja"] .vietnam_lays .box_con .tit{line-height:1.2}
+html[lang="zh"] .vietnam_lays .box_con .desc,
+html[lang="ja"] .vietnam_lays .box_con .desc{line-height:1.5}
+html[lang="zh"] .vietnam_lays .box_con .annot,
+html[lang="ja"] .vietnam_lays .box_con .annot{line-height:1.5}
+/* 2018-12-18 */
+
+/* 2019-02-21 추가 시작 */
+.challenge_h{line-height:1.5;color:#576b7c;text-align:left}
+.challenge_h .f_point{color:#ff7300}
+.challenge_h .img_g{display:block}
+.challenge_h .ico_challenge{display:inline-block;font-size:0;line-height:0;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201902/ico_challenge_spirit.png) no-repeat 0 0;text-indent:-9999px;vertical-align:top}
+.challenge_h .ico_challenge.ico_arr{width:25px;height:25px;background-position:0 0}
+.challenge_h .txt_info{font-size:16px;line-height:1.3;color:#767676}
+.challenge_h .link_challenge{border:1px solid #576b7c;font-weight:600;font-size:16px;color:#576b7c;background-color:#fff;box-sizing:border-box;text-align:center}
+.challenge_h .link_challenge:hover{color:#fff;background-color:#576b7c}
+.challenge_h .link_challenge .ico_arr{margin:10px 0 0 8px}
+.challenge_h .link_challenge:hover .ico_arr{background-position:-30px 0}
+.challenge_h .link_readmore{width:185px;height:45px;line-height:45px}
+.challenge_h .tit{display:block;font-weight:600;font-size:25px}
+.challenge_h .sub_tit{display:block;font-size:20px;line-height:1.2}
+.challenge_h .tit_h img{margin:0 auto}
+.challenge_h .txt_h{margin-top:33px;font-size:16px;line-height:1.3;text-align:center}
+.challenge_h .txt_h em{font-weight:bold;font-style:normal}
+.challenge_h .tab_area{position:relative;padding-top:84px}
+.challenge_h .tab_area .list_tab{position:absolute;left:144px;top:68px}
+.challenge_h .tab_area .list_tab li{float:left;margin-left:-1px}
+.challenge_h .tab_area .list_tab li:first-child{margin-left:0}
+.challenge_h .tab_area .list_tab a{display:block;width:293px;height:82px;font-size:22px;line-height:80px;color:#767676;border:1px solid #d7d7d7;background-color:#f8f7f6;box-sizing:border-box;text-align:center}
+.challenge_h .tab_area .list_tab a.on{font-weight:600;color:#fff;border-color:#ff7300;background-color:#ff7300}
+.challenge_h .box_tab{overflow:hidden;width:1220px;height:555px;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201902/bg_tab_challenge_v3.png) no-repeat 0 0;}
+.challenge_h .box_tab .tab_info{padding:96px 102px 0 600px}
+.challenge_h .box_tab .tab_info .tit_info{display:block;margin-bottom:9px;font-weight:600;font-size:24px;line-height:1.3;color:#fff}
+.challenge_h .box_tab .tab_info .txt_info{color:#fff}
+.challenge_h .box_tab .tab_info .txt_info + .txt_info{margin-top:5px}
+.challenge_h .msg_chairman{overflow:hidden;margin-top:45px;padding:65px 58px 75px 60px;background-color:#f5f5f5}
+.challenge_h .msg_chairman h3.tit{float:left}
+.challenge_h .msg_chairman .pack_info{display:inline-block;width:100%;vertical-align:top;clear:both}
+.challenge_h .msg_chairman .info_msg{float:left;width:690px}
+.challenge_h .msg_chairman .sub_tit{margin-top:23px}
+.challenge_h .msg_chairman .txt_info{margin-top:20px}
+.challenge_h .msg_chairman .info_chairman{overflow:hidden;float:right;width:391px;margin-top:-27px;text-align:center}
+.challenge_h .msg_chairman .info_chairman .name{display:block;margin-top:23px;font-size:14px;color:#767676}
+.challenge_h .msg_chairman .info_chairman .name strong{display:block;font-size:24px;line-height:1.3;color:#576b7c}
+.challenge_h .msg_chairman .link_chairman{float:left;width:353px;height:60px;margin-top:32px;font-size:20px;line-height:60px;clear:both}
+.challenge_h .msg_chairman .link_chairman .ico_arr{margin:17px 0 0 11px}
+.challenge_h .spirit_action{width:926px;margin:92px auto 0}
+.challenge_h .spirit_action .tit{text-align:center}
+.challenge_h .spirit_action .tit + .txt_info{padding:24px 0 0 134px;text-align:left}
+.challenge_h .spirit_action .prj_city{overflow:hidden;margin-top:44px}
+.challenge_h .spirit_action .prj_city .img_g{float:left}
+.challenge_h .spirit_action .prj_city .img_g + .img_g{margin-left:11px}
+.challenge_h .spirit_action .prj_city .sub_tit{padding-top:44px;clear:both}
+.challenge_h .spirit_action .prj_city .txt_info{margin-top:22px}
+.challenge_h .spirit_action .link_readmore{display:block;margin-top:27px}
+.challenge_h .spirit_action .prj_kslv{overflow:hidden;width:950px;margin-top:97px;clear:both}
+.challenge_h .spirit_action .prj_kslv .box_clip{float:left;width:638px;height:328px;margin-right:49px}
+.challenge_h .spirit_action .prj_kslv .box_info{overflow:hidden}
+.challenge_h .spirit_action .prj_kslv .sub_tit{overflow:hidden;margin-top:5px}
+.challenge_h .spirit_action .prj_kslv .txt_info{overflow:hidden;margin-top:23px}
+.challenge_h .spirit_action .prj_kslv .link_readmore{overflow:hidden;margin-top:40px}
+.challenge_h .how_tobe{margin-top:101px;padding:69px 116px 116px 146px;background-color:#f5f5f5;clear:both}
+.challenge_h .how_tobe .tit{margin-left:-33px;text-align:center}
+.challenge_h .how_tobe .sub_tit{margin-top:27px}
+.challenge_h .how_tobe .txt_info{margin-top:23px}
+.challenge_h .how_tobe .tit_how{display:block;margin-top:20px;font-weight:600;font-size:16px;color:#767676}
+.challenge_h .how_tobe .list_principles{margin-top:4px;font-size:16px;line-height:1.3;color:#767676}
+.challenge_h .how_tobe .list_principles li{position:relative;padding-left:16px}
+.challenge_h .how_tobe .list_principles li:before{content:'';position:absolute;top:9px;left:2px;width:3px;height:3px;border-radius:50%;background-color:#767676}
+.challenge_h .how_tobe .list_principles + .tit_how{margin-top:17px}
+.challenge_h .how_tobe .list_colleague{overflow:hidden;margin:43px 0 0 4px}
+.challenge_h .how_tobe .list_colleague li{float:left}
+.challenge_h .how_tobe .list_colleague li + li{margin-left:24px}
+.challenge_h .how_tobe .list_colleague a{overflow:hidden;display:block;position:relative;width:465px;height:278px;background-color:#576b7c}
+.challenge_h .how_tobe .list_colleague a .ico_arr{position:absolute;right:30px;bottom:20px}
+.challenge_h .how_tobe .list_colleague .info_colleague{float:left;width:243px;padding-left:10px;margin-top:25px;text-align:center;box-sizing:border-box}
+.challenge_h .how_tobe .list_colleague .thumb{overflow:hidden;display:block;position:relative;width:168px;height:168px;margin:0 auto}
+.challenge_h .how_tobe .list_colleague .thumb:after{content:'';position:absolute;top:0;left:0;width:168px;height:168px;border-radius:50%;border:1px solid #fff;box-sizing:border-box}
+.challenge_h .how_tobe .list_colleague .thumb .img_g{overflow:hidden;width:156px;height:156px;margin:5px auto 0;border-radius:50%}
+.challenge_h .how_tobe .list_colleague .name{display:block;margin-top:8px;font-weight:normal;font-size:14px;line-height:1.3;color:#fff}
+.challenge_h .how_tobe .list_colleague .name span{display:block;margin-bottom:-2px;font-weight:600;font-size:22px;line-height:24px}
+.challenge_h .how_tobe .list_colleague .txt_quote{display:table;overflow:hidden;height:100%}
+.challenge_h .how_tobe .list_colleague .txt_quote p{display:table-cell;padding:33px 0 82px;font-weight:600;font-size:18px;line-height:1.3;color:#fff;vertical-align:middle}
+.challenge_h .how_tobe .list_colleague a:hover .ico_arr{background-position:-30px 0}
+.challenge_h .how_tobe .list_colleague + .txt_info{margin-top:46px}
+/* //2019-02-21 추가 끝 */
+
+
+/*20190403 survey css 추가 */
+.survey_sticker{background-color:#ff7101}
+.survey_sticker.hide{display:none}
+.survey_sticker .link_survey{display:block;overflow:hidden;width:1240px;height:62px;margin:0 auto;color:#fff}
+.survey_sticker .link_survey img{display:block;width:100%;vertical-align:top}
+
+.survey_banner{position:fixed;z-index:999999;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.42)}
+.survey_banner.hide{display:none}
+.survey_banner .inner_banner{width:1240px;margin:0 auto;text-align:center}
+.survey_banner .box_wrap{display:inline-block;position:relative;vertical-align:top;text-align:left}
+.survey_banner .img_g{display:block;margin:0 auto;vertical-align:top}
+.survey_banner .info_pack{position:absolute;top:0;left:0;width:100%;height:100%}
+.survey_banner .tit{display:block;overflow:hidden;font-size:1px;line-height:0;text-indent:-9999px}
+
+.survey_banner .link_survey .ico_arr{display:inline-block;width:15px;height:15px;margin:10px 0 0 21px;background:url(../../../../../content/dam/hanwha/survey/201904/ico_arr2.png) no-repeat 0 0;background-size:100%;vertical-align:top}
+.survey_banner .check_item{position:absolute;left:0;bottom:0;padding:8px 22px 5px;font-size:14px;color:#fff}
+.survey_banner .check_item .inp_check{position:absolute;top:0;left:0;width:100%;height:100%;border:0 none;outline:none;-webkit-appearance:none;opacity:0.01}/* 2019-04-04 수정 */
+.survey_banner .check_item .ico_check{float:left;width:18px;height:18px;margin-right:10px;background:url(../../../../../content/dam/hanwha/survey/201904/check_off.png) no-repeat 0 0;background-size:100%}
+.survey_banner .check_item .inp_check:checked + .ico_check{background-image:url(../../../../../content/dam/hanwha/survey/201904/check_on.png)}
+.survey_banner .btn_close{overflow:hidden;position:absolute;right:0;bottom:0;width:40px;height:40px}
+.survey_banner .btn_close span{display:block;width:21px;height:21px;margin:16px auto 0;font-size:0;line-height:0;background:url(../../../../../content/dam/hanwha/survey/201904/ico_close.png) no-repeat 0 0;background-size:100%;text-indent:-9999px}
+
+.survey_popup{overflow-y:auto;position:fixed;z-index:999999;top:0;left:0;right:0;bottom:0;width:100%;height:100%;background-color:rgba(0,0,0,0.70)}
+.survey_popup.hide{display:none}
+.survey_popup .inner_popup{position:relative;width:800px;margin:0 auto 100px;font-size:16px;color:#666;background-color:#fff;word-break:break-word}
+.survey_popup .top_pop{display:block}
+.survey_popup .cont_pop{padding:60px 60px 50px}
+.survey_popup .tit_ask{display:block;margin:42px 0 14px;font-weight:normal}
+.survey_popup .list_ask{overflow:hidden}
+.survey_popup .list_ask li{float:left;width:50%;padding:8px 10px 8px 0;box-sizing:border-box}
+.survey_popup .radio_item{display:block;position:relative;padding-left:27px;box-sizing:border-box}
+.survey_popup .radio_item .inp_radio{position:absolute;top:0;left:0;width:100%;height:100%;border:0 none;outline:none;-webkit-appearance:none;opacity:0.01}
+.survey_popup .radio_item .ico_radio{position:absolute;left:0;top:0;width:17px;height:17px;background:url(../../../../../content/dam/hanwha/survey/201904/radio_off.png) no-repeat 0 0;background-size:100%}
+.survey_popup .radio_item .inp_radio:checked + .ico_radio{background-image:url(../../../../../content/dam/hanwha/survey/201904/radio_on.png)}
+.survey_popup .btn_ask{display:block;height:41px;padding:0 20px;margin:94px auto 0;font-size:14px;color:#fff;background-color:#ec7a30}
+.survey_popup .btn_close{position:absolute;top:-10px;right:-41px;padding:10px}
+.survey_popup .btn_close span{display:block;width:21px;height:21px;margin:0 auto;font-size:0;line-height:0;background:url(../../../../../content/dam/hanwha/survey/201904/ico_close2.png) no-repeat 0 0;background-size:100%;text-indent:-9999px}
+/*20190403 survey css 추가 끝*/
+
+/* 2019-04-14 수정 시작 */
+/* 한화 sprit - dedication */
+.dedication_h .box_tab{overflow:hidden;width:1220px;height:525px;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201903/bg_tab_dedication_v2.png) no-repeat 0 0}
+html[lang="ja"] .dedication_h .box_tab .tab_info .txt_info{line-height:1.4}
+html[lang="zh"] .dedication_h .box_tab .tab_info .tit_info{line-height:1.3}
+html[lang="zh"] .dedication_h .box_tab .tab_info .txt_info{line-height:1.5}
+
+/* 한화 sprit - integrity */
+.integrity_h .box_tab{overflow:hidden;width:1220px;height:525px;background:url(../../../../../content/dam/hanwha/news_and_media/newsletter/monthlycolumn/201904/bg_tab_integrity.png) no-repeat 0 0}
+html[lang="ja"] .integrity_h .box_tab .tab_info .txt_info{line-height:1.4}
+html[lang="zh"] .integrity_h .box_tab .tab_info .tit_info{line-height:1.3}
+html[lang="zh"] .integrity_h .box_tab .tab_info .txt_info{line-height:1.5}
+/* //2019-04-14 수정 끝 */
+
+/*20190624 privacy banner add */
+.notice_policy{position:fixed;z-index:9999;bottom:0;left:0;right:0;width:100%;min-width:1223px;background-color:#5f5f5f}/* 2019-06-26 수정 */
+.notice_policy.hide{display:none}
+.notice_policy .inner{overflow:hidden;display:table;position:relative;width:1223px;min-height:75px;margin:0 auto;padding:10px 105px 10px 0;font-size:15px;line-height:1.1;color:#ddd;background-color:#5f5f5f;box-sizing:border-box;word-break:break-word}/* 2019-06-26 수정 */
+.notice_policy .txt_notice{display:table-cell;vertical-align:middle}
+.notice_policy .link_notice{font-weight:bold;color:#ff8a00;border-bottom:1px solid #ff8a00}/* 2019-07-09 수정 */
+.notice_policy .btn_close{position:absolute;top:50%;right:0;width:44px;height:50px;margin-top:-25px}
+.notice_policy .btn_close .ico_close{display:block;width:44px;height:30px;margin:15px auto;background:url(../../../../../content/dam/hanwha/notice_policy/ico_close.png);background-repeat:no-repeat;font-size:0;line-height:0;text-indent:-9999px}/* 2019-07-02 수정 */
+/*20190624 privacy banner end */
+
+	/* 2020-02-23 추가 시작 */
+	.mNewRoom .list_glance{overflow:hidden}
+	.mNewRoom .list_glance span{padding:0}
+	.mNewRoom .list_glance img{min-height:auto}
+	.mNewRoom .list_glance li{display:block;float:left;overflow:hidden;position:relative;width:390px;height:auto;margin:0 15px 25px 10px}
+	.mNewRoom .list_glance li:hover{cursor:pointer}
+	.mNewRoom .list_glance li:nth-child(3n){margin-right:0}
+	.mNewRoom .list_glance .link_findout{display:block}
+	.mNewRoom .list_glance .link_findout .frame_box{display:block;height:236px;background-repeat:no-repeat;background-position:0 0;background-size:cover}
+	.mNewRoom .list_glance .link_findout .frame1{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance1.jpg)}
+	.mNewRoom .list_glance .link_findout .frame2{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance2.jpg)}
+	.mNewRoom .list_glance .link_findout .frame3{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance3.jpg)}
+	.mNewRoom .list_glance .link_findout .frame4{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance4.jpg)}
+	.mNewRoom .list_glance .link_findout .frame5{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance5.jpg)}
+	.mNewRoom .list_glance .link_findout .frame6{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance6.jpg)}
+	.mNewRoom .list_glance .link_findout .cont_box{display:block;height:195px;padding:10px 15px 20px 40px;border:1px solid #bcbcbc;border-top:0 none;box-sizing:border-box}
+	.mNewRoom .list_glance .link_findout .tit{display:block;overflow:hidden;margin-top:20px;font-weight:600;font-size:36px;line-height:1.3;color:#000;white-space:nowrap;text-overflow:ellipsis;word-break:keep-all}
+	.mNewRoom .list_glance .link_findout .tit .txt_hanwha{display:inline-block;width:155px;height:27px;margin:11px 0 0 5px;font-size:0;line-height:0;background:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/txt_hanwha.png) no-repeat 0 0;vertical-align:top;text-indent:-9999px}
+	.mNewRoom .list_glance .link_findout .txt{overflow:hidden;float:left;width:0;height:0;font-size:0;line-height:0;color:transparent;text-indent:-9999px}
+	.mNewRoom .list_glance li:hover .link_findout{height:431px}
+	.mNewRoom .list_glance li:hover .link_findout .frame_box{position:relative;width:100%;height:100%}
+	.mNewRoom .list_glance li:hover .link_findout .frame1{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance1_on.jpg)}
+	.mNewRoom .list_glance li:hover .link_findout .frame2{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance2_on.jpg)}
+	.mNewRoom .list_glance li:hover .link_findout .frame3{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance3_on.jpg)}
+	.mNewRoom .list_glance li:hover .link_findout .frame4{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance4_on.jpg)}
+	.mNewRoom .list_glance li:hover .link_findout .frame5{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance5_on.jpg)}
+	.mNewRoom .list_glance li:hover .link_findout .frame6{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/img_glance6_on.jpg)}
+	.mNewRoom .list_glance li:hover .link_findout .frame_box:after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.7)}
+	.mNewRoom .list_glance li:hover .link_findout .cont_box{position:absolute;top:0;left:0;width:100%;height:100%;padding:59px 20px 0 40px;border:0 none}
+	.mNewRoom .list_glance li:hover .link_findout .tit{color:#fff}
+	.mNewRoom .list_glance li:hover .link_findout .tit .txt_hanwha{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/txt_hanwha_on.png)}
+	.mNewRoom .list_glance li:hover .link_findout .txt{display:block;display:-webkit-box;float:none;width:auto;height:124px;margin:25px 10px 0 0;font-size:20px;line-height:24px;color:#fff;-webkit-line-clamp:5;-webkit-box-orient:vertical;text-overflow:ellipsis;word-break:keep-all;text-indent:0}
+	html[lang="zh"] .mNewRoom .list_glance li:hover .link_findout .txt{word-break:break-all} /* 2020-05-07 추가 */
+	.mNewRoom .list_glance .link_download{position:absolute;z-index:1;left:41px;bottom:32px;font-size:20px}
+	.mNewRoom .list_glance li:hover .link_download{position:absolute;z-index:1;right:auto;left:140px;bottom:57px;width:60px;height:60px;padding-top:10px;text-align:center}
+	.mNewRoom .list_glance .aid_word{display:inline-block;padding-right:33px;font-weight:bold;font-size:18px;line-height:22px;color:#576b7d;background-repeat:no-repeat;background-position:100% 1px;vertical-align:top;letter-spacing:1px}
+	.mNewRoom .list_glance .aid_word.type_more{margin-top:30px;background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/ico_arr2.png)}
+	.mNewRoom .list_glance .aid_word.type_pdf{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/ico_download2.png)}
+	.mNewRoom .list_glance li:hover .aid_word{padding:0;font-size:0;line-height:0;color:transparent;background-position:0 0;text-indent:-9999px}
+	.mNewRoom .list_glance li:hover .aid_word.type_more{width:50px;height:50px;margin-top:38px;background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/ico_arr2_on.png)}
+	.mNewRoom .list_glance li:hover .aid_word.type_pdf{width:40px;height:44px;background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/ico_download2_on.png)}
+
+	.tab_at_glance{height:60px;font-size:0;background-color:#d4d4d4;}
+	.tab_at_glance li{display:inline-block;height:100%;vertical-align:top}
+	.tab_at_glance .link_tab{display:block;position:relative;height:100%;padding-top:22px;font-weight:500;font-size:18px;color:#697e90;box-sizing:border-box}
+	.tab_at_glance li+li .link_tab:after{content:'';position:absolute;left:0;top:20px;width:1px;height:20px;background-color:#f2f2f2}
+	.tab_at_glance .on+li .link_tab:after{display:none}
+	.tab_at_glance .on .link_tab{top:-10px;height:80px;padding-top:31px;color:#fff;background-color:#697e90}
+	.tab_at_glance .on .link_tab:after{content:'';position:absolute;top:auto;bottom:-10px;left:50%;width:20px;height:10px;margin-left:-10px;background:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/ico_tab_arr.png) no-repeat 0 0}
+	.tab_at_glance .link_tab .txt_h{display:inline-block;width:74px;height:14px;margin:2px 0 0 2px;font-size:0;line-height:0;background:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/txt_hanwha2_off.png) no-repeat 0 0;vertical-align:top;text-indent:-9999px}
+	.tab_at_glance .on .link_tab .txt_h{background-image:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/txt_hanwha2_on.png)}
+	.tab_at_glance .tab0{width:210px}
+	.tab_at_glance .tab1{width:176px}
+	.tab_at_glance .tab2{width:205px}
+	.tab_at_glance .tab3{width:167px}
+	.tab_at_glance .tab4{width:168px}
+	.tab_at_glance .tab5{width:122px}
+	.tab_at_glance .tab6{width:172px}
+
+	.cont_glance{text-align:left}
+	.cont_glance .area_glance{display:inline-block;position:relative;width:100%;padding-right:310px;margin-top:76px;vertical-align:top;box-sizing:border-box}
+	.cont_glance .tit_type01{display:block;margin:0;font-weight:600;font-size:50px;color:#697e90}
+	.cont_glance .tit_type02{width:auto;font-weight:600;font-size:32px;color:#697e90}
+	.cont_glance .btn_pdf{position:absolute;top:13px;right:0;min-width:290px;height:85px;padding:29px 15px 0;font-size:22px;color:#000;border:2px solid #e9e9e9;box-sizing:border-box;text-align:center}
+	.cont_glance .btn_pdf .ico_down{display:inline-block;width:19px;height:23px;margin-left:17px;background:url(../../../../../content/dam/hanwha/news_and_media/Hanwha_at_a_glance/ico_download.png) no-repeat 0 0;vertical-align:top}
+/* 2020-02-23 추가 끝 */
+
+/* 2020-03-22 추가 */
+/* 2020-04-14 수정 시작 */
+.chk_executive .btn_switch{display:inline-block;margin:18px 0 0 10px;padding:15px 0;font-size:17px;color:#767676;vertical-align:text-top}
+.chk_executive .btn_switch .line_f{border-bottom:1px solid #767676}
+/* 2020-04-14 수정 끝 */
+.newsExecutive{clear:both}
+.newsExecutive > ul{clear:both;margin:0 15px;}
+.newsExecutive > ul > li {padding: 0 0 30px}
+.newsExecutive > ul > li > label {display: block;padding: 0 0 10px;font-size: 0.9375rem;color: #333}
+.newsExecutive .textCase{box-sizing:border-box}
+.newsExecutive .selectbox a{width:auto}
+/* //2020-03-22 추가 */
+
+/* 2020-04-28 추가 */
+.z9999{z-index:9999}
+#footer . layer_video{z-index:99999}
+.enquire .layer_map_info, .subscribe .layer_map_info{z-index:99999}
+.form_contact .selectbox > ul{overflow-y:auto;max-height:500px}
+/* //2020-04-28 추가 */
+
+/* 2020-05-07 추가 */
+div[disabled=disabled] {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* 2020-05-08 추가 */
+.newsExecutive .direct_inp{display:block;margin-top:10px;padding:8px 23px 10px 14px}
+.newsExecutive .direct_inp input{display:block;width:100%;height:34px;font-size:16px;color:#333}
+/* //2020-05-08 추가 */
+
+/* 2020-05-26 추가 */
+.latest_story_wrap{margin-top:50px}
+.latest_story_wrap > .title{border:1px solid #cfcfcf;border-bottom:0 none}
+.latest_story_wrap > .title .tit_type02{padding-top:30px;padding-bottom:28px}
+.latest_story_wrap .related-con-box{position:relative}
+.latest_story_wrap .related-con-box:last-child{margin-bottom:10px}
+.latest_story_wrap .related-con-box:after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;border:1px solid #cfcfcf;border-top:0 none;border-bottom:0 none;box-sizing:border-box}
+.latest_story_wrap .related-con-box > a{border:1px solid #cfcfcf;border-top:0 none;background-position:-1px 0}
+/* //2020-05-26 추가 */
+
+/* 2020-06-03 추가 */
+.split_content_parsys{overflow:hidden}
+.split_content_parsys .split_box{float:left}
+.split_content_parsys .split_box .tit_type02{width:auto;margin:0;padding:60px 0 75px}
+.split_content_parsys .split_box .wrap_list{width:812px !important;padding-top:0}
+.split_content_parsys .split_box .wrap_list ul{position:static}
+.split_content_parsys .split_box .latest_content .wrap_list{width:406px !important}
+.split_content_parsys .split_box .latest_content .swiper-wrapper{margin-left:0 !important}
+/* //2020-06-03 추가 */
+
+/* 2020-07-01 추가 */
+.check_unsubs{display:inline-block;margin-top:30px;vertical-align:top;text-align:left}
+.check_unsubs li{overflow:hidden;margin-top:10px;font-size:17px;line-height:1.3;color:#767676}
+.check_unsubs li input{float:left;margin:4px 5px 0 0;vertical-align:top}
+.check_unsubs li label{display:block;overflow:hidden}
+/* //2020-07-01 추가 */
+
+/* 2020-09-06 추가 */
+/* 동영상 삽입용 */
+.figure_area_video{position:relative}
+.figure_area_video .btn_video_figure{position:absolute;top:0;left:0;width:100%;height:100%}
+.figure_area_video .btn_video_figure:before{content:'';position:absolute;left:0;top:0;right:0;bottom:0;width:82px;height:82px;margin:auto;background:url(../../../../../content/dam/hanwha/sustainability/btn_videoplay.png) no-repeat 0 0;background-size:100%}
+/* //2020-09-06 추가 */
+
+.tit_newsroom{margin:-30px 0 -28px} /* [2021-10-18 메인BH영역개편] 추가 */
+
+/* [2021-10-25 오디오폴리] 추가 시작 */
+/*.content_header .area_conthead{width:800px} 2021-11-10 삭제*/
+.content_header .area_conthead:after{content:'';display:block;clear:both}
+.content_header .area_conthead .social_nav{float:right;width:auto;padding:20px 0 0}
+.content_header .area_conthead .audio_pollywrap{float:left;height:38px;margin-top:19px}
+.audio_pollywrap audio{display:none}
+.audio_pollywrap .btn_listen{display:inline-block;position:relative;font-weight:600;font-size:18px;line-height:38px;color:#767676;cursor:pointer}
+.audio_pollywrap .btn_listen:before{content:'';display:inline-block;width:38px;height:38px;margin-right:20px;background:url(../../../../../content/dam/hanwha/resources/images/common/btn_audio_listen.png) no-repeat 0 0;background-size:cover;vertical-align:top}
+.audio_pollywrap.playing .btn_listen{display:none}
+.audio_pollywrap.playing .audio_player{display:block;}
+.audio_pollywrap .audio_player{display:none;position:relative;width:270px;padding:11px 0 0 58px} /* 2022-03-16 수정 */
+.audio_pollywrap .audio_player:after{content:'';display:block;clear:both}
+.audio_pollywrap .audio_player .timeline_handle{float:left;padding:6px 0;cursor:pointer}
+.audio_pollywrap .audio_player .timeline_bar{position:relative;width:147px;height:5px;background-color:#e6e6e6;cursor:pointer}
+.audio_pollywrap .audio_player .timeline_bar .progress_bar{position:absolute;top:0;left:0;height:100%;background-color:#343434}
+.audio_pollywrap .audio_player .timeline_bar .progress_bar .dot_handle{position:absolute;top:-2px;right:-2px;width:9px;height:9px;background-color:#343434;border-radius:50%;cursor:pointer}
+.audio_pollywrap .audio_player .btn_player{position:absolute;top:0;left:0;width:38px;height:38px;background:url(../../../../../content/dam/hanwha/resources/images/common/btn_audio_play.png) no-repeat 0 0;background-size:cover;vertical-align:top;font-size:1px;line-height:0;color:transparent;text-indent:-999em}
+.audio_pollywrap .audio_player .btn_player.pause{background-image: url(../../../../../content/dam/hanwha/resources/images/common/btn_audio_pause.png)}
+.audio_pollywrap .audio_player .time_play{float:left;margin-left:14px;font-size:16px} /* 2021-11-18 수정 */
+/* //[2021-10-25 오디오폴리] 추가 끝 */
+
+/* [2021-11-01 태그개편] 시작 */
+.tag_area{position:relative;width:1220px;padding:39px 0 29px 0;margin:60px auto -80px;border-top:1px solid #e4e4e4;box-sizing:border-box} /* 2021-12-20 수정 */
+.ns-leftbox .tag_area{width:auto;margin:60px auto -60px;border-top:1px solid #f3f3f3} /* 2021-12-10 수정 */
+.tag_area .tit_tag{float:left;position:relative;height:36px;margin:1px 23px 0 0;padding:0 16px 0 20px;line-height:34px;font-weight:600;font-size:20px;color:#fff;background-color:#ff7201;text-align:center} /* 2021-12-20 수정 */
+.tag_area .tit_tag:after{content:'';position:absolute;top:0;right:-14px;width:0;height:0;border-style:solid;border-width:18px 0 18px 14px;border-color:transparent transparent transparent #ff7201}
+.tag_area .list_tag{overflow:hidden}
+.tag_area .list_tag > li{float:left;margin:0 9px 11px 0}
+.tag_area .list_tag > li > a{display:block;min-width:55px;height:36px;padding:0 22px;font-weight:600;font-size:16px;color:#576b7c;line-height:33px;border:1px solid #ff4a0e;border-radius:36px;box-sizing:border-box;text-align:center}
+
+.taglist_section{margin:30px 0}
+.box_inner > .taglist_section{margin:-30px 0 40px}
+.taglist_section dl{overflow:hidden;position:relative} /* 2021-12-20 수정 */
+.taglist_section dl > dt{float:left;position:relative;height:36px;margin:1px 23px 0 0;padding:0 16px 0 20px;line-height:34px;font-weight:600;font-size:20px;color:#fff;background-color:#ff7201;text-align:center} /* 2021-12-20 수정 */
+.taglist_section dl > dt:after{content:'';position:absolute;top:0;right:-14px;width:0;height:0;border-style:solid;border-width:18px 0 18px 14px;border-color:transparent transparent transparent #ff7201}
+.taglist_section dl > dd{float:left}
+.taglist_section dl > dd strong{display:block;min-width:55px;height:36px;padding:0 22px;font-weight:600;font-size:16px;color:#576b7c;line-height:33px;border:1px solid #ff4a0e;border-radius:36px;box-sizing:border-box;text-align:center}
+/* //[2021-11-01 태그개편] 끝 */
